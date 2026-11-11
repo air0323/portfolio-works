@@ -1,0 +1,920 @@
+﻿@charset "utf-8";
+
+
+/* =========================
+   BASE
+========================= */
+
+body {
+font-weight: 400;
+line-height: 1.8;
+color: #494848;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* =========================
+   MV
+========================= */
+
+#mv {
+	position: relative;
+}
+
+#mv picture {
+	display: block;
+}
+
+#mv picture img {
+	display: block;
+
+	width: 100%;
+	height: auto;
+}
+
+.mv-contents {
+	position: absolute;
+	top: 50%;
+	left: 15%;
+
+	width: 50%;
+	max-width: 620px;
+
+	transform: translateY(-50%);
+}
+
+.mv-copy {
+	margin: 0;
+
+	font-size: clamp(28px, 3vw, 42px);
+	font-weight: 400;
+	line-height: 1.6;
+
+	color: #fff;
+
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.4),
+		0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   ABOUT BACKGROUND
+========================= */
+
+.about-bg-wrap {
+	position: relative;
+
+	overflow: hidden;
+}
+
+.about-bg-wrap::before {
+	content: "";
+
+	position: absolute;
+	inset: -20px;
+
+	background-image: url("../img/about-us/aboutUs_mv.png");
+	background-size: cover;
+	background-position: center;
+
+	filter: blur(12px);
+
+	opacity: 0.3;
+
+	z-index: 0;
+}
+
+.about-bg-wrap::after {
+	content: "";
+
+	position: absolute;
+	inset: 0;
+
+	background-color: rgba(255, 255, 255, 0.74);
+
+	z-index: 0;
+}
+
+
+/* =========================
+   ABOUT COMMON
+========================= */
+
+.about-intro,
+.about-name {
+	position: relative;
+
+	background-color: transparent;
+
+	z-index: 1;
+}
+
+.about-intro .section-inner,
+.about-name .section-inner {
+	width: 1200px;
+
+	margin: 0 auto;
+}
+
+
+/* =========================
+   ABOUT INTRO
+========================= */
+
+.about-intro {
+	padding: 120px 0;
+}
+
+.about-intro .section-inner {
+	text-align: center;
+}
+
+.about-label {
+	margin: 0 0 20px;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: #7b9365;
+}
+
+.about-title {
+	margin: 0 0 40px;
+
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.about-text {
+	margin: 0;
+
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+
+/* =========================
+   ABOUT NAME
+========================= */
+
+.about-name {
+	padding: 120px 0;
+}
+
+.about-name-top {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 70px;
+}
+
+.about-name-image {
+	width: 620px;
+
+	flex-shrink: 0;
+}
+
+.about-name-image img {
+	display: block;
+
+	width: 100%;
+	height: auto;
+}
+
+.about-name-contents {
+	width: 430px;
+}
+
+.about-name-label {
+	margin: 0 0 20px;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: #7b9365;
+}
+
+.about-name-title {
+	margin: 0 0 35px;
+
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.about-name-text {
+	margin: 0 0 15px;
+
+	font-size: 16px;
+	line-height: 2;
+
+	text-align: left;
+}
+
+.about-name-bottom {
+	width: 1000px;
+
+	margin: 0 auto;
+
+	text-align: center;
+}
+
+
+/* =========================
+   CONCEPT BACKGROUND
+========================= */
+
+.concept-bg-wrap {
+	position: relative;
+
+	overflow: hidden;
+}
+
+.concept-bg-wrap::before {
+	content: "";
+
+	position: absolute;
+	inset: -20px;
+
+	background-image: url("../img/about-us/aboutUs_Concept01.png");
+	background-size: cover;
+	background-position: center;
+
+	filter: blur(12px);
+
+	opacity: 0.18;
+
+	z-index: 0;
+}
+
+.concept-bg-wrap::after {
+	content: "";
+
+	position: absolute;
+	inset: 0;
+
+	background-color: rgba(255, 255, 255, 0.8);
+
+	z-index: 0;
+}
+
+
+/* =========================
+   CONCEPT COMMON PC
+========================= */
+
+.studio-concept,
+.business-background {
+	position: relative;
+
+	padding: 120px 0;
+
+	z-index: 1;
+}
+
+.studio-concept .section-inner,
+.business-background .section-inner {
+	width: 1200px;
+
+	margin: 0 auto;
+}
+
+.concept-layout {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+
+	column-gap: 100px;
+
+	align-items: start;
+}
+
+
+/* =========================
+   STUDIO CONCEPT PC
+========================= */
+
+/*
+   左：画像2枚
+   右：テキスト1
+   下：テキスト2
+*/
+
+.concept-layout-studio {
+	grid-template-areas:
+		"images text01"
+		"text02 text02";
+
+	grid-template-rows: 470px auto;
+}
+
+
+/* 画像2枚を同じエリアへ */
+
+.concept-layout-studio .concept-image01,
+.concept-layout-studio .concept-image02 {
+	grid-area: images;
+}
+
+
+/* 画像1 */
+
+.concept-layout-studio .concept-image01 {
+	justify-self: start;
+	align-self: start;
+
+	z-index: 1;
+}
+
+.concept-layout-studio .concept-image01 img {
+	display: block;
+
+	width: 400px;
+	height: 270px;
+
+	object-fit: cover;
+}
+
+
+/* 画像2 */
+
+.concept-layout-studio .concept-image02 {
+	justify-self: start;
+	align-self: start;
+
+	margin-top: 210px;
+	margin-left: 160px;
+
+	z-index: 2;
+}
+
+.concept-layout-studio .concept-image02 img {
+	display: block;
+
+	width: 400px;
+	height: 270px;
+
+	object-fit: cover;
+}
+
+
+/* テキスト1 */
+
+.concept-layout-studio .concept-textarea01 {
+	grid-area: text01;
+
+	padding-top: 10px;
+}
+
+
+/* テキスト2 */
+
+.concept-layout-studio .concept-textarea02 {
+	grid-area: text02;
+
+	width: 1000px;
+
+	margin: 80px auto 0;
+
+	text-align: center;
+}
+
+
+/* =========================
+   BUSINESS BACKGROUND PC
+========================= */
+
+/*
+   左：テキスト1
+   右：画像2枚
+   下：テキスト2
+*/
+
+.concept-layout-business {
+	grid-template-areas:
+		"text01 images"
+		"text02 text02";
+
+	grid-template-rows: 550px auto;
+}
+
+
+/* 画像2枚を同じエリアへ */
+
+.concept-layout-business .concept-image01,
+.concept-layout-business .concept-image02 {
+	grid-area: images;
+}
+
+
+/* 画像1 */
+
+.concept-layout-business .concept-image01 {
+	justify-self: start;
+	align-self: start;
+
+	z-index: 1;
+}
+
+.concept-layout-business .concept-image01 img {
+	display: block;
+
+	width: 300px;
+	height: 370px;
+
+	object-fit: cover;
+}
+
+
+/* 画像2 */
+
+.concept-layout-business .concept-image02 {
+	justify-self: start;
+	align-self: start;
+
+	margin-top: 160px;
+	margin-left: 220px;
+
+	z-index: 2;
+}
+
+.concept-layout-business .concept-image02 img {
+	display: block;
+
+	width: 300px;
+	height: 370px;
+
+	object-fit: cover;
+}
+
+
+/* テキスト1 */
+
+.concept-layout-business .concept-textarea01 {
+	grid-area: text01;
+
+	padding-top: 10px;
+}
+
+
+/* テキスト2 */
+
+.concept-layout-business .concept-textarea02 {
+	grid-area: text02;
+
+	width: 1000px;
+
+	margin: 80px auto 0;
+
+	text-align: center;
+}
+
+
+/* =========================
+   CONCEPT TEXT PC
+========================= */
+
+.concept-textarea {
+	width: 100%;
+}
+
+.concept-label {
+	margin: 0 0 20px;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: #7b9365;
+}
+
+.concept-title {
+	margin: 0 0 35px;
+
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.concept-text {
+	margin: 0;
+
+	font-size: 16px;
+	line-height: 2;
+}
+
+.concept-text + .concept-text {
+	margin-top: 25px;
+}
+
+/* =========================
+   ABOUT CTA
+========================= */
+
+.about-cta {
+	position: relative;
+
+	background-image: url("../img/about-us/aboutUs_cta.png");
+	background-size: cover;
+	background-position: center;
+}
+
+/* 背景を少し明るく */
+.about-cta::before {
+	content: "";
+
+	position: absolute;
+	inset: 0;
+
+	background-color: rgba(255, 255, 255, 0.35);
+}
+
+.about-cta-inner {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	z-index: 1;
+}
+
+
+/* =========================
+   RESPONSIVE
+   768px以下
+========================= */
+
+@media screen and (max-width: 768px) {
+
+
+	/* =========================
+	   MV SP
+	========================= */
+
+	.mv-contents {
+		top: 50%;
+		left: 10%;
+
+		width: 75%;
+		max-width: none;
+	}
+
+
+	.mv-copy {
+		font-size: clamp(18px, 5vw, 26px);
+		line-height: 1.6;
+
+		color: #fff;
+
+		text-shadow:
+			0 2px 4px rgba(0, 0, 0, 0.4),
+			0 4px 10px rgba(0, 0, 0, 0.25);
+	}
+
+
+	/* =========================
+	   ABOUT BACKGROUND SP
+	========================= */
+
+	.about-bg-wrap::before {
+		inset: 0;
+
+		width: 100%;
+		height: 100%;
+
+		filter: blur(10px);
+
+		transform: scale(1.05);
+
+		opacity: 0.28;
+	}
+
+	.about-bg-wrap::after {
+		background-color: rgba(255, 255, 255, 0.78);
+	}
+
+
+	/* =========================
+	   ABOUT COMMON SP
+	========================= */
+
+	.about-intro,
+	.about-name {
+		width: 100%;
+
+		padding: 80px 0;
+
+		box-sizing: border-box;
+	}
+
+	.about-intro .section-inner,
+	.about-name .section-inner {
+		width: 100%;
+		max-width: 100%;
+
+		padding: 0 25px;
+		margin: 0;
+
+		box-sizing: border-box;
+
+		text-align: left;
+	}
+
+
+	/* =========================
+	   ABOUT INTRO SP
+	========================= */
+
+	.about-label {
+		margin-bottom: 15px;
+
+		font-size: 14px;
+	}
+
+	.about-title {
+		margin-bottom: 30px;
+
+		font-size: 24px;
+		line-height: 1.5;
+	}
+
+	.about-text {
+		font-size: 14px;
+		line-height: 1.8;
+	}
+
+
+	/* =========================
+	   ABOUT NAME SP
+	========================= */
+
+	.about-name-top {
+		display: flex;
+		flex-direction: column;
+
+		margin-bottom: 30px;
+	}
+
+	.about-name-image {
+		order: 1;
+
+		width: 100%;
+
+		margin-bottom: 30px;
+	}
+
+	.about-name-contents {
+		order: 2;
+
+		width: 100%;
+	}
+
+	.about-name-label {
+		margin-bottom: 15px;
+
+		font-size: 14px;
+	}
+
+	.about-name-title {
+		margin-bottom: 25px;
+
+		font-size: 24px;
+		line-height: 1.5;
+	}
+
+	.about-name-text {
+		font-size: 14px;
+		line-height: 1.8;
+	}
+
+	.about-name-bottom {
+		width: 100%;
+
+		margin: 0;
+
+		text-align: left;
+	}
+
+
+	/* =========================
+	   CONCEPT BACKGROUND SP
+	========================= */
+
+	.concept-bg-wrap::before {
+		inset: 0;
+
+		width: 100%;
+		height: 100%;
+
+		filter: blur(10px);
+
+		transform: scale(1.05);
+
+		opacity: 0.18;
+	}
+
+	.concept-bg-wrap::after {
+		background-color: rgba(255, 255, 255, 0.82);
+	}
+
+
+	/* =========================
+	   CONCEPT SECTION SP
+	========================= */
+
+	.studio-concept,
+	.business-background {
+		width: 100%;
+
+		padding: 80px 0;
+
+		box-sizing: border-box;
+	}
+
+	.studio-concept .section-inner,
+	.business-background .section-inner {
+		width: 100%;
+		max-width: 100%;
+
+		padding: 0 25px;
+		margin: 0;
+
+		box-sizing: border-box;
+	}
+
+
+	/* =========================
+	   CONCEPT LAYOUT SP
+	========================= */
+
+	.concept-layout,
+	.concept-layout-studio,
+	.concept-layout-business {
+		display: grid;
+
+		grid-template-columns: 1fr;
+
+		grid-template-areas:
+			"image01"
+			"text01"
+			"image02"
+			"text02";
+
+		grid-template-rows: auto;
+
+		gap: 0;
+
+		width: 100%;
+	}
+
+
+	/* =========================
+	   CONCEPT IMAGE SP
+	========================= */
+
+	.concept-layout-studio .concept-image01,
+	.concept-layout-business .concept-image01 {
+		grid-area: image01;
+
+		margin: 0 0 30px;
+
+		justify-self: stretch;
+
+		z-index: 1;
+	}
+
+	.concept-layout-studio .concept-image02,
+	.concept-layout-business .concept-image02 {
+		grid-area: image02;
+
+		margin: 50px 0 30px;
+
+		justify-self: stretch;
+
+		z-index: 1;
+	}
+
+
+	/* PC用の位置指定を解除 */
+
+	.concept-layout-studio .concept-image01,
+	.concept-layout-studio .concept-image02,
+	.concept-layout-business .concept-image01,
+	.concept-layout-business .concept-image02 {
+		margin-left: 0;
+	}
+
+
+	/* スタジオ画像 */
+
+	.concept-layout-studio .concept-image01 img,
+	.concept-layout-studio .concept-image02 img {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		aspect-ratio: 400 / 270;
+
+		object-fit: cover;
+	}
+
+
+	/* 事業背景画像 */
+
+	.concept-layout-business .concept-image01 img,
+	.concept-layout-business .concept-image02 img {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		aspect-ratio: 300 / 370;
+
+		object-fit: cover;
+	}
+
+
+	/* =========================
+	   CONCEPT TEXT SP
+	========================= */
+
+	.concept-textarea01 {
+		grid-area: text01;
+	}
+
+	.concept-textarea02 {
+		grid-area: text02;
+	}
+
+	.concept-layout-studio .concept-textarea01,
+	.concept-layout-business .concept-textarea01 {
+		padding: 0;
+	}
+
+	.concept-layout-studio .concept-textarea02,
+	.concept-layout-business .concept-textarea02 {
+		width: 100%;
+
+		margin: 0;
+
+		text-align: left;
+	}
+
+	.concept-textarea {
+		width: 100%;
+
+		text-align: left;
+	}
+
+	.concept-label {
+		margin: 0 0 15px;
+
+		font-size: 14px;
+	}
+
+	.concept-title {
+		margin: 0 0 25px;
+
+		font-size: 24px;
+		line-height: 1.5;
+	}
+
+	.concept-text {
+		margin: 0;
+
+		font-size: 14px;
+		line-height: 1.8;
+	}
+
+	.concept-text + .concept-text {
+		margin-top: 20px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	/* =========================
+	   ABOUT CTA SP
+	========================= */
+
+	.about-cta {
+		background-position: center;
+	}
+
+
+}

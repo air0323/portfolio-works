@@ -1,0 +1,723 @@
+﻿@charset "utf-8";
+body {
+font-weight: 400;
+line-height: 1.8;
+color: #494848;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+#wrapper {
+	width: 100%;
+}
+
+.yellow {
+	background-color: #fcf7c5;
+}
+
+
+/*===========================================================================
+
+本文
+===========================================================================*/
+
+/* ↓メインビジュアル全体（画像）=============================== */
+.praiceKv {
+	position: relative;
+	width: 100%;
+	height: 300px;
+
+ /* ↓背景画像（背景として埋め込み） */
+	background: url("../img/price/priceKv_20261029.jpg") no-repeat center center / cover;
+}
+
+/* ↓インナー幅とレイアウト */
+.kv-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+/* ↓画像にかぶせるキャッチコピー（画像上端からの位置） */
+.kv-lead {
+	position: absolute;
+	top: 40px; /* 上の余白 */
+	left: 50%;
+	transform: translateX(-50%); /* 水平中央揃え */
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 0.08em;
+	white-space: nowrap;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); /* 写真と同化しないための薄い影 */
+}
+
+/* ↓中央のタイトル（price / 料金） */
+.kv-titleBox {
+	position: absolute;
+	top: 55%; /* 中央のやや下 */
+	left: 50%;
+	transform: translate(-50%, -50%); /* 上下左右中央揃え */
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* ↓英字 (price) */
+.kv-en {
+	font-size: 52px;
+	font-weight: 300; /* 細身のフォント */
+	letter-spacing: 0.05em;
+	line-height: 1;
+	margin-bottom: 8px;
+	font-family: serif;
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ↓日本語 (料金) */
+.kv-ja {
+	font-size: 20px;
+	letter-spacing: 0.15em;
+	opacity: 0.9;
+	text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ↓キャッチコピー（KV直下）=============================== */
+
+.lead01 {
+	font-size: 16px;
+	color: #494848;
+	line-height: 1.8;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	text-align: center;
+
+	/* JSアニメーション用の初期状態 */
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* JSによって付与される表示クラス */
+.lead01.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ↓料金プラン案内セクション=============================== */
+
+.lead02 {
+	font-size: 22px;
+	color: #494848;
+	line-height: 1.8;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+/* ↓料金プランコンテナ */
+
+
+.pricePlan-section {
+	padding-bottom: 0px;/* 現状不要だけど調整用に残しておく */
+}
+
+/* ↓インナーコンテナ */
+.pricePlanTitle-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 80px;
+}
+
+.pricePlanTitle-container h2 {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+
+/* ↓見出し：ロゴと「の料金」を中央横並び＆上下中央揃え */
+.pricePlan-title {
+	display: flex;
+	justify-content: center; /* 水平中央配置 */
+	align-items: center;     /* 上下中央揃え */
+	gap: 12px;               /* ロゴと文字の間隔 */
+	font-size: 26px;
+	font-weight: 300;
+	color: #494848;
+	letter-spacing: 5px;
+	margin: 0;
+	padding-top: 80px;
+}
+
+/* ↓ロゴのサイズ制御 */
+.pricePlan-title img {
+	height: 25px;
+	width: auto;
+	display: block;
+}
+
+/* ↓3つの安心ポイント */
+
+.planCard-container3point {
+	display: flex;
+	justify-content: center; /* 3つのカードを画面の真ん中に寄せる */
+	gap: 10px;               /* カードとカードの間のすき間（10px） */
+	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す */
+	padding-bottom: 60px;
+}
+
+.planCard-3pointName {
+	width: 350px;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 300;
+	background-color: #B0C99A;
+	border-radius: 15px 15px 0 0;
+	display: flex;
+	justify-content: center; /* 左右（水平）の真ん中 */
+	align-items: center;     /* 上下（垂直）の真ん中 */
+}
+
+.planCard-3pointDescription {
+	width: 350px;
+	height: 100px;
+	font-size: 15px;
+	background-color: #fff;
+	border-radius: 0 0 15px 15px;
+	display: flex;
+	justify-content: center; /* 左右（水平）の真ん中 */
+	align-items: center;     /* 上下（垂直）の真ん中 */
+}
+
+/* ↓プラン比較表 */
+
+.planCard-containerPrice {
+	display: flex;
+	justify-content: center; /* 4つのカードを画面の真ん中に寄せる */
+	gap: 5px;               /* カードとカードの間のすき間 */
+	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す  */
+	padding: 20px;
+	padding-bottom: 30px;
+}
+
+
+.pCard-Name {
+	width: 250px;
+	height: 75px;
+	font-weight: 300;
+	background-color: #B0C99A;
+	border-radius: 15px 15px 0 0;
+	display: flex;
+	justify-content: center; /* 左右（水平）の真ん中 */
+	align-items: center;     /* 上下（垂直）の真ん中 */
+}
+
+.pCard-Description {
+	width: 250px;
+	height: 75px;
+	background-color: #E5DFA4;
+	display: flex;
+	justify-content: center; /* 左右（水平）の真ん中 */
+	align-items: center;     /* 上下（垂直）の真ん中 */
+}
+
+.pCard-time {
+	width: 250px;
+	height: 100px;
+	line-height: 1.5;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;  /* 上下中央配置 */
+	align-items: center;      /* 左右中央配置 */
+	border-bottom: 5px solid #fcf7c5;
+}
+
+.pCard-price {
+	width: 250px;
+	height: 100px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;   /* 上下2段に並べる */
+	justify-content: center;  /* 全体を上下中央配置 */
+	align-items: center;      /* 全体を左右中央配置 */
+	gap: 4px;                 /* 金額と税込テキストの間隔 */
+}
+
+.pCard-priceMain {
+	display: inline-flex;
+	align-items: baseline;    /* テキストの下端基準で揃える */
+}
+
+
+.pCard-priceFee {
+	font-size: 24px;
+	font-weight: 300;
+}
+
+.pCard-priceYen {
+	font-size: 18px;
+	line-height: 1;
+	padding-left: 2px;
+}
+
+.pCard-priceTax {
+	font-size: 14px;
+	line-height: 1;
+}
+
+.lead03 {
+	width: 900px;
+	margin: 0 auto;
+	line-height: 1.5;
+	padding-bottom: 100px;
+}
+
+
+ /* ↓当日入会特典紹介 */
+
+.priceImg {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.priceImg img {
+	width: 100%;
+	height: auto;
+	display: block; /* 画像下部の隙間を除去 */
+}
+
+
+/* ↓オプションプラン紹介セクション=============================== */
+
+.pricePlan-option {
+	justify-content: center; /* 画面の真ん中に寄せる */
+}
+
+.pricePlan-option h2 {
+	font-size: 24px;
+	font-weight: 300;
+	text-align: center;      /* テキスト中央配置 */
+	padding-top: 80px;
+	padding-bottom: 60px;
+}
+
+.planCard-containerOption {
+	display: flex;
+	justify-content: center; /* 2つのカードを画面の真ん中に寄せる */
+	align-items: stretch;    /* 左右のカードの高さを揃える */
+	gap: 30px;               /* カードとカードの間のすき間（30px） */
+	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す */
+	padding: 20px;
+	padding-bottom: 100px;
+}
+
+/* カードの外枠（左右の高さ揃え） */
+.planCard-item {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.planCard-optionName {
+	width: 100%;
+	height: 50px;
+	font-size: 24px;
+	font-weight: 300;
+	background-color: #B0C99A;
+	border-radius: 15px 15px 0 0;
+	display: flex;
+	justify-content: center; /* 左右（水平）の真ん中 */
+	align-items: center;     /* 上下（垂直）の真ん中 */
+	margin: 0;
+}
+
+/* カード内部の余白調整、横幅を確保 */
+.planCard-optionDescription {
+	width: 100%;
+	background-color: #fcf7c5;
+	border-radius: 0 0 15px 15px;
+	box-sizing: border-box;
+	padding: 24px 20px 28px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+/* チケット価格 */
+.ticket-price-list {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+/* 各行：絶対に改行させない指定 */
+.ticket-price-item {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: nowrap;       /* ★ wrap を nowrap に変更して改行を禁止 */
+	white-space: nowrap;     /* ★ テキストの自動折り返しを防止 */
+	color: #494848;
+}
+
+/* 「1回チケット（50分）：」 */
+.ticket-label {
+	font-size: 15px;
+}
+
+/* 金額の数字（大きめ・太字） */
+.ticket-price-val {
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 0.02em;
+	margin-left: 2px;
+}
+
+/* 「円」 */
+.ticket-price-unit {
+	font-size: 15px;
+	margin-right: 6px;
+}
+
+/* 「（税込 32,780 円）」 */
+.ticket-tax {
+	font-size: 12px;
+	color: #494848;
+}
+
+ /* ↓お支払方法案内セクション=============================== */
+
+.pricePlan-payment h2 {
+	font-size: 24px;
+	font-weight: 300;
+	text-align: center;      /* テキスト中央配置 */
+	padding-top: 80px;
+	padding-bottom: 60px;
+}
+
+.pricePlan-payment p img {
+	width: 700px;
+	padding-bottom: 100px;
+	margin: 0 auto;
+	display: block; /* 画像下部の隙間を除去 */
+}
+
+
+/* ↓良くある質問セクション=============================== */
+
+.pricePlan-question {
+	padding-bottom: 100px;
+}
+
+.pricePlan-question h2 {
+	font-size: 24px;
+	font-weight: 300;
+	text-align: center;      /* 見出し中央配置 */
+	padding-top: 80px;
+	padding-bottom: 50px;
+	color: #494848;
+}
+
+/* 質問エリア全体（最大幅800pxで画面中央に配置） */
+.questionBox {
+	max-width: 800px;
+	margin: 0 auto;          /* 左右中央配置 */
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;               /* 1つ目と2つ目の質問の間隔 */
+}
+
+.questionItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;     /* 中身（QとA）を中央寄せ */
+}
+
+/* 質問バー（Q） */
+.questionQ {
+	width: 100%;
+	max-width: 800px;
+	height: 54px;
+	background-color: #fcf7c5;
+	border-radius: 12px;
+	font-size: 18px;
+	font-weight: 300;
+	color: #494848;
+	display: flex;
+	justify-content: center; /* 水平中央 */
+	align-items: center;     /* 上下中央 */
+	margin: 0 0 24px 0;
+}
+
+/* 回答テキスト（A） */
+.questionA {
+	width: 100%;
+	font-size: 16px;
+	color: #494848;
+	text-align: center;      /* テキスト中央揃え */
+	line-height: 1.6;
+	margin: 0;
+}
+
+
+/* 無料体験を予約するバナーセクション・バナー全体枠===================== */
+.priceReservation-area {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 画像とボタンを重ねる基準枠 */
+.priceReservation-inner {
+  position: relative;
+  width: 100%;
+}
+
+/* CTAの画像・ボタンの位置とサイズは common.css の「CTA AREA」で全ページ共通指定 */
+
+
+/* --- 画像右下のTOPへ戻るボタン --- */
+.pagetop-btn {
+  position: absolute;
+  right: 24px;                  /* 右端からの距離 */
+  bottom: 24px;                 /* 下端からの距離 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  background-color: #B0C99A;    /* テーマカラーの薄緑 */
+  color: #494848;               /* 濃いグレー文字 */
+  border: 3px solid #E5DFA4;    /* クリーム枠 */
+  border-radius: 50%;           /* 正円 */
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* 矢印アイコン */
+.pagetop-arrow {
+  font-size: 11px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+/* 「TOP」文字 */
+.pagetop-text {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+/* ホバー時の挙動 */
+.pagetop-btn:hover {
+  background-color: #494848;
+  color: #ffffff;
+  transform: translateY(-3px);  /* 少し浮き上がる演出 */
+}
+
+
+/*===========================================================================
+  SP（768px以下）レスポンシブ
+===========================================================================*/
+@media screen and (max-width: 768px) {
+
+	/* KV */
+	.praiceKv { height: 200px; }
+	.kv-inner { padding: 0 20px; box-sizing: border-box; }
+	.kv-lead { display: none; } /* SPではキャッチコピー非表示（本文の見える範囲を増やすため） */
+	.kv-titleBox { top: 50%; }
+	.kv-en { font-size: 40px; }
+	.kv-ja { font-size: 16px; }
+
+	/* リード文 */
+	.lead01 {
+		padding: 40px 20px;
+		font-size: 14px;
+		text-align: left;
+	}
+	.lead01 br,
+	.lead03 br { display: none; }
+	.lead02 {
+		padding: 0 20px 30px;
+		font-size: 17px;
+	}
+
+	/* 見出し */
+	.pricePlanTitle-container { padding-bottom: 40px; }
+	.pricePlan-title {
+		padding-top: 50px;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+	.pricePlan-title img { height: 20px; }
+
+	/* 3つの安心ポイント：縦並び */
+	.planCard-container3point {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 0 20px 40px;
+	}
+	.planCard-container3point > div { width: 100%; max-width: 420px; }
+	.planCard-3pointName {
+		width: 100%;
+		height: auto;
+		min-height: 46px;
+		padding: 6px 10px;
+		box-sizing: border-box;
+		font-size: 16px;
+		text-align: center;
+	}
+	.planCard-3pointDescription {
+		width: 100%;
+		height: auto;
+		padding: 16px 16px;
+		box-sizing: border-box;
+		font-size: 14px;
+		line-height: 1.7;
+		text-align: left;
+	}
+	.planCard-3pointDescription br { display: none; }
+
+	/* プラン比較：2列 */
+	.planCard-containerPrice {
+		gap: 14px 10px;
+		padding: 0 15px 20px;
+	}
+	.planCard-containerPrice > div {
+		width: calc(50% - 5px);
+	}
+	.pCard-Name,
+	.pCard-Description,
+	.pCard-time,
+	.pCard-price {
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	.pCard-Name {
+		height: 64px;
+		padding: 0 6px;
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	.pCard-Description {
+		height: 72px;
+		padding: 0 6px;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+	.pCard-time {
+		height: 80px;
+		font-size: 13px;
+	}
+	.pCard-price { height: 80px; }
+	.pCard-priceFee { font-size: 20px; }
+	.pCard-priceYen { font-size: 14px; }
+	.pCard-priceTax { font-size: 11px; }
+
+	.lead03 {
+		width: auto;
+		padding: 10px 20px 60px;
+		font-size: 12px;
+	}
+
+	/* オプション */
+	.pricePlan-option h2,
+	.pricePlan-payment h2,
+	.pricePlan-question h2 {
+		padding-top: 50px;
+		padding-bottom: 30px;
+		font-size: 20px;
+	}
+	.planCard-containerOption {
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+		padding: 0 20px 60px;
+	}
+	.planCard-item {
+		width: 100%;
+		max-width: 500px;
+	}
+	.planCard-optionName {
+		box-sizing: border-box;
+		height: auto;
+		min-height: 46px;
+		padding: 6px 10px;
+		font-size: 17px;
+		text-align: center;
+	}
+	.planCard-optionDescription { padding: 20px 16px 24px; }
+	.planCard-optionText {
+		font-size: 14px;
+		line-height: 1.7;
+	}
+	.planCard-optionText br { display: none; }
+	.ticket-price-item {
+		flex-wrap: wrap;
+		white-space: normal;
+	}
+	.ticket-label { width: 100%; font-size: 14px; }
+	.ticket-price-val { margin-left: 0; font-size: 18px; }
+	.ticket-price-unit { font-size: 14px; }
+	.ticket-tax { font-size: 12px; }
+
+	/* お支払い方法 */
+	.pricePlan-payment p img {
+		width: 100%;
+		max-width: 700px;
+		padding: 0 20px 60px;
+		box-sizing: border-box;
+	}
+
+	/* よくある質問 */
+	.pricePlan-question { padding-bottom: 60px; }
+	.questionBox {
+		padding: 0 20px;
+		gap: 28px;
+	}
+	.questionQ {
+		box-sizing: border-box;
+		height: auto;
+		min-height: 50px;
+		padding: 8px 14px;
+		box-sizing: border-box;
+		margin-bottom: 14px;
+		font-size: 15px;
+		line-height: 1.6;
+		text-align: left;
+	}
+	.questionA {
+		font-size: 14px;
+		text-align: left;
+	}
+
+	/* TOPへ戻るボタン */
+	/* CTA画像：人物が中途半端に映らないよう、左寄り（植物のあたり）を表示 */
+	.priceReservation-img { object-position: 25% 50%; }
+
+	.pagetop-btn {
+		right: 14px;
+		bottom: 14px;
+		width: 46px;
+		height: 46px;
+	}
+}

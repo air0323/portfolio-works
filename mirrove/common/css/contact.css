@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+/*==============================
+  contact.css（contact.html 専用）
+==============================*/
+
+/*== このページ用のリセット ==*/
+/* チーム共通の reset.css（Meyer reset）の後に読み込んでも、見え方が変わらないように
+   このページで必要なリセットをここにまとめておく */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+small {
+  font-size: smaller; /* Meyer resetで100%にされるのを元に戻す */
+}
+
+/* hidden属性の要素は必ず消す（Meyer resetの details{display:block} に負けないように） */
+[hidden] {
+  display: none !important;
+}
+
+/*== サイト共通カラー（コンセプトシート＋カンプ） ==*/
+:root {
+  --color-text: #494848;   /* 基本文字色：ダークグレー */
+  --color-bg: #ffffff;     /* ベース：白 */
+  --color-cream: #f8f7e5;  /* ベース：黄（カンプの背景色） */
+  --color-green: #b0c99a;  /* メインカラー：グリーン */
+  --color-yellow: #e5dfa4; /* サブカラー：薄黄色 */
+  --color-green-dark: #6f9156; /* 濃い緑（必須マーク・Aなど、文字を目立たせたいところ） */
+  --color-footer: #494848; /* フッター背景 */
+}
+
+body {
+  font-weight: 300; /* DemiLight相当 */
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-bg);
+  letter-spacing: 0.05em;
+}
+
+/*== contact ==*/
+
+/* 下層ページは横幅1200px固定 */
+.contact-page {
+  min-width: 1200px;
+}
+
+/*== ヘッダー（ロゴのみ・中央） ==*/
+.contact-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background: var(--color-footer); /* フッターと同じブラウン */
+}
+.contact-header img {
+  width: auto;
+  height: 36px;
+}
+
+/*== お問い合わせ（Q&Aコーナーと同じ余白：上下100px・幅1040px）＋背景は黄・中は白地 ==*/
+.contact {
+  padding: 50px 0 100px; /* ヘッダーとの間は少しせまく */
+  background: var(--color-cream); /* 背景は黄 */
+}
+.contact-inner {
+  width: 1040px;
+  margin: 0 auto;
+}
+/* 見出し（Q&Aの見出しと同じ 24px） */
+.contact h1 {
+  font-size: 24px;
+  font-weight: 500; /* 太字 */
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 案内文 */
+.contact-lead {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+}
+/* ※の注意書き（プライバシーポリシーの上） */
+.contact-notes {
+  width: 680px;
+  margin: 0 auto 20px;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: left;
+}
+.contact-notes strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-green-dark); /* アドレスを強調 */
+}
+.contact-notes a {
+  text-decoration: underline;
+}
+
+/*== フォーム（firstVisitの予約フォームと同じ形） ==*/
+.contact-form {
+  width: 760px;
+  margin: 0 auto;
+}
+/* 入力項目（タイトル＋入力欄）だけを白地で囲む */
+.contact-form-box {
+  padding: 30px 40px;
+  background: #fff;
+  border-radius: 16px;
+}
+.contact-form-item {
+  display: flex;
+  align-items: center;
+}
+.contact-form-item + .contact-form-item {
+  margin-top: 10px;
+}
+/* お問い合わせ内容：タイトルを入力欄の上端にそろえる */
+.contact-form-item-top {
+  align-items: flex-start;
+}
+.contact-form-item-top .contact-form-title {
+  padding-top: 4px;
+}
+/* 項目タイトル（左寄せ・必須マークは右端） */
+.contact-form-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 240px;
+  flex-shrink: 0;
+  margin-right: 25px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.contact-form-title span {
+  margin-left: auto;
+  padding: 0 6px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #fff; /* 白抜き文字（前の形）を小さめに */
+  background: var(--color-green-dark);
+  border-radius: 9999px;
+  opacity: 0.85; /* 少しだけやわらげる */
+}
+.contact-form-title small {
+  display: block;
+  width: 100%;
+  font-size: 11px;
+}
+/* 「(確認用)」は必須マークと同じ行に置く */
+label[for="contact-mail-check"] small {
+  width: auto;
+}
+.contact-form-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+.contact-form-field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* 入力欄（白地＋緑の枠） */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+  height: 30px;
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid var(--color-green);
+  border-radius: 5px;
+}
+/* お問い合わせ内容（200文字まで）：右下に今の文字数 */
+.contact-form-textarea {
+  width: 415px;
+}
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  height: 110px;
+  padding: 6px 10px;
+  line-height: 1.5;
+  resize: none;
+}
+.contact-form-count {
+  margin-top: 4px;
+  text-align: right;
+  font-size: 12px;
+  line-height: 1;
+}
+.contact-form-count span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-green-dark); /* 今の文字数を緑で目立たせる */
+}
+.contact-form-count.is-max span {
+  color: #c0504d; /* 上限に達したら赤 */
+}
+/* 姓・名の入力欄の左右の位置を上下でそろえる */
+.contact-form-name label {
+  display: grid;
+  grid-template-columns: 2.2em 1fr;
+  gap: 6px;
+  width: 165px;
+}
+.contact-form-name input {
+  width: 100%;
+}
+#contact-type {
+  width: 260px;
+}
+.contact-form-mail {
+  width: 300px;
+}
+.contact-form-tel input {
+  width: 72px;
+  text-align: center;
+}
+.contact-form-member {
+  width: 130px;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--color-green-dark); /* 入力中の枠（緑） */
+  outline-offset: -1px;
+}
+.contact-form input[type="checkbox"] {
+  accent-color: var(--color-green);
+}
+.contact-form-submit {
+  margin-top: 30px;
+  text-align: center;
+}
+.contact-form-agree {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.contact-form-agree a {
+  text-decoration: underline;
+}
+.contact-form-submit button {
+  display: block;
+  width: 200px; /* 「送信する」に合わせて短く */
+  height: 50px;
+  margin: 0 auto;
+  font-size: 20px;
+  background: var(--color-green);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.contact-form-submit button:hover {
+  background: #494848;
+  color: #fff;
+}
+
+
+/*===========================================================================
+  SP（768px以下）レスポンシブ
+===========================================================================*/
+@media screen and (max-width: 768px) {
+
+	.contact-page { min-width: 0; }
+	.contact-header { height: 70px; }
+	.contact-header img { height: 28px; }
+
+	.contact { padding: 36px 0 60px; }
+	.contact-inner {
+		width: auto;
+		padding: 0 20px;
+	}
+	.contact h1 {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.contact-lead {
+		margin-bottom: 24px;
+		font-size: 13px;
+		text-align: left;
+	}
+	.contact-lead br { display: none; }
+
+	.contact-form { width: 100%; }
+	.contact-form-box { padding: 24px 16px; }
+	.contact-form-item,
+	.contact-form-item-top {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.contact-form-item + .contact-form-item { margin-top: 18px; }
+	.contact-form-title,
+	.contact-form-item-top .contact-form-title {
+		width: 100%;
+		margin: 0 0 6px;
+		padding-top: 0;
+	}
+	.contact-form-title span { margin-left: 10px; }
+	label[for="contact-mail-check"] small { margin-left: 4px; }
+	.contact-form-field {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.contact-form-name label {
+		width: calc(50% - 5px);
+		grid-template-columns: 2.8em 1fr;
+		white-space: nowrap;
+	}
+	#contact-type,
+	.contact-form-mail,
+	.contact-form-textarea {
+		width: 100%;
+		max-width: 100%;
+	}
+	.contact-form-tel input { width: 60px; }
+
+	/* 入力欄・ボタン：高さ44px以上＋文字16px（iPhoneで入力時に画面が拡大されるのを防ぐ） */
+	.contact-form input[type="text"],
+	.contact-form input[type="email"],
+	.contact-form input[type="tel"],
+	.contact-form select {
+		height: 44px;
+		font-size: 16px;
+	}
+	.contact-form textarea {
+		font-size: 16px;
+	}
+	.contact-form-field label { min-height: 44px; }
+	.contact-form input[type="checkbox"] {
+		width: 20px;
+		height: 20px;
+	}
+	.contact-form-agree { min-height: 44px; }
+	.contact-notes a { padding: 8px 0; }
+
+	.contact-notes {
+		width: auto;
+		font-size: 12px;
+	}
+	.contact-form-agree {
+		font-size: 13px;
+		text-align: left;
+	}
+	.contact-form-submit button {
+		width: 100%;
+		max-width: 300px;
+		height: 54px;
+	}
+}

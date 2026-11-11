@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nata de Encontro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<meta name="description" content="小さな出会い、大きなときめき。渋谷駅中央口すぐのエッグタルト専門店 Nata de Encontro。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Nata de Encontro トップへ">
+      <img src="img/logo-mark.webp" alt="" width="200" height="150">
+      <span>Nata de Encontro</span>
+    </a>
+    <div class="header-right">
+      <a class="status js-status" href="#access" data-state="">本日の営業を確認中</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="メニューを開く"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" id="nav" aria-label="サイトメニュー">
+  <div class="nav-inner">
+    <ol>
+      <li><a href="#story"><b>STORY</b><small>ブランドについて</small></a></li>
+      <li><a href="#menu"><b>MENU</b><small>メニュー</small></a></li>
+      <li><a href="#craft"><b>THE CRAFT</b><small>こだわり</small></a></li>
+      <li><a href="#news"><b>NEWS</b><small>お知らせ</small></a></li>
+      <li><a href="#access"><b>ACCESS</b><small>店舗情報</small></a></li>
+    </ol>
+    <div class="nav-meta">
+      京王井の頭線 渋谷駅 中央口すぐ<br><span data-store="summary">10:00 – 19:00 ／ 水曜定休</span>
+      <div><a href="https://www.instagram.com/" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram</a></div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- 01 FIRST VIEW : おいしそう -->
+  <section class="hero" aria-label="ファーストビュー">
+    <div class="slides" id="slides">
+      <img class="on" data-pos="a" src="img/hero.webp" alt="焼きたてのエッグタルトがずらりと並ぶ様子" width="1449" height="963" fetchpriority="high">
+      <img data-pos="b" src="img/plate.webp" alt="グレーのお皿にのったふたつのエッグタルト" width="1600" height="1065">
+      <img data-pos="c" src="img/box.webp" alt="ボックスに詰められたエッグタルト" width="1200" height="803">
+    </div>
+    <div class="wrap">
+      <div>
+        <h1>
+          <span class="ln ln1"><span class="s">小さな</span><span class="m">出会い。</span></span>
+          <span class="ln ln2"><span class="xl">大きな</span><span class="m">ときめき。</span></span>
+        </h1>
+        <p class="hero-lead">ポルトガル生まれのエッグタルト専門店</p>
+      </div>
+      <div class="hero-foot">
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#menu">メニューを見る
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ghost" href="#access">お店への行き方</a>
+        </div>
+        <div class="hero-side">
+          <div class="dots" id="dots" role="group" aria-label="写真の切り替え">
+            <button type="button" aria-current="true" aria-label="写真1"></button><button type="button" aria-current="false" aria-label="写真2"></button><button type="button" aria-current="false" aria-label="写真3"></button>
+          </div>
+          <p class="hero-today"><b class="js-today-head">渋谷駅 中央口すぐ</b><span class="js-today-sub" data-store="summary">10:00 – 19:00 ／ 水曜定休</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 STORY : どんなお店？ -->
+  <section class="section story" id="story">
+    <div class="wrap">
+      <div class="sec-head"><h2>STORY</h2><p>ブランドについて</p></div>
+      <div class="story-grid">
+        <div class="story-photo">
+          <figure>
+            <img src="img/porto-flat.webp" alt="ポルトガル・ポルトのドウロ川沿いに広がる街並み" width="692" height="458" loading="lazy">
+            <figcaption>Porto, Portugal</figcaption>
+          </figure>
+        </div>
+        <div class="story-text">
+          <h3>エッグタルトから、<br>やさしい出会いを。</h3>
+          <dl class="lexicon">
+            <div><dt>Nata</dt><dd>クリーム<small>ポルトガル語 ／ ナタ</small></dd></div>
+            <div><dt>Encontro</dt><dd>出会い<small>ポルトガル語 ／ エンコントロ</small></dd></div>
+          </dl>
+          <p>ポルトガルで「パステル・デ・ナタ」と呼ばれ、街角のカフェで毎日のように親しまれているエッグタルト。</p>
+          <p>ふたつの言葉を組み合わせた Nata de Encontro は、焼きたてのひとつを通して、みなさまの日常にやさしい出会いとときめきが生まれる場所でありたいと願っています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 MENU : これを食べたい -->
+  <section class="section menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head"><h2>MENU</h2><p>メニュー</p></div>
+
+      <div class="mood" role="group" aria-label="今日の気分からおすすめを探す">
+        <p>今日の気分は？</p>
+        <div class="chips">
+        <button type="button" aria-pressed="false" data-pick="original">まずは定番を</button>
+        <button type="button" aria-pressed="false" data-pick="cacao">ほろ苦く、深く</button>
+        <button type="button" aria-pressed="false" data-pick="cheese">甘じょっぱい気分</button>
+        </div>
+      </div>
+      <p class="mood-hint">写真をタップしても選べます</p>
+
+      <ul class="cards" id="cards">
+        <li class="card" data-id="original" tabindex="0" role="button" aria-pressed="false">
+          <span class="badge">今日のあなたに</span>
+          <div class="pic"><img src="img/tart-original.webp" alt="焦げ目のついたオリジナルのエッグタルト" width="312" height="251" loading="lazy"></div>
+          <h3>ORIGINAL<span class="ja">エッグタルト</span></h3>
+          <p class="desc">素材そのものの甘さが際立つ、定番のエッグタルト。はじめての方はまずこちらから。</p>
+          <div class="price">¥380<small>税込</small></div>
+          <dl class="taste" aria-label="味わいの目安">
+            <div><dt>甘さ</dt><dd aria-label="5段階中3"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></dd></div>
+            <div><dt>コク</dt><dd aria-label="5段階中3"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></dd></div>
+            <div><dt>香ばしさ</dt><dd aria-label="5段階中5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></dd></div>
+          </dl>
+        </li>
+        <li class="card" data-id="cacao" tabindex="0" role="button" aria-pressed="false">
+          <span class="badge">今日のあなたに</span>
+          <div class="pic"><img src="img/tart-cacao.webp" alt="カカオニブをのせたチョコレート色のエッグタルト" width="309" height="253" loading="lazy"></div>
+          <h3>CACAO<span class="ja">カカオ</span></h3>
+          <p class="desc">カカオの深いコクと、なめらかなカスタード。ほろ苦さがあとを引く大人の味。</p>
+          <div class="price">¥420<small>税込</small></div>
+          <dl class="taste" aria-label="味わいの目安">
+            <div><dt>甘さ</dt><dd aria-label="5段階中2"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></dd></div>
+            <div><dt>コク</dt><dd aria-label="5段階中5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></dd></div>
+            <div><dt>香ばしさ</dt><dd aria-label="5段階中4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></dd></div>
+          </dl>
+        </li>
+        <li class="card" data-id="cheese" tabindex="0" role="button" aria-pressed="false">
+          <span class="badge">今日のあなたに</span>
+          <div class="pic"><img src="img/tart-cheese.webp" alt="削ったチーズをのせたエッグタルト" width="313" height="253" loading="lazy"></div>
+          <h3>CHEESE<span class="ja">チーズ</span></h3>
+          <p class="desc">甘さとしょっぱさが楽しめる、大人の味わい。コーヒーやワインとも好相性。</p>
+          <div class="price">¥420<small>税込</small></div>
+          <dl class="taste" aria-label="味わいの目安">
+            <div><dt>甘さ</dt><dd aria-label="5段階中2"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></dd></div>
+            <div><dt>コク</dt><dd aria-label="5段階中4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></dd></div>
+            <div><dt>香ばしさ</dt><dd aria-label="5段階中3"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></dd></div>
+          </dl>
+        </li>
+      </ul>
+
+      <a class="seasonal" href="#news-marron">
+        <b>SEASONAL</b>
+        <span>11月の季節限定「和栗のエッグタルト」¥450</span>
+        <em>詳しく見る</em>
+      </a>
+
+      <div class="gift">
+        <img src="img/box.webp" alt="ボックスに並んだ6個のエッグタルト" width="1200" height="803" loading="lazy">
+        <div>
+          <p class="eyebrow">GIFT BOX</p>
+          <h3>ご自宅用にも、<br>手みやげにも。</h3>
+          <p>お好きな味を組み合わせて箱に詰めます。友人や家族とわけあえば、ときめきもふたつ、みっつと増えていきます。</p>
+          <ul>
+            <li><span>3個入り（3種から選べます）</span><b>¥1,200</b></li>
+            <li><span>6個入り（3種から選べます）</span><b>¥2,300</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- roots band -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track"><span>Nata de Encontro</span><span>Nata de Encontro</span><span>Nata de Encontro</span><span>Nata de Encontro</span><span>Nata de Encontro</span><span>Nata de Encontro</span></div>
+  </div>
+  <div class="roots">
+    <img src="img/street.webp" alt="石畳の階段と黄色い壁が続くポルトの路地" width="1200" height="1600" loading="lazy">
+  </div>
+
+  <!-- 04 THE CRAFT : 期待を高める -->
+  <section class="section craft" id="craft">
+    <div class="wrap">
+      <div class="sec-head"><h2>THE CRAFT</h2><p>こだわり</p></div>
+      <div class="craft-grid">
+        <div class="craft-text">
+          <h3>シンプルだからこそ、<br>素材にこだわる。</h3>
+          <p>卵、ミルク、砂糖をベースにしたなめらかなカスタードと、何層にも重なったパイ生地。素材本来の味わいを、やさしい甘さで引き立てました。</p>
+          <ol class="layers" id="layers">
+            <li><button type="button" data-layer="1"><span class="n">1</span><b>焼き色</b><span>高温で一気に焼き上げ、表面をキャラメリゼ。ほろ苦い香ばしさが生まれます。</span></button></li>
+            <li><button type="button" data-layer="2"><span class="n">2</span><b>カスタード</b><span>卵黄をたっぷり使い、ぷるんととろける食感に。甘さは控えめです。</span></button></li>
+            <li><button type="button" data-layer="3"><span class="n">3</span><b>パイ生地</b><span>バターを折り込んだ生地を薄くのばし、サクッと軽い層を重ねています。</span></button></li>
+          </ol>
+        </div>
+        <div class="craft-visual">
+          <div class="anatomy" id="anatomy">
+            <img src="img/craft.webp" alt="エッグタルトの断面。表面の焼き色、カスタード、パイ生地の層が見える" width="601" height="342" loading="lazy">
+            <button class="spot" type="button" data-layer="1" style="left:63%;top:20%" aria-label="焼き色">1</button>
+            <button class="spot" type="button" data-layer="2" style="left:44%;top:52%" aria-label="カスタード">2</button>
+            <button class="spot" type="button" data-layer="3" style="left:22%;top:50%" aria-label="パイ生地">3</button>
+          </div>
+          <p class="craft-hint">数字をタップすると、説明が切り替わります</p>
+          <div class="layer-card" id="layerCard" aria-live="polite">
+            <div class="head"><span class="n" id="lcN">1</span><h4 id="lcT">焼き色</h4></div>
+            <p class="d" id="lcD"></p>
+            <div class="lc-nav">
+              <button type="button" id="lcPrev">← 前へ</button>
+              <span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>
+              <button type="button" id="lcNext">次へ →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tips">
+        <div><h4>厳選素材</h4><p>卵・牛乳・砂糖・小麦粉・バター。毎朝、店内で仕込んでいます。</p></div>
+        <div><h4>おすすめの食べ方</h4><p>少し温めると、パイの香ばしさとカスタードのなめらかさがより引き立ちます。</p></div>
+        <div><h4>季節の楽しみ方</h4><p>夏は冷蔵庫で冷やしてひんやりと。冬はトースターで温めて、焼きたてのように。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 NEWS : 再訪のきっかけ -->
+  <section class="section news" id="news">
+    <div class="wrap">
+      <div class="sec-head"><h2>NEWS</h2><p>お知らせ</p></div>
+      <div class="news-list">
+        <details id="news-marron" open>
+          <summary><time datetime="2026-11-01">2026.11.01</time><b>秋の季節限定「和栗のエッグタルト」を発売しました</b>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">新商品</span></summary>
+          <div class="body">
+            <p>和栗のペーストを合わせたカスタードを、香ばしいパイ生地で焼き上げました。栗の素朴な甘さとキャラメリゼのほろ苦さをお楽しみください。</p>
+            <p>販売期間：11月1日（日）〜11月30日（月）／ ¥450（税込）<br>※なくなり次第終了となります。</p>
+          </div>
+        </details>
+        <details>
+          <summary><time datetime="2026-10-06">2026.10.06</time><b>新宿伊勢丹にて期間限定ポップアップを開催</b>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">イベント</span></summary>
+          <div class="body"><p>新宿伊勢丹 本館地下1階にて、期間限定のポップアップストアを出店します。定番3種に加え、ポップアップ限定のアソートボックスもご用意しました。</p></div>
+        </details>
+        <details>
+          <summary><time datetime="2026-09-30">2026.09.30</time><b>10月の定休日についてのお知らせ</b>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">営業</span></summary>
+          <div class="body">
+            <p>いつも当店をご利用いただきありがとうございます。誠に勝手ながら、以下のとおり定休日とさせていただきます。</p>
+            <p>【10月休業日】<br>10月7日・14日・21日・28日の各水曜日<br>10月12日（月・祝）</p>
+            <p>ご来店を予定されていたお客様にはご不便をおかけいたしますが、何卒よろしくお願いいたします。</p>
+          </div>
+        </details>
+        <details>
+          <summary><time datetime="2026-09-18">2026.09.18</time><b>台風に伴う営業時間の変更について</b>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">営業</span></summary>
+          <div class="body"><p>台風の接近に伴い、9月19日（土）は15:00で閉店いたします。ご来店のお客様はお気をつけてお越しください。</p></div>
+        </details>
+      </div>
+      <div class="news-follow">
+        <span>焼きあがりや新作のお知らせは Instagram でも。</span>
+        <a class="btn btn-ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram をフォロー</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ACCESS : 行ってみたい -->
+  <section class="section access" id="access">
+    <div class="wrap">
+      <div class="sec-head"><h2>ACCESS</h2><p>店舗情報</p></div>
+      <div class="access-grid">
+        <div>
+          <dl class="info">
+            <div><dt>住所</dt><dd>
+              <span class="copyable"><span id="addr">〒150-0043<br>東京都渋谷区道玄坂1丁目4−1<br>京王井の頭線 渋谷駅 中央口そば コンコース2階</span></span>
+              <div style="margin-top:8px"><span class="copyable"><button type="button" id="copyAddr">住所をコピー</button></span></div>
+            </dd></div>
+            <div><dt>営業時間</dt><dd><span data-store="hours">10:00 〜 19:00</span> <small data-store="hours-note">（なくなり次第終了）</small></dd></div>
+            <div><dt>定休日</dt><dd data-store="holidays">水曜日</dd></div>
+            <div><dt>電話番号</dt><dd>03-1234-5678</dd></div>
+          </dl>
+          <div class="today-card">
+            <span class="status js-status" data-state="">本日の営業を確認中</span>
+            <h4>焼きあがり時間</h4>
+            <ul class="bake" id="bake">
+              <li>10:00<small>開店</small></li>
+              <li>13:00<small>お昼</small></li>
+              <li>16:00<small>夕方</small></li>
+            </ul>
+            <p class="special-note" id="specialNote" hidden></p>
+          </div>
+        </div>
+        <div class="store">
+          <figure><img src="img/store.webp" alt="白い木枠の窓と Nata de Encontro のサインがある店舗外観" width="586" height="430" loading="lazy"></figure>
+          <ol class="route" aria-label="渋谷駅からの行き方">
+            <li><span>京王井の頭線 渋谷駅「中央口」改札を出る</span></li>
+            <li><span>コンコースを JR 方面へ進み、2階フロアへ</span></li>
+            <li><span>甘い香りと白いショーウィンドウが目印。改札から徒歩約1分</span></li>
+          </ol>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E9%81%93%E7%8E%84%E5%9D%821%E4%B8%81%E7%9B%AE4-1" target="_blank" rel="noopener">Google マップで開く
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="img/logo-mark.webp" alt="" width="200" height="150"><span>Nata de Encontro</span></a>
+    <a class="ig" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <p class="copy">小さな出会い、大きなときめき。</p>
+    <small>© Nata de Encontro All Rights Reserved.</small>
+  </div>
+</footer>
+
+<div class="visitbar" id="visitbar" aria-hidden="true">
+  <div class="inner">
+    <span class="status js-status" data-state="">本日の営業を確認中</span>
+    <a class="btn btn-primary" href="#access" tabindex="-1">お店への行き方</a>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   店舗情報の設定（営業時間・定休日・臨時営業・焼きあがり）
+   ここを書き換えるだけで、ヘッダー／メニュー／FV／ACCESS の
+   表示と「営業中」などの自動判定がすべて切り替わります。
+   ========================================================= */
+var STORE = {
+  open:  "10:00",          // 開店時刻
+  close: "19:00",          // 閉店時刻
+  holidays: [3],           // 毎週の定休日（0=日 1=月 2=火 3=水 4=木 5=金 6=土）。複数可 例：[2,3]
+  hoursNote: "なくなり次第終了",   // 営業時間の補足（不要なら ""）
+
+  // 臨時休業・時短・臨時営業（日付は "YYYY-MM-DD"）
+  //   date                … 1日だけのとき
+  //   from / to           … 期間のとき（両端の日を含む）
+  //   closed: true        … その日（期間）は休業
+  //   open / close        … その日だけ時間を変更（定休日に書けば臨時営業になります）
+  //   note                … お知らせ文。日付のすぐあとにそのまま表示（例："社員研修のため休業"）
+  //                         時間変更の日は、うしろに（10:00 – 15:00）が自動で付きます
+  special: [
+    { date: "2026-09-19", close: "15:00", note: "台風接近のため時短営業" },
+    { date: "2026-10-12", closed: true,   note: "祝日のため休業" },
+    { from: "2026-12-28", to: "2027-01-05", closed: true, note: "年末年始休業" }
+  ],
+
+  // 焼きあがり時間（営業時間外の回は自動で「本日なし」になります）
+  bake: [
+    { time: "10:00", label: "開店" },
+    { time: "13:00", label: "お昼" },
+    { time: "16:00", label: "夕方" }
+  ],
+
+  noticeDays: 21           // 何日先までの臨時予定を ACCESS に予告するか
+};
+</script>
+<script>
+(function(){
+  /* ---- menu overlay ---- */
+  var burger=document.getElementById('burger'), nav=document.getElementById('nav'), header=document.querySelector('.site-header');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+    nav.classList.toggle('open',open); header.classList.toggle('menu-open',open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(burger.getAttribute('aria-expanded')!=='true')});
+  // メニューのリンク：メニューを閉じてから、セクションの先頭を画面の上端にぴったり合わせる
+  nav.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    var target=document.querySelector(a.getAttribute('href'));
+    setMenu(false);
+    if(!target) return;
+    e.preventDefault();
+    requestAnimationFrame(function(){
+      var y=Math.round(target.getBoundingClientRect().top+window.scrollY);
+      window.scrollTo({top:y,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    });
+  });
+  // ロゴ：ページの冒頭へ戻る（メニューが開いていれば閉じる）
+  document.querySelectorAll('a[href="#top"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault(); setMenu(false);
+      window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      if(location.hash){ try{history.replaceState(null,'',location.pathname+location.search)}catch(_){} }
+    });
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  /* ---- today's status (JST) : すべて STORE から生成 ---- */
+  var WD=['日','月','火','水','木','金','土'];
+  function toMin(hm){var x=hm.split(':');return (+x[0])*60+(+x[1]||0)}
+  function jstNow(){
+    var p={};
+    new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'numeric',minute:'numeric',hourCycle:'h23'})
+      .formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    return {y:+p.year,mo:+p.month,d:+p.day,min:(+p.hour)*60+(+p.minute)};
+  }
+  function dayInfo(base,offset){ // base: jstNow(), offset: 日数
+    var dt=new Date(Date.UTC(base.y,base.mo-1,base.d+offset));
+    var y=dt.getUTCFullYear(), m=dt.getUTCMonth()+1, d=dt.getUTCDate(), wd=dt.getUTCDay();
+    var key=y+'-'+String(m).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    var sp=null; (STORE.special||[]).forEach(function(x){ if(x.date===key || (x.from&&x.to&&x.from<=key&&key<=x.to)) sp=x; });
+    var info={key:key,m:m,d:d,wd:wd,sp:sp,label:offset===0?'本日':offset===1?'明日':offset===2?'明後日':(m+'/'+d+'（'+WD[wd]+'）')};
+    if(sp&&sp.closed){info.closed='special';return info}
+    if(!sp&&STORE.holidays.indexOf(wd)>-1){info.closed='regular';return info}
+    if(sp&&!sp.open&&!sp.close&&STORE.holidays.indexOf(wd)>-1){info.closed='regular';return info}
+    info.open=(sp&&sp.open)||STORE.open; info.close=(sp&&sp.close)||STORE.close;
+    info.extra=!!(sp&&STORE.holidays.indexOf(wd)>-1);
+    info.changed=!!(sp&&(sp.open&&sp.open!==STORE.open||sp.close&&sp.close!==STORE.close));
+    return info;
+  }
+  function nextOpen(base){for(var i=1;i<=31;i++){var d=dayInfo(base,i);if(!d.closed)return d}return null}
+
+  var now=jstNow(), today=dayInfo(now,0), nx=nextOpen(now);
+  var holidayNames=STORE.holidays.slice().sort().map(function(w){return WD[w]});
+  var nextText=nx?(nx.label+' '+nx.open+' から営業'):'';
+  var st;
+  if(today.closed){
+    st={s:'closed',
+        text: today.closed==='special' ? '本日は臨時休業です' : '本日は定休日です（'+WD[today.wd]+'曜）',
+        head: today.closed==='special' ? '本日は臨時休業' : '本日は定休日',
+        sub: nextText};
+  }else if(now.min<toMin(today.open)){
+    st={s:'soon',text:'本日 '+today.open+' オープン',head:'本日 '+today.open+' オープン',
+        sub: today.changed ? ('本日は '+today.open+' – '+today.close+' の営業です') : ('焼きたては '+today.open+' から並びます')};
+  }else if(now.min<toMin(today.close)){
+    st={s:'open',text:(today.extra?'本日は臨時営業 ・ ':today.changed?'本日は短縮営業 ・ ':'営業中 ・ ')+today.close+' まで',head:today.extra?'ただいま臨時営業中':'ただいま営業中',
+        sub: today.changed ? ('本日は '+today.close+' までの営業です') : '渋谷駅 中央口から徒歩約1分'};
+  }else{
+    st={s:'closed',text:'本日の営業は終了しました',head:'本日の営業は終了',sub:nextText};
+  }
+  document.querySelectorAll('.js-status').forEach(function(el){el.textContent=st.text;el.dataset.state=st.s});
+  var th=document.querySelector('.js-today-head'), ts=document.querySelector('.js-today-sub');
+  if(th){th.textContent=st.head; ts.textContent=st.sub;}
+
+  // 固定表示（営業時間・定休日）
+  var hoursText=STORE.open+' – '+STORE.close;
+  var holText=holidayNames.length?holidayNames.join('・')+'曜定休':'年中無休';
+  document.querySelectorAll('[data-store="summary"]').forEach(function(el){ if(!el.classList.contains('js-today-sub')) el.textContent=hoursText+' ／ '+holText; });
+  document.querySelectorAll('[data-store="hours"]').forEach(function(el){el.textContent=STORE.open+' 〜 '+STORE.close});
+  document.querySelectorAll('[data-store="hours-note"]').forEach(function(el){el.textContent=STORE.hoursNote?'（'+STORE.hoursNote+'）':''});
+  document.querySelectorAll('[data-store="holidays"]').forEach(function(el){el.textContent=holidayNames.length?holidayNames.map(function(w){return w+'曜日'}).join('・'):'なし（年中無休）'});
+
+  // 焼きあがり時間
+  var bakeEl=document.getElementById('bake'); bakeEl.innerHTML=''; var marked=false;
+  STORE.bake.forEach(function(b){
+    var li=document.createElement('li'), sm=document.createElement('small'), bm=toMin(b.time);
+    li.textContent=b.time; sm.textContent=b.label; li.appendChild(sm);
+    if(!today.closed){
+      if(bm<toMin(today.open)||bm>=toMin(today.close)){li.classList.add('done');sm.textContent='本日なし'}
+      else if(now.min<toMin(today.close)){
+        if(now.min>=bm+60) li.classList.add('done');
+        else if(!marked){li.classList.add('next');marked=true;sm.textContent=(now.min>=bm?'焼きたて':'次の焼きあがり')}
+      }
+    }
+    bakeEl.appendChild(li);
+  });
+
+  // 臨時の予定を予告（今日〜noticeDays日先）。期間指定は1行にまとめる
+  function md(key){var x=key.split('-'),dt=new Date(Date.UTC(+x[0],+x[1]-1,+x[2]));return (+x[1])+'/'+(+x[2])+'（'+WD[dt.getUTCDay()]+'）'}
+  var notes=[], seen=[];
+  for(var i=0;i<=(STORE.noticeDays||14);i++){
+    var d=dayInfo(now,i); if(!d.sp||seen.indexOf(d.sp)>-1) continue;
+    seen.push(d.sp);
+    var isRange=!!(d.sp.from&&d.sp.to);
+    var what=d.closed==='special'?'臨時休業':d.closed?'定休日':(d.open+' – '+d.close+' の営業');
+    if(!isRange&&d.sp.open&&STORE.holidays.indexOf(d.wd)>-1&&!d.sp.closed) what='臨時営業（'+d.open+' – '+d.close+'）';
+    var when=isRange?(md(d.sp.from)+'〜'+md(d.sp.to)):md(d.key);
+    var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+    var txt=d.sp.note ? esc(d.sp.note)+(d.closed?'':'（'+d.open+' – '+d.close+'）') : what;
+    notes.push('<b>'+when+'</b>'+txt);
+  }
+  var sn=document.getElementById('specialNote');
+  if(notes.length){sn.innerHTML='お知らせ：<br>'+notes.join('<br>');sn.hidden=false}
+
+  /* ---- mood picker ---- */
+  var cards=document.getElementById('cards'), current=null;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function pick(id, scroll){
+    current=(current===id)?null:id;
+    document.querySelectorAll('.mood button').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.pick===current))});
+    cards.querySelectorAll('.card').forEach(function(c){var on=c.dataset.id===current;c.classList.toggle('pick',on);c.setAttribute('aria-pressed',String(on))});
+    cards.classList.toggle('picking',!!current);
+    if(current&&scroll&&window.innerWidth<=860){
+      // 選んだ商品の写真が、固定された気分バーのすぐ下に来るように移動
+      var pic=cards.querySelector('[data-id="'+current+'"] .pic');
+      var bar=document.querySelector('.mood').getBoundingClientRect();
+      var y=window.scrollY+pic.getBoundingClientRect().top-bar.height-(document.querySelector('.site-header').offsetHeight)-12;
+      window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+    }
+  }
+  document.querySelectorAll('.mood button').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.pick,true)})});
+  cards.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('click',function(){pick(c.dataset.id,false)});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(c.dataset.id,false)}});
+  });
+
+  /* ---- craft anatomy ---- */
+  function setLayer(k){
+    document.querySelectorAll('[data-layer]').forEach(function(el){el.classList.toggle('on',el.dataset.layer===k)});
+  }
+  var sp=matchMedia('(max-width: 860px)'), shown='1';
+  var card=document.getElementById('layerCard'), anatomy=document.getElementById('anatomy');
+  function layerData(k){var b=document.querySelector('#layers button[data-layer="'+k+'"]');return {t:b.querySelector('b').textContent,d:b.querySelector('span:last-child').textContent}}
+  function showLayer(k){
+    shown=k; setLayer(k); var d=layerData(k);
+    document.getElementById('lcN').textContent=k;
+    document.getElementById('lcT').textContent=d.t;
+    document.getElementById('lcD').textContent=d.d;
+    document.getElementById('lcPrev').disabled=(k==='1');
+    document.getElementById('lcNext').disabled=(k==='3');
+    card.querySelectorAll('.pips i').forEach(function(p,i){p.classList.toggle('on',String(i+1)===k)});
+    // 吹き出しの矢印を、選んだ数字の真下へ
+    var spot=anatomy.querySelector('.spot[data-layer="'+k+'"]');
+    if(spot){var cr=card.getBoundingClientRect(), sr=spot.getBoundingClientRect();
+      if(cr.width){var x=Math.min(Math.max(sr.left+sr.width/2-cr.left,24),cr.width-24);card.style.setProperty('--arrow',x+'px')}}
+  }
+  document.getElementById('lcPrev').addEventListener('click',function(){showLayer(String(+shown-1))});
+  document.getElementById('lcNext').addEventListener('click',function(){showLayer(String(+shown+1))});
+  var sx=null;
+  card.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  card.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>50){var n=+shown+(dx<0?1:-1);if(n>=1&&n<=3)showLayer(String(n))}});
+  window.addEventListener('resize',function(){showLayer(shown)});
+  document.querySelectorAll('[data-layer]').forEach(function(el){
+    el.addEventListener('mouseenter',function(){if(!sp.matches)showLayer(el.dataset.layer)});
+    el.addEventListener('focus',function(){showLayer(el.dataset.layer)});
+    el.addEventListener('click',function(){showLayer(el.dataset.layer)});
+  });
+  showLayer('1');
+
+  /* ---- story photo: placed on scroll ---- */
+  var sph=document.querySelector('.story-photo');
+  if(sph&&!reduce&&'IntersectionObserver' in window&&sph.getBoundingClientRect().top>window.innerHeight*0.9){
+    sph.classList.add('pre');
+    var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ sph.classList.remove('pre'); io.disconnect(); } },{rootMargin:'0px 0px 0px 0px',threshold:0.15});
+    io.observe(sph);
+  }
+
+  /* ---- FV slideshow ---- */
+  var slides=[].slice.call(document.querySelectorAll('#slides img')), dots=[].slice.call(document.querySelectorAll('#dots button')), si=0, timer=null;
+  function show(i){
+    si=(i+slides.length)%slides.length;
+    slides.forEach(function(im,k){im.classList.toggle('on',k===si)});
+    dots.forEach(function(d,k){d.setAttribute('aria-current',String(k===si))});
+  }
+  function play(){ if(reduce) return; clearInterval(timer); timer=setInterval(function(){show(si+1)},6000); }
+  dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);play()})});
+  document.addEventListener('visibilitychange',function(){ if(document.hidden) clearInterval(timer); else play(); });
+  play();
+
+  /* ---- seasonal link opens its news ---- */
+  document.querySelector('.seasonal').addEventListener('click',function(e){
+    e.preventDefault();
+    var d=document.getElementById('news-marron'); d.open=true;
+    var news=document.getElementById('news'); news.scrollTop=0;
+    var y=window.scrollY+d.getBoundingClientRect().top-document.querySelector('.site-header').offsetHeight-24;
+    window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+  });
+
+  /* ---- copy address ---- */
+  var cb=document.getElementById('copyAddr');
+  cb.addEventListener('click',function(){
+    var txt=document.getElementById('addr').innerText.replace(/\n/g,' ');
+    function done(){cb.textContent='コピーしました';setTimeout(function(){cb.textContent='住所をコピー'},2000)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='選択しました'}
+    try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+  });
+
+  /* ---- SP visit bar: show after FV, hide at ACCESS ---- */
+  var bar=document.getElementById('visitbar'), hero=document.querySelector('.hero'), access=document.getElementById('access');
+  var pastHero=false, atAccess=false;
+  function upd(){var s=pastHero&&!atAccess;bar.classList.toggle('show',s);bar.setAttribute('aria-hidden',!s);bar.querySelector('a').tabIndex=s?0:-1}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){pastHero=!e[0].isIntersecting;upd()}).observe(hero);
+    new IntersectionObserver(function(e){atAccess=e[0].isIntersecting;upd()},{rootMargin:'0px 0px -30% 0px'}).observe(access);
+  }
+})();
+</script>
+</body>
+</html>

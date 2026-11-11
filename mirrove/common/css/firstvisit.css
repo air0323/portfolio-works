@@ -1,0 +1,966 @@
+@charset "UTF-8";
+
+/*==============================
+  firstvisit.css（firstvisit.html 専用）
+==============================*/
+
+/*== このページ用のリセット ==*/
+/* チーム共通の reset.css（Meyer reset）の後に読み込んでも、見え方が変わらないように
+   このページで必要なリセットをここにまとめておく */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+small {
+  font-size: smaller; /* Meyer resetで100%にされるのを元に戻す */
+}
+
+/* hidden属性の要素は必ず消す（Meyer resetの details{display:block} に負けないように） */
+[hidden] {
+  display: none !important;
+}
+
+/* ページ内リンクで飛んだとき、追従ヘッダーの下に隠れないようにする */
+[id] {
+  scroll-margin-top: 90px;
+}
+
+/*== サイト共通カラー（コンセプトシート＋カンプ） ==*/
+:root {
+  --color-text: #494848;   /* 基本文字色：ダークグレー */
+  --color-bg: #ffffff;     /* ベース：白 */
+  --color-cream: #f8f7e5;  /* ベース：黄（カンプの背景色） */
+  --color-green: #b0c99a;  /* メインカラー：グリーン */
+  --color-yellow: #e5dfa4; /* サブカラー：薄黄色 */
+  --color-green-dark: #6f9156; /* 濃い緑（必須マーク・Aなど、文字を目立たせたいところ） */
+  --color-footer: #494848; /* フッター背景 */
+}
+
+/* 本文の設定（スプレッドシート「共通」シートのbody指定） */
+body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #494848;
+  background: var(--color-bg);
+  letter-spacing: 0.05em;
+}
+
+/*== firstvisit ==*/
+
+/* 下層ページは横幅1200px固定 */
+.firstvisit-page {
+  min-width: 1200px;
+}
+
+/* コンテンツ幅 1040px（左右80px） */
+.firstvisit-inner {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+/* セクション見出し（H2 24px） */
+.firstvisit-page main h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 45px;
+}
+
+/* ページタイトルの画像を、下の「ようこそ」の背景写真より前に出す（このページだけの指定） */
+.firstvisit-page .common-pagehead {
+  z-index: 2;
+}
+
+/*== ページ内リンク ==*/
+.firstvisit-pagenav {
+  position: relative;
+  z-index: 2; /* ようこその背景写真より前に出す */
+  padding: 30px 0;
+}
+.firstvisit-pagenav ul {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+.firstvisit-pagenav a {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-green);
+}
+.firstvisit-pagenav a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  border-style: solid;
+  border-width: 8px 6px 0 6px;
+  border-color: var(--color-green) transparent transparent transparent;
+  vertical-align: middle;
+}
+
+/*== MIRROVEへ、ようこそ ==*/
+.firstvisit-welcome {
+  position: relative;
+  z-index: 1;           /* 次のセクション（６STEP）の上に重ねる */
+  overflow-x: clip;     /* 横のはみ出しだけ切る（縦は上下のセクションへはみ出してOK） */
+  overflow-y: visible;
+  padding: 60px 0 360px; /* 上の余白を詰めた（190px→60px）／下は写真の女性が入る高さ */
+  text-align: center;
+}
+/* 背景写真（firstvisit_09）：写真全体（女性のひざまで）が入るように、高さ880pxで下端合わせ。
+   上はページ内リンクの下から、下は６STEPのセクションに少しはみ出す。上下の端はグラデーションで消す */
+.firstvisit-welcome-bg {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 880px;
+  object-fit: cover;
+  object-position: center bottom;
+  transform: scale(1.04); /* 画像の左右にある白い縁を隠す */
+  transform-origin: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 260px, #000 calc(100% - 90px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 260px, #000 calc(100% - 90px), transparent 100%);
+}
+.firstvisit-welcome-inner {
+  position: relative; /* 背景より前に出す */
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.7); /* 写真の上でも文字が読めるように */
+}
+.firstvisit-page .firstvisit-welcome h2 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+}
+.firstvisit-welcome p {
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+/*== 無料体験レッスンの流れ（６STEP） ==*/
+.firstvisit-step {
+  padding: 100px 0;
+  background: var(--color-cream);
+}
+.firstvisit-step-head {
+  display: flex;
+  align-items: baseline;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+.firstvisit-page .firstvisit-step-head h2 {
+  margin-bottom: 0;
+}
+.firstvisit-step-head span {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 2px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  background: var(--color-green);
+  border-radius: 9999px;
+}
+/* 300px＋▶70px＋300px＋▶70px＋300px＝1040px */
+.firstvisit-step-list {
+  display: grid;
+  grid-template-columns: 300px 70px 300px 70px 300px;
+  row-gap: 50px;
+}
+.firstvisit-step-item {
+  display: flex;
+  flex-direction: column;
+}
+.firstvisit-step-photo {
+  position: relative;
+}
+.firstvisit-step-photo img {
+  width: 300px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+/* 写真：ふだんはうっすらグレー、カーソルを当てるとふわっとカラーに */
+.firstvisit-step-photo img {
+  filter: saturate(70%);
+  transition: filter 0.2s ease;
+}
+/* ふだんは白〜薄緑のマスク（画面が暗くならないように） */
+.firstvisit-step-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(244, 248, 238, 0.4);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.firstvisit-step-item:hover .firstvisit-step-photo img {
+  filter: none;
+}
+.firstvisit-step-item:hover .firstvisit-step-photo::after {
+  opacity: 0;
+}
+/* 下のテキストは少し浮き上がる */
+.firstvisit-step-item:hover .firstvisit-step-text {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(73, 72, 72, 0.1);
+}
+/* STEP番号：半透明の白い円（写真の角から少しはみ出す） */
+.firstvisit-step-num {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(73, 72, 72, 0.12);
+}
+.firstvisit-step-num small {
+  margin-bottom: 3px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-green-dark);
+}
+/* STEP５の写真：人物を右寄せに */
+.firstvisit-step-img05 {
+  object-position: 8% center;
+}
+/* 白ボックス：flex: 1 で同じ段の高さをそろえる */
+.firstvisit-step-text {
+  flex: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 6px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+.firstvisit-step-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.firstvisit-step-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  text-wrap: pretty; /* 1字落ち防止 */
+}
+/* ▶（TOPと同じ形・色） */
+.firstvisit-step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstvisit-step-arrow::before {
+  content: "";
+  border-style: solid;
+  border-width: 20px 0 20px 24px;
+  border-color: transparent transparent transparent var(--color-yellow);
+}
+/* STEP３→４：STEP３の右横と、STEP４の左横に▶を置いて「続き」を示す */
+.firstvisit-step-next,
+.firstvisit-step-prev {
+  position: relative;
+}
+.firstvisit-step-next::after,
+.firstvisit-step-prev::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* ほかの▶と同じ高さ */
+  border-style: solid;
+  border-width: 20px 0 20px 24px;
+  border-color: transparent transparent transparent var(--color-yellow);
+  transform: translateY(-50%);
+}
+.firstvisit-step-next::after {
+  right: -50px;
+}
+.firstvisit-step-prev::before {
+  left: -50px;
+}
+
+/*== よくあるご質問（Q&A） ==*/
+.firstvisit-qa {
+  padding: 100px 0;
+}
+.firstvisit-qa-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+/* 左：ピクトグラム 170px × 2列 */
+.firstvisit-qa-pict {
+  display: grid;
+  grid-template-columns: 170px 170px;
+  gap: 25px 30px;
+}
+.firstvisit-qa-pict button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  color: inherit;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.firstvisit-qa-pict img {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 8px;
+  object-fit: cover;
+  border-radius: 50%;
+  outline: 4px solid transparent;
+  outline-offset: 4px;
+  transition: opacity 0.2s, outline-color 0.2s;
+}
+.firstvisit-qa-pict button:hover img {
+  opacity: 0.8;
+}
+/* 選んでいるアイコン */
+.firstvisit-qa-pict button.is-active img {
+  outline-color: var(--color-green-dark);
+}
+.firstvisit-qa-pict button.is-active {
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+/* 絞り込んだQ&Aがふわっと出る */
+.firstvisit-qa-list details.is-show {
+  animation: firstvisit-fadein 0.3s ease;
+}
+@keyframes firstvisit-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* 右：質問リスト 620px */
+.firstvisit-qa-list {
+  width: 620px;
+  text-align: right;
+}
+.firstvisit-qa-list details {
+  text-align: left;
+  background: var(--color-yellow);
+  border-radius: 10px;
+  scroll-margin-top: 20px;
+}
+.firstvisit-qa-list details + details {
+  margin-top: 12px;
+}
+.firstvisit-qa-list summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 62px;
+  padding: 10px 45px 10px 55px;
+  font-size: 15px;
+  cursor: pointer;
+  list-style: none;
+  text-wrap: pretty; /* 1字だけ次の行に落ちるのを防ぐ */
+}
+.firstvisit-qa-list summary::-webkit-details-marker {
+  display: none;
+}
+.firstvisit-qa-list summary::before {
+  content: "Q.";
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+/* 開閉アイコン ＋ / − */
+.firstvisit-qa-list summary::after {
+  content: "＋";
+  position: absolute;
+  right: 20px;
+}
+.firstvisit-qa-list details[open] summary::after {
+  content: "−";
+}
+.firstvisit-qa-list details p {
+  position: relative;
+  /* 白いボックス全体を右へ10pxずらす：左は10px内側にひっこめ、右は10pxはみ出す。
+     下はQの黄色いボックスの下の端にそろえる（Qのボックスの高さ＝Aのボックスの下まで） */
+  margin: 0 -10px 0 10px;
+  padding: 14px 19px 14px 49px; /* 枠を太くした1px分、内側の余白を減らして外側の大きさは変えない */
+  background: #fff;
+  border: 3px solid var(--color-yellow); /* 黄色の枠（3px） */
+  border-radius: 8px;
+  font-size: 14px;
+  text-wrap: pretty;
+}
+.firstvisit-qa-list details p::before {
+  content: "A.";
+  position: absolute;
+  left: 17px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+/* more...（キャッチ付きのボタン） */
+.firstvisit-qa-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  padding: 0;
+  font: inherit;
+  font-size: 20px;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.firstvisit-qa-more span {
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-green-dark);
+  border-radius: 9999px;
+}
+.firstvisit-qa-more::after {
+  content: "";
+  border-style: solid;
+  border-width: 8px 6px 0 6px;
+  border-color: var(--color-green-dark) transparent transparent transparent;
+  transition: transform 0.2s;
+}
+.firstvisit-qa-more.is-open::after {
+  transform: rotate(180deg);
+}
+.firstvisit-qa-more:hover {
+  opacity: 0.8;
+}
+
+/*== 無料体験レッスンご予約フォーム ==*/
+.firstvisit-form {
+  padding: 100px 0;
+  background: var(--color-cream);
+}
+.firstvisit-form-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.firstvisit-form-logo img:first-child {
+  width: 80px;  /* ロゴマーク */
+}
+.firstvisit-form-logo img:last-child {
+  width: 120px; /* ロゴ（小さめ） */
+}
+.firstvisit-form form {
+  width: 680px;
+  margin: 0 auto;
+}
+.firstvisit-form-item {
+  display: flex;
+  align-items: center;
+}
+.firstvisit-form-item + .firstvisit-form-item {
+  margin-top: 16px;
+}
+/* 項目タイトル（左寄せ・必須マークは右端） */
+.firstvisit-form-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 240px;
+  flex-shrink: 0;
+  margin-right: 25px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.firstvisit-form-title span {
+  margin-left: auto;
+  padding: 1px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff; /* 白抜き文字 */
+  background: var(--color-green-dark);
+  border-radius: 9999px;
+}
+.firstvisit-form-title small {
+  display: block;
+  width: 100%;
+  font-size: 11px;
+}
+.firstvisit-form-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+.firstvisit-form-field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* 入力欄（白） */
+.firstvisit-form input[type="text"],
+.firstvisit-form input[type="email"],
+.firstvisit-form input[type="tel"],
+.firstvisit-form input[type="date"],
+.firstvisit-form select {
+  height: 34px;
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid var(--color-green);
+  border-radius: 5px;
+}
+/* フリガナ・お名前：「セイ／姓」の幅をそろえて、入力欄の左右の位置を上下で合わせる */
+.firstvisit-form-name label {
+  display: grid;
+  grid-template-columns: 2.2em 1fr;
+  gap: 6px;
+  width: 165px;
+}
+.firstvisit-form-name input {
+  width: 100%;
+}
+#firstvisit-course {
+  width: 220px;
+}
+#firstvisit-date {
+  width: 160px;
+}
+.firstvisit-form-time {
+  width: 112px;
+}
+.firstvisit-form-member {
+  width: 130px;
+}
+.firstvisit-form-other {
+  width: 180px;
+}
+.firstvisit-form-tel input {
+  width: 72px;
+  text-align: center;
+}
+.firstvisit-form-mail {
+  width: 300px;
+}
+.firstvisit-form input[type="radio"],
+.firstvisit-form input[type="checkbox"] {
+  accent-color: var(--color-green);
+}
+.firstvisit-form-submit {
+  margin-top: 45px;
+  text-align: center;
+}
+.firstvisit-form-agree {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.firstvisit-form-agree a {
+  text-decoration: underline;
+}
+.firstvisit-form-submit button {
+  display: block;
+  width: 300px;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 20px;
+  background: var(--color-green);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/*======================================================================
+  ▼ページタイトル（ヘッダー下の画像＋文字）をコピーして使う人へ③
+    ここから「▲コピー③ここまで」の行までを、自分のCSSの最後にコピーする。
+    文字の大きさ・セリフ体・白文字・シャドー・余白は全部この中で指定しているので、
+    ほかのCSS（bodyの設定やreset.css）が違っても見え方は同じになる。
+    自分のページに合わせて変えていいのは、画像の見せる位置（object-position）だけ。
+      例：写真の真ん中を見せたい → center center／上を見せたい → center top
+======================================================================*/
+/*== common-pagehead ==*/
+/* 料金ページ（.praiceKv）のデザインに合わせる。画面幅いっぱい・高さ300px */
+.common-pagehead {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.common-pagehead > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 300px;
+  object-fit: cover;
+  /* ★ページごとに変えてOK：画像の見せる位置
+     firstvisit_08は表示する帯の部分だけにトリミング済みで、上端＝トレーナーの目のすぐ下。
+     上端合わせで表示するので、画面幅が変わっても目は写らない */
+  object-position: center top;
+}
+/* 明るい写真でも白文字が読めるように、うすく暗くする */
+.common-pagehead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(73, 72, 72, 0.15);
+}
+.common-pagehead-inner {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  color: #fff; /* 文字は白 */
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); /* 白文字のシャドー（料金ページと同じ） */
+}
+/* 上部のキャッチコピー（画像の上端から40px） */
+.common-pagehead-inner p {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+/* 中央のタイトル（英字：セリフ体 52px） */
+.common-pagehead h1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  font-family: serif; /* いちばんシンプルなセリフ体（料金ページと同じ指定） */
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* タイトル下の日本語（- 〇〇 -：20px） */
+.common-pagehead h1 span {
+  display: block;
+  margin: 8px 0 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: #fff;
+  opacity: 0.9;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+/*== ▲コピー③ここまで ==*/
+
+/*== common-cta ==*/
+/* 画面幅に合わせて横100%に広がる（高さ300px固定） */
+.common-cta {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: var(--color-cream); /* 上のフォームと同じ色に溶け込ませる */
+}
+/* 写真とマスクの上部を、上に向かって消えるグラデーションにする */
+.common-cta > img,
+.common-cta::after {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 140px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 140px);
+}
+.common-cta > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+/* 写真の上にうすいマスク */
+/* ほかのページのカンプに合わせて、うすい黄色〜緑のマスクを重ねる（screenで明るく色づける） */
+.common-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(229, 223, 164, 0.75) 0%, rgba(176, 201, 154, 0.6) 100%);
+  mix-blend-mode: screen;
+}
+/* CTAの画像・ボタンの位置とサイズは common.css の「CTA AREA」で全ページ共通指定 */
+
+
+/*== ページトップへ戻るボタン ==*/
+/* 紅茶画像（.common-cta）の右下に置く。押すと一番上まで戻る（動きは firstvisit.js） */
+.firstvisit-pagetop {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1; /* マスクより前に出す */
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--color-yellow);
+  border-radius: 50%;
+  background: var(--color-green);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
+}
+/* 上向きの矢印（白） */
+.firstvisit-pagetop::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transform: translate(-50%, -25%) rotate(45deg);
+}
+.firstvisit-pagetop:hover {
+  background: #494848;
+  transform: translateY(-3px); /* 少し浮き上がる */
+}
+
+
+/*===========================================================================
+  SP（768px以下）レスポンシブ
+===========================================================================*/
+@media screen and (max-width: 768px) {
+
+	.firstvisit-page { min-width: 0; }
+	.firstvisit-inner {
+		width: auto;
+		padding: 0 20px;
+	}
+	.firstvisit-page main h2 {
+		font-size: 20px;
+		margin-bottom: 28px;
+	}
+	[id] { scroll-margin-top: 20px; }
+
+	/* ページタイトル（画像＋文字）：高さ200px・キャッチコピーはSPでは非表示（本文の見える範囲を増やすため） */
+	.common-pagehead,
+	.common-pagehead > img { height: 200px; }
+	.common-pagehead-inner p { display: none; }
+	.common-pagehead h1 {
+		top: 50%;
+		font-size: 40px;
+	}
+	.common-pagehead h1 span {
+		margin-top: 6px;
+		font-size: 16px;
+	}
+
+	/* ページ内リンク：縦並び */
+	.firstvisit-pagenav { padding: 24px 20px; }
+	.firstvisit-pagenav ul {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		font-size: 15px;
+	}
+	.firstvisit-pagenav a {
+		padding: 12px 4px 10px;
+	}
+
+	/* ようこそ */
+	.firstvisit-welcome { padding: 40px 20px 220px; }
+	.firstvisit-welcome-bg {
+		top: -60px;
+		height: 560px;
+	}
+	.firstvisit-page .firstvisit-welcome h2 {
+		font-size: 22px;
+		margin-bottom: 24px;
+	}
+	.firstvisit-welcome p {
+		font-size: 14px;
+		line-height: 2;
+	}
+	.firstvisit-welcome p br { display: none; }
+
+	/* 6STEP：1列 */
+	.firstvisit-step { padding: 60px 0; }
+	.firstvisit-step-head {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		margin-bottom: 36px;
+	}
+	.firstvisit-step-head p { font-size: 13px; }
+	.firstvisit-step-list {
+		grid-template-columns: 1fr;
+		row-gap: 36px;
+	}
+	.firstvisit-step-arrow { display: none; }
+	.firstvisit-step-next::after,
+	.firstvisit-step-prev::before { display: none; }
+	.firstvisit-step-photo img {
+		width: 100%;
+		height: 220px;
+	}
+	.firstvisit-step-num {
+		top: -12px;
+		left: -8px;
+		width: 66px;
+		height: 66px;
+		font-size: 26px;
+	}
+	.firstvisit-step-text h3 { font-size: 18px; }
+
+	/* Q&A：ピクトグラム→質問の縦並び */
+	.firstvisit-qa { padding: 60px 0; }
+	.firstvisit-qa-wrap {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.firstvisit-qa-pict {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px 16px;
+		margin-bottom: 36px;
+		justify-items: center;
+	}
+	.firstvisit-qa-pict li { width: 100%; max-width: 150px; }
+	.firstvisit-qa-pict img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+	}
+	.firstvisit-qa-list { width: 100%; }
+	.firstvisit-qa-list summary {
+		padding: 10px 40px 10px 46px;
+		font-size: 14px;
+	}
+	.firstvisit-qa-list summary::before { left: 16px; }
+	.firstvisit-qa-list summary::after { right: 14px; }
+	.firstvisit-qa-list details p {
+		margin: 0;
+		padding: 12px 14px 12px 42px;
+		font-size: 14px;
+	}
+	.firstvisit-qa-list details p::before { left: 12px; }
+
+	/* 予約フォーム：項目を縦並び */
+	.firstvisit-form { padding: 60px 0; }
+	.firstvisit-form form {
+		width: auto;
+		padding: 0 20px;
+	}
+	.firstvisit-form-item {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.firstvisit-form-item + .firstvisit-form-item { margin-top: 20px; }
+	.firstvisit-form-title {
+		width: 100%;
+		margin: 0 0 6px;
+	}
+	.firstvisit-form-title span { margin-left: 10px; }
+	.firstvisit-form-field {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.firstvisit-form-name label {
+		width: calc(50% - 5px);
+		grid-template-columns: 2.8em 1fr;
+		white-space: nowrap;
+	}
+	#firstvisit-course,
+	#firstvisit-date,
+	.firstvisit-form-mail,
+	.firstvisit-form-other {
+		width: 100%;
+		max-width: 100%;
+	}
+	.firstvisit-form-time { width: calc(50% - 5px); }
+	.firstvisit-form-tel input { width: 60px; }
+	/* 入力欄・ボタン：高さ44px以上＋文字16px（iPhoneで入力時に画面が拡大されるのを防ぐ） */
+	.firstvisit-form input[type="text"],
+	.firstvisit-form input[type="email"],
+	.firstvisit-form input[type="tel"],
+	.firstvisit-form input[type="date"],
+	.firstvisit-form select {
+		height: 44px;
+		font-size: 16px;
+	}
+	.firstvisit-form-field label {
+		min-height: 44px;
+	}
+	.firstvisit-form input[type="radio"],
+	.firstvisit-form input[type="checkbox"] {
+		width: 20px;
+		height: 20px;
+	}
+	.firstvisit-form-agree { min-height: 44px; }
+	.firstvisit-qa-more { min-height: 44px; }
+	.firstvisit-form-submit { margin-top: 36px; }
+	.firstvisit-form-agree {
+		font-size: 13px;
+		text-align: left;
+	}
+	.firstvisit-form-submit button {
+		width: 100%;
+		max-width: 300px;
+		height: 54px;
+	}
+	.firstvisit-pagetop {
+		right: 14px;
+		bottom: 14px;
+		width: 48px;
+		height: 48px;
+	}
+}

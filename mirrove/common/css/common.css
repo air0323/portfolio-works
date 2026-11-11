@@ -933,7 +933,7 @@ body {
 	#footer .footer-nav-columns {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		column-gap: 20px;
+		column-gap: 16px;
 		row-gap: 0;
 	}
 	#footer .footer-nav-list,
@@ -946,8 +946,8 @@ body {
 	}
 	#footer .footer-nav-list a {
 		display: block;
-		padding: 16px 0;
-		font-size: 13px;
+		padding: 11px 0;
+		font-size: 14px;
 		line-height: 1.4;
 	}
 
@@ -964,7 +964,6 @@ body {
 	}
 	#footer .footer-heading {
 		margin: 0 0 8px;
-		font-size: 20px;
 	}
 	#footer .small {
 		margin: 32px 0 0;

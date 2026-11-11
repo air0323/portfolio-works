@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+/* =====================================================================
+   line.css  ―  LINE友だち追加ページ専用（line.html）
+   ■ 読み込み順：reset.css → common.css → line.css
+   ■ ヘッダー・フッター・SPは common.css。ここにはページ固有の指定だけを書く
+   ■ 色：#B0C99A（メイン）／#E5DFA4（サブ）／#494848（文字）
+   ===================================================================== */
+
+.line-page {
+	font-weight: 400;
+	line-height: 1.8;
+	color: #494848;
+	background: #fff;
+}
+
+.line-inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+.line-page main h2 {
+	margin: 0 0 40px;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+}
+
+/* ---------- 友だち追加ボタン（サイトのCTAボタンと同じ形） ---------- */
+.line-add-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+	padding: 8px 12px 8px 32px;
+	background-color: #B0C99A;
+	color: #494848;
+	border: 6px solid #E5DFA4;
+	border-radius: 9999px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: background-color 0.2s, color 0.2s;
+}
+.line-add-btn:hover {
+	background-color: #494848;
+	color: #fff;
+}
+.line-add-btn-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	background: #fff;
+	border-radius: 50%;
+	color: #494848;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+.line-add-btn--center {
+	display: flex;
+	width: fit-content;
+	margin: 60px auto 0;
+}
+
+/* ---------- ヒーロー ---------- */
+.line-hero {
+	padding: 100px 0 90px;
+	background: linear-gradient(135deg, #f8f7e5 0%, #E5DFA4 55%, #B0C99A 100%);
+}
+.line-hero-inner {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+.line-hero-en {
+	margin: 0 0 8px;
+	font-family: serif;
+	font-size: 52px;
+	line-height: 1;
+	letter-spacing: 0.05em;
+}
+.line-page .line-hero h1 {
+	margin: 0 0 24px;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: left;
+}
+.line-hero-lead {
+	margin: 0 0 40px;
+	font-size: 16px;
+	line-height: 2;
+}
+.line-hero-qr {
+	flex-shrink: 0;
+	padding: 20px 20px 14px;
+	background: #fff;
+	border-radius: 16px;
+	text-align: center;
+	box-shadow: 0 4px 14px rgba(73, 72, 72, 0.12);
+}
+.line-hero-qr img {
+	display: block;
+	width: 180px;
+	height: 180px;
+	margin: 0 auto 10px;
+}
+.line-hero-qr p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+/* ---------- LINEでできること ---------- */
+.line-benefit {
+	padding: 100px 0;
+}
+.line-benefit-list {
+	display: flex;
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.line-benefit-list li {
+	box-sizing: border-box;
+	flex: 1;
+	padding: 30px 26px 34px;
+	background: #fff;
+	border: 2px solid #E5DFA4;
+	border-radius: 15px;
+	text-align: center;
+}
+.line-benefit-num {
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 2px 16px;
+	background: #B0C99A;
+	border-radius: 9999px;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+.line-benefit-list h3 {
+	margin: 0 0 12px;
+	font-size: 18px;
+	font-weight: 700;
+}
+.line-benefit-list p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.8;
+	text-align: left;
+}
+
+/* ---------- ご利用の流れ ---------- */
+.line-flow {
+	padding: 100px 0;
+	background: #f8f7e5;
+}
+.line-flow-list {
+	display: flex;
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.line-flow-list li {
+	box-sizing: border-box;
+	position: relative;
+	flex: 1;
+	padding: 28px 24px 30px;
+	background: #fff;
+	border-radius: 10px;
+}
+.line-flow-step {
+	display: block;
+	margin-bottom: 4px;
+	color: #6f9156;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+}
+.line-flow-list h3 {
+	margin: 0 0 8px;
+	font-size: 18px;
+	font-weight: 700;
+}
+.line-flow-list p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+/* ---------- ご利用にあたって ---------- */
+.line-note {
+	padding: 80px 0 100px;
+}
+.line-note ul {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	font-size: 14px;
+}
+.line-note li {
+	position: relative;
+	padding-left: 1.2em;
+}
+.line-note li + li {
+	margin-top: 8px;
+}
+.line-note li::before {
+	content: "※";
+	position: absolute;
+	left: 0;
+}
+.line-note a {
+	text-decoration: underline;
+}
+
+/* =====================================================================
+   SP（768px以下）
+   ===================================================================== */
+@media screen and (max-width: 768px) {
+
+	.line-inner {
+		padding: 0 20px;
+	}
+	.line-page main h2 {
+		margin-bottom: 28px;
+		font-size: 20px;
+	}
+
+	.line-add-btn {
+		gap: 14px;
+		padding: 6px 8px 6px 22px;
+		border-width: 5px;
+		font-size: 18px;
+	}
+	.line-add-btn-icon {
+		width: 36px;
+		height: 36px;
+		font-size: 15px;
+	}
+	.line-add-btn--center {
+		margin-top: 40px;
+	}
+
+	/* ヒーロー：ボタンのみ（QRは非表示）・上は固定ヘッダーのボタンと重ならないよう余白 */
+	.line-hero {
+		padding: 110px 0 60px;
+	}
+	.line-hero-inner {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0 20px;
+	}
+	.line-hero-en {
+		font-size: 40px;
+	}
+	.line-page .line-hero h1 {
+		font-size: 22px;
+	}
+	.line-hero-lead {
+		margin-bottom: 32px;
+		font-size: 14px;
+		line-height: 1.9;
+	}
+	.line-hero-lead br {
+		display: none;
+	}
+	.line-hero-text {
+		width: 100%;
+	}
+	.line-hero-text .line-add-btn {
+		display: flex;
+		width: fit-content;
+		margin: 0 auto;
+	}
+	.line-hero-qr {
+		display: none;
+	}
+
+	.line-benefit,
+	.line-flow {
+		padding: 60px 0;
+	}
+	.line-benefit-list,
+	.line-flow-list {
+		flex-direction: column;
+		gap: 16px;
+	}
+	.line-note {
+		padding: 50px 0 60px;
+	}
+}

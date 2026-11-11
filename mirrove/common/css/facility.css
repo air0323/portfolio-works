@@ -1,0 +1,479 @@
+﻿@charset "utf-8";
+
+body {
+font-weight: 400;
+line-height: 1.8;
+color: #494848;
+}
+
+
+/* ===================================================
+   CONTENTS
+=================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+#contents {
+	font-size: 16px;
+}
+
+#list-top{
+  scroll-margin-top: 180px;
+}
+
+#contents > p {
+    margin-top: 50px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+#facility-list {
+    margin-top: 50px;
+	margin-bottom: 80px;
+	text-align: center;
+}
+
+.facility-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.facility-row a {
+    display: flex;
+    width: 300px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #B0C99A;
+    box-shadow: 2px 2px 6px #666;
+	font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+	color: #494848
+}
+
+.facility-row a:hover {
+    background-color: #E5DFA4;
+}
+
+#detail {
+    width: 100%;
+    max-width: 1200px;
+    margin: 180px auto 0;
+}
+
+/* 写真と文章を横並びにする */
+.facility-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+/* 左右交互に配置 */
+.facility-item.left {
+    flex-direction: row;
+}
+
+.facility-item.right {
+    flex-direction: row-reverse;
+}
+
+/* 写真 */
+.photo-box {
+    position: relative;
+    width: 745px;
+    height: 450px;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 2;
+}
+
+.photo-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.facility-item {
+    position: relative;
+}
+
+/* 写真の下側に画面幅いっぱいの背景を敷く */
+.facility-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 200px;
+    background-color: #E5DFA4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 写真と文章を背景より手前にする */
+.photo-box {
+    position: relative;
+    z-index: 2;
+}
+
+.article {
+    position: relative;
+    z-index: 1;
+}
+
+/* 見出し */
+.photo-box h2 {
+    position: absolute;
+    top: -30px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: #B0C99A;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 2px 2px 6px #666;
+    scroll-margin-top: 120px;
+}
+
+.facility-item.left .photo-box h2 {
+    left: -25px;
+}
+
+.facility-item.right .photo-box h2 {
+    right: -25px;
+}
+
+/* 文章の枠 */
+.article {
+    width: 440px;
+    height: 333px;
+    flex: 0 0 440px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 2px solid #E5DFA4;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 文章 */
+.article-text {
+    width: 285px;
+    height: 210px;
+    box-sizing: border-box;
+}
+
+.article p {
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* ▲リンク */
+.article a {
+    display: block;
+    width: 100%;
+    text-align: right;
+    text-decoration: none;
+    color: #E5DFA4;
+}
+
+.facility-item {
+    position: relative;
+}
+
+.photo-box {
+    position: relative;
+    z-index: 2;
+}
+
+.article {
+    position: relative;
+    z-index: 1;
+}
+
+.facility-item.left .article {
+    margin-left: -15px;
+}
+
+.facility-item.right .article {
+    margin-right: -15px;
+}
+
+/* レッスンスタジオの写真だけ拡大・位置調整 */
+.studio-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.photo-box img.studio-photo {
+    transform: scale(1.2) translate(10px, -10px);
+    transform-origin: center;
+}
+
+/* シャワーの写真だけ拡大・位置調整 */
+.shower-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.photo-box img.shower-photo {
+    transform: scale(2.5) translate(8px, 12px);
+    transform-origin: center;
+}
+
+/* リラックススペースの見出し */
+#relax {
+    height: 80px;
+    line-height: 1.5;
+}
+
+/*===========================================================================
+　無料体験ボタンエリア
+===========================================================================*/
+/* 無料体験を予約するバナーセクション・バナー全体枠 */
+.priceReservation-area {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 画像とボタンを重ねる基準枠 */
+.priceReservation-inner {
+  position: relative;
+  width: 100%;
+}
+
+/* CTAの画像・ボタンの位置とサイズは common.css の「CTA AREA」で全ページ共通指定 */
+
+
+/*======================================================================
+  ▼ページタイトル（ヘッダー下の画像＋文字）をコピーして使う人へ③
+    ここから「▲コピー③ここまで」の行までを、自分のCSSの最後にコピーする。
+    文字の大きさ・セリフ体・白文字・シャドー・余白は全部この中で指定しているので、
+    ほかのCSS（bodyの設定やreset.css）が違っても見え方は同じになる。
+    自分のページに合わせて変えていいのは、画像の見せる位置（object-position）だけ。
+      例：写真の真ん中を見せたい → center center／上を見せたい → center top
+======================================================================*/
+/*== common-pagehead ==*/
+/* 料金ページ（.praiceKv）のデザインに合わせる。画面幅いっぱい・高さ300px */
+.common-pagehead {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.common-pagehead > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 300px;
+  object-fit: cover;
+  /* ★ページごとに変えてOK：画像の見せる位置
+     firstvisit_08は表示する帯の部分だけにトリミング済みで、上端＝トレーナーの目のすぐ下。
+     上端合わせで表示するので、画面幅が変わっても目は写らない */
+  object-position: center top;
+}
+/* 明るい写真でも白文字が読めるように、うすく暗くする */
+.common-pagehead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(73, 72, 72, 0.15);
+}
+.common-pagehead-inner {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  color: #fff; /* 文字は白 */
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); /* 白文字のシャドー（料金ページと同じ） */
+}
+/* 上部のキャッチコピー（画像の上端から40px） */
+.common-pagehead-inner p {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+/* 中央のタイトル（英字：セリフ体 52px） */
+.common-pagehead h1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  font-family: serif; /* いちばんシンプルなセリフ体（料金ページと同じ指定） */
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* タイトル下の日本語（- 〇〇 -：20px） */
+.common-pagehead h1 span {
+  display: block;
+  margin: 8px 0 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: #fff;
+  opacity: 0.9;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+/*== ▲コピー③ここまで ==*/
+
+html, body {
+    overflow-x: clip;
+    max-width: 100%;
+}
+
+/* ===== 下からフェードイン（ふわっと） =====
+   ※ <html> に .js が付いている時だけ非表示（js/facility.js が付ける） */
+.js .article-text p {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.js .article-text p.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*===========================================================================
+  SP（768px以下）レスポンシブ
+===========================================================================*/
+@media screen and (max-width: 768px) {
+
+	/* ページタイトル（画像＋文字）：高さ200px・キャッチコピーはSPでは非表示（本文の見える範囲を増やすため） */
+	.common-pagehead,
+	.common-pagehead > img { height: 200px; }
+	.common-pagehead-inner p { display: none; }
+	.common-pagehead h1 {
+		top: 50%;
+		font-size: 40px;
+	}
+	.common-pagehead h1 span {
+		margin-top: 6px;
+		font-size: 16px;
+	}
+
+	#contents > p {
+		margin-top: 36px;
+		padding: 0 20px;
+		font-size: 14px;
+	}
+	#list-top { scroll-margin-top: 20px; }
+
+	/* 設備リンク：縦並び */
+	#facility-list {
+		margin-top: 24px;
+		margin-bottom: 50px;
+		padding: 0 20px;
+	}
+	.facility-row {
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+	}
+	.facility-row a {
+		width: 100%;
+		max-width: 360px;
+		height: 64px;
+		margin-bottom: 16px;
+		font-size: 16px;
+	}
+
+	/* 詳細：写真→文章 の縦積み */
+	#detail { margin-top: 60px; }
+	.facility-item,
+	.facility-item.left,
+	.facility-item.right {
+		flex-direction: column;
+		align-items: stretch;
+		margin-bottom: 70px;
+	}
+	.facility-item::before {
+		top: auto;
+		bottom: 40px;
+		height: 160px;
+	}
+	.photo-box {
+		width: 100%;
+		height: 280px;
+	}
+	.photo-box h2 {
+		top: -24px;
+		width: 190px;
+		height: 48px;
+		font-size: 15px;
+	}
+	#relax { height: 60px; }
+	.facility-item.left .photo-box h2 { left: 12px; }
+	.facility-item.right .photo-box h2 { right: 12px; }
+
+	.article,
+	.facility-item.left .article,
+	.facility-item.right .article {
+		width: auto;
+		height: auto;
+		flex: none;
+		margin: -20px 20px 0;
+		padding: 36px 24px 20px;
+		box-sizing: border-box;
+	}
+	.article-text {
+		width: 100%;
+		height: auto;
+	}
+	.article p {
+		font-size: 14px;
+		line-height: 1.8;
+	}
+	.article-text p br + br { display: none; }
+	.article a {
+		padding: 10px 0 0;
+		font-size: 18px;
+	}
+}
