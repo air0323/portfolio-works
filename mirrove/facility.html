@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="恵比寿の女性向けフィットネススタジオMIRROVE。ヨガ、ピラティス、暗闇ボクシング、トレーニングマシーン、パーソナルレッスンを通して、女性の美と健康をサポートします。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>設備案内｜MIRROVE</title>
+	<link rel="icon" href="common/img/favicon.ico" type="image/x-icon">
+  <!--==================================================
+    ▼ページタイトル（ヘッダー下の画像＋文字）をコピーして使う人へ①
+      下の３行（Noto Sans JPの読み込み）も、自分のページの<head>にコピーする。
+      これがないと、キャッチと「- 〇〇 -」の文字が別のゴシック体になって、文字の幅がそろわない。
+  ==================================================-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!--== ▲コピー①ここまで ==-->
+
+	<link rel="stylesheet" href="common/css/reset.css">
+	<link rel="stylesheet" href="common/css/common.css">
+	<link rel="stylesheet" href="common/css/facility.css">
+	<script src="common/js/jquery-1.12.3.min.js"></script>
+	<script src="common/js/facility.js"></script>
+
+	<script src="common/js/common.js" defer></script>
+</head>
+
+<body>
+<header class="header">
+	<nav id="nav-sticky" class="nav-container">
+		<div class="nav-logo">
+			<a href="index.html"><img src="common/img/price/mirrove_logo_8BB762.png" alt="MIRROVE"></a>
+		</div><!-- .nav-logo・TOPページへ戻る -->
+		<ul class="nav-menu">
+			<li><a href="aboutUs.html">私たちについて</a></li>
+			<li><a href="firstvisit.html">はじめての方へ</a></li>
+			<li><a href="lesson.html">レッスン内容</a></li>
+			<li><a href="price.html">料金</a></li>
+			<li><a href="facility.html">設備案内</a></li>
+			<li><a href="index.html#access">アクセス</a></li>
+			<li class="nav-btn">
+				<a href="firstvisit.html#firstvisit-form-title" class="reserve-btn">
+					<span class="reserve-btn-text">無料体験を予約する</span>
+					<span class="reserve-btn-icon">&gt;&gt;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+
+<div class="sp-header">
+
+	<input type="checkbox" id="sp-menu-toggle" class="sp-menu-toggle">
+
+	<label for="sp-menu-toggle" class="sp-menu-button">
+		<span></span>
+		<span></span>
+		<span class="sp-menu-text">MENU</span>
+	</label><!-- .sp-menu-button -->
+	<p class="sp-trial-button">
+		<a href="firstvisit.html#firstvisit-form-title">
+			<span class="sp-trial-main">無料体験</span>
+			<span class="sp-trial-sub">を予約する</span>
+		</a>
+	</p><!-- .sp-trial-button -->
+
+
+	<nav class="sp-menu">
+
+		<label for="sp-menu-toggle" class="sp-menu-close">
+			<span></span>
+			<span></span>
+		</label><!-- .sp-menu-close -->
+
+		<div class="sp-menu-logo">
+			<a href="index.html"><img src="common/img/header/mirrove_logo_hb.png" alt="MIRROVE"></a>
+		</div><!-- .sp-menu-logo -->
+
+		<ul class="sp-menu-list">
+			<li><a href="aboutUs.html">私たちについて</a></li>
+			<li><a href="firstvisit.html">はじめての方へ</a></li>
+			<li><a href="lesson.html">レッスン内容</a></li>
+			<li><a href="price.html">料金</a></li>
+			<li><a href="facility.html">設備案内</a></li>
+			<li><a href="index.html#access">アクセス</a></li>
+			<li><a href="contact.html">お問い合わせ</a></li>
+		</ul>
+
+		<ul class="sp-sns">
+			<li><a href="#"><img src="common/img/header/sp_sns_icon_i.png" alt="Instagram"></a></li>
+			<li><a href="#"><img src="common/img/header/sp_sns_icon_y.png" alt="YouTube"></a></li>
+		</ul><!-- .sp-sns -->
+
+	</nav><!-- .sp-menu -->
+</div><!-- .sp-header -->
+
+<div id="contents">
+    <!--== ページタイトル（共通パーツ） ==-->
+    <section class="common-pagehead">
+      <img src="common/img/facility/facility_top_cut.jpg" alt="facility top">
+      <div class="common-pagehead-inner">
+
+        <p>会員の皆様が快適にご利用いただけるよう、こだわり抜いた充実の設備をご用意</p>
+        <h1>Facilities<span>- 設備案内 -</span></h1>
+      </div>
+      <!-- common-pagehead-inner -->
+    </section>
+    <!-- common-pagehead -->
+
+	<!-- ▲をクリックすると飛ぶ場所 -->
+		<p id="list-top">各設備の詳細をご覧いただけます</p>
+		
+	<!-- 各設備のリンク（クリックすると詳細に飛ぶ） -->
+	<div id="facility-list">
+		<div class="facility-row">
+			<a href="#studio">レッスンスタジオ</a>
+			<a href="#training">トレーニングスペース</a>
+			<a href="#locker">更衣室 / ロッカー</a>
+		</div>
+
+		<div class="facility-row">
+			<a href="#shower">シャワールーム</a>
+			<a href="#powder">パウダースペース</a>
+			<a href="#relax">リラックススペース<br>/ 物販エリア</a>
+		</div>
+
+	</div><!-- #facility-list-->
+
+	<div id="detail">
+		<div class="facility-item left">
+			<div class="photo-box">
+
+				<div class="studio-frame">
+				<h2 id="studio">レッスンスタジオ</h2>
+				<img src="common/img/facility/facility_studio.png" alt="studio" class="studio-photo">
+				</div><!-- .studio-frame -->
+
+			</div><!-- .photo-box -->
+
+			<section class="article">
+				<div class="article-text">
+					<p>広々としたスペースで、ヨガ・ピラティス・暗闇ボクシングのレッスンが受けられます。<br><br>
+							マインドフルな空間でココロもカラダもととのえて。<br><br></p>
+					<a href="#list-top">▲</a>
+				</div><!-- article-text -->
+			</section>
+		</div><!-- .facility-item left-->
+
+	<div class="facility-item right">
+		<div class="photo-box">
+			<h2 id="training">トレーニングスペース</h2>
+			<img src="common/img/facility/facility_training.jpg" alt="training">
+		</div><!-- .photo-box -->
+
+		<section class="article">
+			<div class="article-text">
+				<p>有酸素運動から高負荷の筋力トレーニングまで幅広く行えます。<br><br>
+					充実のマシーンラインナップでもっとキレイに。<br><br>
+					ストレッチエリア完備。</p>
+				<a href="#list-top">▲</a>
+			</div><!-- article-text -->
+		</section>
+	</div><!-- .facility-item right -->
+
+	<div class="facility-item left">
+		<div class="photo-box">
+			<h2 id="locker">更衣室 / ロッカー</h2>
+			<img src="common/img/facility/facility_locker.jpg" alt="locker">
+		</div><!-- .photo-box -->
+
+		<section class="article">
+			<div class="article-text">
+				<p>清潔感のある、ナチュラルな雰囲気の更衣室。<br><br>
+					レッスンの前後にスムーズに身支度していただけます。<br><br>
+					ロッカーは鍵付きで安心です。
+				</p>
+				<a href="#list-top">▲</a>
+			</div><!-- article-text -->
+		</section>
+	</div><!-- .facility-item left -->
+
+	<div class="facility-item right">
+		<div class="photo-box">
+			<h2 id="shower">シャワールーム</h2>
+
+			<div class="shower-frame">
+				<img src="common/img/facility/facility_shower.jpg" alt="shower" class="shower-photo">
+			</div><!-- .shower-frame -->
+
+		</div><!-- .photo-box -->
+
+		<section class="article">
+			<div class="article-text">
+				<p>たっぷり汗をかいた後は、シャワーですっきり。<br><br>
+					受付時にアメニティーセットをお渡ししておりますので、運動後にご予定がある場合でもお気軽にご利用いただけます。<br></p>
+				<a href="#list-top">▲</a>
+			</div><!-- article-text -->
+		</section>
+	</div><!-- .facility-item right -->
+
+
+	<div class="facility-item left">
+		<div class="photo-box">
+			<h2 id="powder">パウダースペース</h2>
+			<img src="common/img/facility/facility_powder.jpg" alt="powder">
+		</div><!-- .photo-box -->
+
+		<section class="article">
+			<div class="article-text">
+				<p>上質な空間で、スキンケアやメイク直し・ヘアセットをしていただけます。<br><br>
+					人気メーカーのドライヤーも多数ご用意しております。<br><br><br>
+				</p>
+				<a href="#list-top">▲</a>
+			</div><!-- article-text -->
+		</section>
+	</div><!-- .facility-item left -->
+
+	<div class="facility-item right">
+		<div class="photo-box">
+			<h2 id="relax">リラックススペース<br>/ 物販エリア</h2>
+			<img src="common/img/facility/facility_relax.jpg" alt="relax">
+		</div>
+
+		<section class="article">
+			<div class="article-text">
+				<p>頑張った自分に、癒しのひとときを。<br><br>
+					月替りのデトックスウォーターをお楽しみいただけます。<br><br>
+					MEGURI製品のお試し・ご購入もいただけます（お会計は受付にて承ります）
+				</p>
+				<a href="#list-top">▲</a>
+			</div><!-- article-text -->
+		</section>
+	</div><!-- .facility-item right -->
+
+	</div><!-- #detail-->
+
+</div><!-- #contents -->
+
+<!-- 無料体験を予約するバナーセクション -->
+<div class="priceReservation-area">
+  <div class="priceReservation-inner">
+    <img src="common/img/facility/facility_freebtnback_cut.jpg" alt="無料体験を予約する" class="priceReservation-img">
+    <a href="firstvisit.html#firstvisit-form-title" class="reserve-btn reserve-btn--large">
+      <span class="reserve-btn-text">無料体験を予約する</span>
+      <span class="reserve-btn-icon">&gt;&gt;</span>
+    </a>
+  </div>
+</div>
+
+<!-- フッター（全頁共通） -->
+<footer id="footer">
+
+	<div class="footer-container">
+
+		<!-- 左ブロック：ロゴ・キャッチコピー -->
+		<div class="footer-brand">
+
+			<div class="footer-logo">
+				<a href="index.html">
+					<img src="common/img/price/mirrove_logo_white.png" alt="MIRROVE">
+				</a>
+			</div><!-- .footer-logo -->
+
+			<p class="footer-copy">
+				内側からも、<br>
+				外側からも、美しく。
+			</p>
+
+		</div><!-- .footer-brand -->
+
+
+		<!-- 中央ブロック：サイトマップ -->
+		<div class="footer-sitemap">
+
+			<p class="footer-heading">Site Map</p>
+
+			<div class="footer-nav-columns">
+
+				<ul class="footer-nav-list">
+					<li><a href="aboutUs.html">私たちについて</a></li>
+					<li><a href="firstvisit.html">はじめての方へ</a></li>
+					<li><a href="lesson.html">レッスン内容</a></li>
+					<li><a href="price.html">料金</a></li>
+					<li><a href="facility.html">設備案内</a></li>
+					<li><a href="index.html#access">アクセス</a></li>
+				</ul>
+
+				<ul class="footer-nav-list">
+					<li><a href="firstvisit.html#firstvisit-qa-title">よくあるご質問</a></li>
+					<li><a href="contact.html">お問い合わせ</a></li>
+				</ul>
+
+				<ul class="footer-nav-list">
+					<li><a href="#">会社概要</a></li>
+					<li><a href="#">特定商取引</a></li>
+					<li><a href="#">プライバシーポリシー</a></li>
+				</ul>
+
+			</div><!-- .footer-nav-columns -->
+
+		</div><!-- .footer-sitemap -->
+
+
+		<!-- 右ブロック：SNS -->
+		<div class="footer-contents">
+
+			<p class="footer-heading">Contents</p>
+
+			<ul class="footer-sns-list">
+
+				<li>
+					<a href="#" aria-label="Instagram">
+						<img src="common/img/price/sns_icon_i.png" alt="Instagram">
+					</a>
+				</li>
+
+				<li>
+					<a href="#" aria-label="YouTube">
+						<img src="common/img/price/sns_icon_y.png" alt="YouTube">
+					</a>
+				</li>
+
+			</ul>
+
+		</div><!-- .footer-contents -->
+
+	</div><!-- .footer-container -->
+
+
+	<small class="small">
+		Copyright &copy; 2026 MIRROVE All Rights Reserved.
+	</small>
+
+</footer>
+
+</body>
+</html>

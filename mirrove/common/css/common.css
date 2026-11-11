@@ -1,0 +1,991 @@
+﻿@charset "utf-8";
+
+/* =====================================================================
+   common.css  ―  全ページ共通（フォント / ヘッダー / SPヘッダー / ボタン / フッター / フェードイン）
+
+   ■ 読み込み順：reset.css → common.css → 各ページのCSS
+   ■ ヘッダー・フッター・無料体験ボタンの見た目は、ここだけを直せば全ページに反映されます。
+      各ページのCSSには、これらの指定を書かないでください（重複するとズレの原因になります）。
+   ■ 例外
+      ・index.html の PC ヘッダーは縦型サイドバー（style.css 側で指定）
+      ・contact.html のヘッダーはロゴのみ（contact.css 側で指定）
+   ===================================================================== */
+
+
+/* =========================
+   BASE：フォント
+   ※ サイトの基本フォントは Noto Sans JP（各ページの <head> で Google Fonts を読み込む）
+========================= */
+
+body {
+	font-family: "Noto Sans JP", sans-serif;
+}
+
+/* ヘッダー・SPヘッダー・フッターの文字は、ページ側の body 指定
+   （太さ・行間・字間）の影響を受けず、どのページでも同じ見え方にする */
+.header,
+.sp-header,
+#footer {
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 400;
+	line-height: 1.8;
+	letter-spacing: normal;
+}
+
+/* 領域内のリンク色・下線は「文字色を引き継ぐ・下線なし」で統一（詳細度0なので上書きしやすい） */
+:where(.header, .sp-header, #footer) a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ページ側が * { box-sizing: border-box } を指定していても、
+   ヘッダー・フッターは同じ計算方法（content-box）にして幅・余白をそろえる */
+.header,
+.header *,
+.sp-header,
+.sp-header *,
+.sp-header *::before,
+.sp-header *::after,
+#footer,
+#footer * {
+	box-sizing: content-box;
+}
+
+
+/* SPだけ改行したい場所に <br class="sp-only"> を入れる */
+.sp-only {
+	display: none;
+}
+
+/* =========================
+   HEADER PC
+   ※ style-price.css のヘッダーと同一仕様
+========================= */
+/* ヘッダー全体を上部に追従固定 */
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ffffff;
+	z-index: 1000;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ナビ全体の幅・左右配置 */
+.nav-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 12px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* MIRROVEロゴ */
+.nav-logo a {
+	display: flex;
+	align-items: center;
+}
+
+.nav-logo img {
+	height: 35px;
+	width: auto;
+	display: block;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-menu li a {
+	text-decoration: none;
+	color: #494848;
+	font-size: 15px;
+	transition: color 0.2s ease;
+	white-space: nowrap;
+}
+
+.nav-menu li a:hover {
+	color: #8BB762;
+}
+
+/* 無料体験を予約するボタン */
+.reserve-btn {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	background-color: #B0C99A;
+	color: #494848;
+	font-size: 14px;
+	font-weight: 300;
+	border: 4px solid #E5DFA4;
+	border-radius: 9999px;
+	padding: 5px 6px 5px 18px;
+	gap: 12px;
+	transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.reserve-btn:hover {
+	background-color: #494848;
+	color: #ffffff;
+	border-color: #E5DFA4;
+	opacity: 1;
+}
+
+/* 詳細度を上げてナビ内リンクのホバー色(緑)を上書き */
+.nav-menu .reserve-btn:hover {
+	background-color: #494848;
+	color: #ffffff;
+}
+
+.reserve-btn-text {
+	font-weight: bold; /* ヘッダーCTA（ホバー前）も太字 */
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	line-height: 1;
+}
+
+/* 右側の白い丸背景アイコン */
+.reserve-btn-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 28px;
+	height: 28px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	color: #494848;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	padding-right: 1px;
+	flex-shrink: 0;
+}
+
+/* =========================
+   HEADER SP
+========================= */
+.sp-header {
+	display: none;
+}
+
+/* CTA BUTTON（style-price.css の .reserve-btn--large と同一仕様）
+   ※ベースの .reserve-btn は HEADER PC 内で定義 */
+.reserve-btn--large {
+	font-size: 22px;
+	font-weight: bold;
+	padding: 8px 12px 8px 32px;
+	border-width: 6px;
+	gap: 20px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.reserve-btn--large .reserve-btn-icon {
+	width: 44px;
+	height: 44px;
+	font-size: 18px;
+}
+
+.reserve-btn--large:hover {
+	background-color: #494848;
+	color: #ffffff;
+}
+
+.reserve-btn--large:hover .reserve-btn-icon {
+	color: #494848;
+}
+
+/* =========================
+   CTA AREA（フッター直前の「無料体験を予約する」帯）
+   ※ 下層ページ共通：高さ300px・ボタンは帯の中央。
+     対象：price / facility / lesson（.priceReservation-inner）、aboutUs（.about-cta）、
+           firstvisit（.common-cta：ボタンは「お問い合わせ」）
+========================= */
+.priceReservation-inner,
+.about-cta,
+.common-cta {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.priceReservation-img,
+.freetrial-img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	object-fit: cover;
+}
+
+.reserve-btn--large {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	white-space: nowrap;
+}
+
+/* =========================
+   FOOTER（このブロックだけで完結）
+   ※ フォント・行間・字間・余白・リストの点・画像のはみ出しを、フッター内ですべて自分で指定しています。
+      ページ側の body 指定や reset.css の違いで、文字の位置がずれないようにするためです。
+      セレクタに #footer を付けているのは、ページ側CSSの p / ul / img などの指定に負けないためです。
+========================= */
+#footer {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.8;
+	letter-spacing: normal;
+	text-align: left;
+	text-transform: none;
+}
+
+#footer p,
+#footer ul,
+#footer li,
+#footer small,
+#footer div {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.8;
+	letter-spacing: normal;
+}
+
+#footer ul {
+	list-style: none;
+}
+
+#footer li {
+	background: none;
+}
+
+#footer a {
+	display: inline;
+	font-weight: 400;
+	letter-spacing: normal;
+}
+
+#footer img {
+	border: 0;
+	max-width: none;
+	vertical-align: baseline;
+}
+
+#footer {
+	background-color: #494848;
+	color: #ffffff;
+	padding: 50px 0 50px;
+}
+
+/* インナー幅制御と全体横並び */
+#footer .footer-container {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 0 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+/* --- 左：ブランド情報 --- */
+#footer .footer-brand {
+	flex-shrink: 0;
+}
+
+#footer .footer-logo img {
+	height: 36px;
+	width: auto;
+	display: block;
+}
+
+#footer .footer-copy {
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #eaeaea;
+}
+
+/* 共通見出し（Site Map / Contents） */
+#footer .footer-heading {
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	margin-bottom: 20px;
+	color: #ffffff;
+}
+
+/* --- 中央：サイトマップ --- */
+#footer .footer-nav-columns {
+	display: flex;
+	gap: 30px;
+}
+
+#footer .footer-nav-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 140px;
+}
+
+#footer .footer-nav-list li {
+	margin-bottom: 12px;
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+#footer .footer-nav-list a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 14px;
+	transition: opacity 0.2s ease;
+}
+
+#footer .footer-nav-list a:hover {
+	opacity: 0.7;
+}
+
+/* --- 右：SNSアイコン --- */
+#footer .footer-contents {
+	flex-shrink: 0;
+	text-align: right;
+}
+
+#footer .footer-sns-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: flex-end;
+}
+
+#footer .footer-sns-list a {
+	display: block;
+	transition: opacity 0.2s ease;
+}
+
+#footer .footer-sns-list a:hover {
+	opacity: 0.7;
+}
+
+#footer .footer-sns-list img {
+	width: 40px;
+	height: auto;
+	display: block;
+}
+
+/* --- コピーライト --- */
+#footer .small {
+	display: block;
+	text-align: center;
+	width: 100%;
+	font-size: 12px;
+	color: #cccccc;
+	padding-top: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE（768px以下）：SPヘッダー / ボタン / フッター
+========================= */
+
+@media screen and (max-width: 768px) {
+
+	/* =========================
+	   HEADER SP
+	========================= */
+.header {
+		display: none;
+	}
+
+	.sp-header {
+		display: block;
+	}
+
+	/* CHECKBOX */
+.sp-menu-toggle {
+		position: absolute;
+
+		opacity: 0;
+
+		pointer-events: none;
+	}
+
+	/* =========================
+	   SP MENU BUTTON
+	========================= */
+.sp-menu-button {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		width: 72px;
+		height: 72px;
+
+		gap: 6px;
+
+		background-color: rgba(255, 255, 248, 0.9);
+		border-radius: 50%;
+
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+		cursor: pointer;
+
+		box-sizing: border-box;
+
+		z-index: 1100;
+	}
+
+	/* HAMBURGER LINE */
+.sp-menu-button > span:nth-child(1),
+	.sp-menu-button > span:nth-child(2) {
+		display: block;
+
+		width: 24px;
+		height: 1px;
+
+		background-color: #494848;
+	}
+
+	/* MENU TEXT */
+.sp-menu-text {
+		display: block;
+
+		margin-top: 2px;
+
+		font-size: 12px;
+		line-height: 1;
+
+		color: #494848;
+
+		text-align: center;
+	}
+
+	/* =========================
+	   SP TRIAL BUTTON
+	========================= */
+.sp-trial-button {
+		position: fixed;
+		top: 110px;
+		right: 22px;
+
+		width: 68px;
+		height: 68px;
+
+		margin: 0;
+
+		background-color: #E5DFA4;
+		border-radius: 50%;
+
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+		z-index: 1090;
+	}
+
+	.sp-trial-button a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+		height: 100%;
+
+		color: #494848;
+
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.sp-trial-main {
+		font-size: 13px;
+		font-weight: 700;
+	}
+
+	.sp-trial-sub {
+		margin-top: 2px;
+
+		font-size: 8px;
+	}
+
+	/* =========================
+	   SP FULL SCREEN MENU
+	========================= */
+.sp-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		width: 100%;
+		height: 100vh;
+
+		padding: 70px 20px 40px;
+
+		background-color: #fffff8;
+
+		box-sizing: border-box;
+
+		opacity: 0;
+		visibility: hidden;
+
+		transition: 0.3s;
+
+		z-index: 1200;
+	}
+
+	/* MENU OPEN */
+.sp-menu-toggle:checked ~ .sp-menu {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* =========================
+	   SP CLOSE
+	========================= */
+.sp-menu-close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 72px;
+		height: 72px;
+
+		cursor: pointer;
+	}
+
+	.sp-menu-close span {
+		position: absolute;
+
+		width: 28px;
+		height: 1px;
+
+		background-color: #494848;
+	}
+
+	.sp-menu-close span:nth-child(1) {
+		transform: rotate(45deg);
+	}
+
+	.sp-menu-close span:nth-child(2) {
+		transform: rotate(-45deg);
+	}
+
+	/* =========================
+	   SP MENU LOGO
+	========================= */
+.sp-menu-logo {
+		margin-bottom: 60px;
+	}
+
+	.sp-menu-logo img {
+		display: block;
+
+		width: 180px;
+		height: auto;
+	}
+
+	/* =========================
+	   SP MENU LIST
+	========================= */
+.sp-menu .sp-menu-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+	}
+
+	.sp-menu-list li {
+		margin: 0;
+	}
+
+	.sp-menu-list li + li {
+		margin-top: 22px;
+	}
+
+	.sp-menu-list a {
+		display: inline-block;
+
+		padding-bottom: 10px;
+
+		border-bottom: 1px solid #494848;
+
+		font-size: 16px;
+		line-height: 1.2;
+
+		color: #494848;
+	}
+
+	/* =========================
+	   SP SNS
+	========================= */
+.sp-menu .sp-sns {
+		display: flex;
+
+		gap: 25px;
+
+		margin: 60px 0 0;
+		padding: 0;
+
+		list-style: none;
+	}
+
+	.sp-sns li {
+		margin: 0;
+	}
+
+	.sp-sns img {
+		display: block;
+
+		width: 32px;
+		height: 32px;
+
+		object-fit: contain;
+	}
+
+	.reserve-btn--large {
+		font-size: 18px;
+		padding: 6px 8px 6px 22px;
+		border-width: 5px;
+		gap: 14px;
+	}
+
+	.reserve-btn--large .reserve-btn-icon {
+		width: 36px;
+		height: 36px;
+		font-size: 15px;
+	}
+
+	/* =========================
+   FOOTER SP
+========================= */
+#footer {
+	width: 100%;
+	padding: 50px 25px 30px;
+
+	background-color: #494848;
+	color: #fff;
+
+	box-sizing: border-box;
+}
+
+	#footer .footer-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+}
+
+	/* BRAND */
+#footer .footer-brand {
+	order: 1;
+
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+	#footer .footer-logo {
+	margin: 0;
+}
+
+	#footer .footer-logo img {
+	display: block;
+
+	width: 160px;
+	height: auto;
+}
+
+	#footer .footer-copy {
+	margin: 15px 0 0;
+
+	font-size: 12px;
+	line-height: 1.8;
+
+	color: #fff;
+}
+
+	/* CONTENTS / SNS */
+#footer .footer-contents {
+	position: static;
+
+	order: 2;
+
+	width: 100%;
+	margin: 0 0 40px;
+
+	text-align: left;
+}
+
+	#footer .footer-contents .footer-heading {
+	display: none;
+}
+
+	#footer .footer-sns-list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	gap: 18px;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+	#footer .footer-sns-list li {
+	margin: 0;
+}
+
+	#footer .footer-sns-list img {
+	display: block;
+
+	width: 32px;
+	height: 32px;
+
+	margin: 0;
+	object-fit: contain;
+}
+
+	/* SITE MAP */
+#footer .footer-sitemap {
+	order: 3;
+
+	width: 100%;
+	margin: 0;
+}
+
+	#footer .footer-heading {
+	margin: 0 0 20px;
+
+	font-size: 16px;
+	letter-spacing: 0.05em;
+}
+
+	#footer .footer-nav-columns {
+	display: flex;
+	flex-direction: column;
+
+	gap: 0;
+}
+
+	#footer .footer-nav-list {
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+	#footer .footer-nav-list + .footer-nav-list {
+	margin-top: 12px;
+}
+
+	#footer .footer-nav-list li {
+	margin: 0;
+}
+
+	#footer .footer-nav-list li + li {
+	margin-top: 12px;
+}
+
+	#footer .footer-nav-list a {
+	font-size: 13px;
+	color: #fff;
+}
+
+	/* COPYRIGHT */
+#footer .small {
+	width: 100%;
+
+	margin: 40px 0 0;
+	padding: 0;
+
+	font-size: 10px;
+	color: #aaa;
+
+	text-align: left;
+}
+
+}
+
+
+/* =========================
+   FADE IN（スクロールで順番にフェードイン）
+   ※ js/fadein.js と対で使用。<html> に .js が付いている時だけ非表示にするため、
+     JSが動かない環境でも内容は表示される
+========================= */
+
+.js .fade {
+	opacity: 0;
+	transform: translateY(30px);
+
+	transition:
+		opacity 0.9s ease,
+		transform 0.9s ease;
+	transition-delay: 0s; /* 非表示に戻る時は遅延なし */
+}
+
+/* 左右からスライドしてくるバリエーション */
+.js .fade--left {
+	transform: translateX(-40px);
+}
+
+.js .fade--right {
+	transform: translateX(40px);
+}
+
+.js .fade.is-visible {
+	opacity: 1;
+	transform: none;
+	transition-delay: var(--fade-delay, 0s); /* 表示する時だけ遅延を効かせる */
+}
+
+/* SPは横スライドなし（下から上のみ） */
+@media screen and (max-width: 768px) {
+
+	.js .fade--left,
+	.js .fade--right {
+		transform: translateY(30px);
+	}
+
+	.js .fade.is-visible {
+		transform: none;
+	}
+
+}
+
+/* 「動きを減らす」設定のユーザーにはアニメーションしない */
+@media (prefers-reduced-motion: reduce) {
+
+	.js .fade {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+}
+
+
+/* =========================
+   SP USABILITY（768px以下）：タップしやすさの共通調整
+   ※ 指で押す場所は、見た目より少し広めの「押せる範囲」（目安 縦44px以上）を確保しています
+========================= */
+@media screen and (max-width: 768px) {
+
+	.sp-only {
+		display: inline;
+	}
+
+	/* SPメニューのリンク */
+	.sp-menu-list a {
+		padding: 8px 6px 10px;
+	}
+	.sp-menu-list li + li {
+		margin-top: 14px;
+	}
+
+	/* SPメニューのSNSアイコン：見た目32px・押せる範囲44px */
+	.sp-menu .sp-sns {
+		gap: 14px;
+	}
+	.sp-sns a {
+		display: block;
+		padding: 6px;
+	}
+
+	/* フッターのリンク：2列・1行ごとに44px程度の押せる範囲
+	   （3つのリストを display:contents で1つのグリッドにまとめ、左→右の順に並べる） */
+	#footer .footer-nav-columns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 20px;
+		row-gap: 0;
+	}
+	#footer .footer-nav-list,
+	#footer .footer-nav-list + .footer-nav-list {
+		display: contents;
+	}
+	#footer .footer-nav-list li,
+	#footer .footer-nav-list li + li {
+		margin: 0;
+	}
+	#footer .footer-nav-list a {
+		display: block;
+		padding: 16px 0;
+		font-size: 13px;
+		line-height: 1.4;
+	}
+
+	/* フッター各ブロックの上下余白をそろえる（ブロック間はすべて32px） */
+	#footer {
+		padding: 40px 25px 24px;
+	}
+	#footer .footer-brand,
+	#footer .footer-contents {
+		margin: 0 0 32px;
+	}
+	#footer .footer-copy {
+		margin-top: 12px;
+	}
+	#footer .footer-heading {
+		margin: 0 0 8px;
+		font-size: 20px;
+	}
+	#footer .small {
+		margin: 32px 0 0;
+	}
+	#footer .footer-sns-list {
+		gap: 6px;
+	}
+	#footer .footer-sns-list a {
+		padding: 6px;
+		margin-left: -6px;
+	}
+	#footer .footer-copy {
+		font-size: 13px;
+	}
+	#footer .small {
+		font-size: 11px;
+	}
+
+	/* 画面幅いっぱいのCTA画像：SPは中央付近を表示 */
+	.priceReservation-img,
+	.freetrial-img {
+		object-position: 50% 50%;
+	}
+}
