@@ -5,177 +5,326 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 検索エンジンに載せない設定 -->
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>Web Works | 喜多藍利 Portfolio</title>
-  <meta name="description" content="喜多藍利のWebサイト制作作品。Nata de Encontro／怖録／MIRROVE。">
+  <title>喜多 Portfolio｜Web Director / Web Planner</title>
+  <meta name="description" content="喜多のポートフォリオ。EC運営の実務での改善実績と、職業訓練で制作したWebサイト。">
+  <link rel="icon" href="common/img/favicon.ico" sizes="64x64">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;800&family=Shippori+Mincho:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="common/img/favicon.ico" sizes="64x64">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;800&family=Shippori+Mincho:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="common/css/style.css">
 </head>
 <body>
 
+  <header class="site-header site-header--top" id="siteHeader">
+    <div class="wrap site-header__inner">
+      <a class="site-header__logo" href="#top">喜多<span>PORTFOLIO</span></a>
+      <nav class="site-header__nav" aria-label="サイト内">
+        <a href="#business">BUSINESS</a>
+        <a href="#web">WEB</a>
+        <a href="#creative">CREATIVE</a>
+        <a href="#photo">PHOTO</a>
+      </nav>
+    </div>
+  </header>
+
   <!-- 表紙 -->
-  <header class="hero">
-    <p class="hero__word" aria-hidden="true">AsIsToBe</p>
-    <p class="hero__label">WEB WORKS</p>
-    <h1 class="hero__title">
-      <span class="en">Portfolio</span>
-      <span class="ja">喜多藍利</span>
-    </h1>
-    <a class="hero__scroll" href="#works">SCROLL</a>
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <p class="hero__word" aria-hidden="true">AsIsToBe</p>
+      <h1 class="hero__title">
+        <span class="en">Portfolio</span>
+        <span class="ja">喜多</span>
+        <span class="copy">その先まで届ける</span>
+      </h1>
+      <a class="hero__scroll" href="#asis">SCROLL</a>
+    </div>
   </header>
 
   <main>
-    <!-- プロフィールからの一言 -->
-    <section class="wrap intro reveal">
-      <p class="eyebrow">Profile</p>
-      <div class="intro__head">
-        <h2 class="intro__lead">心が動く<br>その理由を考える</h2>
-        <img class="intro__photo" src="common/img/profile.jpg" alt="喜多藍利" width="320" height="320">
+    <!-- As Is：これまで -->
+    <section class="asis" id="asis">
+      <div class="wrap">
+        <p class="asis__en reveal">As Is<small>これまで</small></p>
+        <p class="asis__copy reveal">ECサイトの運営を通じて、売上向上や業務効率化に向けた企画・改善に取り組んできました。<br class="br-pc">さらに職業訓練でデザインとコーディングを学び、企画から制作・運用までを見通せる視点を養いました。</p>
+        <ol class="steps">
+          <li class="reveal"><b>01</b><h3>実務を通じて、課題解決に取り組む</h3><p>ECサイトのリニューアルでは、購入ステップの見直しを中心に、社内の関係部署や制作会社との調整を担当。法人向けサイトの改善、UGCの導入、受注業務の効率化にも取り組みました。</p><p class="ref">→ <a href="#business">01 BUSINESS</a></p></li>
+          <li class="reveal"><b>02</b><h3>企画から制作まで、理解を広げる</h3><p>職業訓練で、企画・デザイン・コーディングを学びました。チーム制作ではページ間の調整や進捗確認、メンバーの技術サポートを担当。自主制作でも2つのWebサイトをコーディングし、公開しています。</p><p class="ref">→ <a href="#web">02 WEB DIRECTION</a></p></li>
+          <li class="reveal to-be"><b>03</b><h3>制作と運用をつなぎ、成果へ</h3><p>EC運営の経験と制作工程への理解を生かし、公開後の成果まで考えられるWebディレクターを目指しています。</p><p class="ref">→ <a href="#tobe">To Be これから</a></p></li>
+        </ol>
       </div>
-      <p class="intro__body">
-        美しいもの、心が動くもの、思わず誰かに伝えたくなるものに惹かれ、気づけば、その理由まで考えています。
-        誰に届けたいのか。何を伝えたら、心が動くのか。
-        様々な人の想いをつなぎながら、形にしていく。
-        見た人の心が、ほんの少し動くものをつくりたい。
-      </p>
     </section>
 
-    <!-- 強み -->
-    <section class="wrap strengths reveal">
-      <p class="strengths__title">Strengths <small>強み</small></p>
-      <ol class="strengths__list">
-        <li class="strength">
-          <span class="strength__num">01</span>
-          <h3 class="strength__name">考える</h3>
-          <p class="strength__text">誰に、どんな思いを届けたいのか。目的や背景を深く考え、本質を見つけるところから始めます。</p>
-        </li>
-        <li class="strength">
-          <span class="strength__num">02</span>
-          <h3 class="strength__name">整理</h3>
-          <p class="strength__text">情報やアイディアを整理し、比較しながら最適な方法を選びます。</p>
-        </li>
-        <li class="strength">
-          <span class="strength__num">03</span>
-          <h3 class="strength__name">つなぐ</h3>
-          <p class="strength__text">人・情報・想いをつなぎ、アイディアを形にします。顧客・チーム・クライアントとの対話も大切にします。</p>
-        </li>
-        <li class="strength">
-          <span class="strength__num">04</span>
-          <h3 class="strength__name">成果を出す</h3>
-          <p class="strength__text">企画やデザインを通して、人の心が動く体験を作り、目に見える成果につなげます。</p>
-        </li>
-      </ol>
+    <!-- Profile -->
+    <section class="profile" id="profile">
+      <div class="wrap profile__grid">
+        <div class="reveal profile__intro">
+          <p class="profile__en">Profile</p>
+          <div class="profile__head">
+            <h2 class="profile__lead">心が動く<br>その理由を考える</h2>
+            <img class="profile__photo" src="common/img/profile.jpg" alt="喜多" width="400" height="400">
+          </div>
+          <p class="profile__poem">美しいものや、思わず誰かに伝えたくなるものに出会うと、なぜ心を惹かれたのか、その理由まで考えてしまいます。誰に、何を、どのように伝えるか。相手の立場や背景を理解し、さまざまな人の想いをつなぎながら、心を動かす体験を形にしたいと考えています。</p>
+        </div>
+
+        <div class="reveal profile__career">
+          <p class="boxhead">Career<small>職務経歴</small></p>
+          <ol class="career">
+              <li><time>2018.06–2025.03</time><span><b>照明メーカー　ECサイト運営</b>自社EC運営、コンテンツ企画、購買導線改善、制作ディレクション。Shopify移行のプロジェクトリーダー、法人向けサイト改善、UGC導入、受注業務の改善</span></li>
+              <li><time>2025.04–2026.05</time><span><b>AIの独学</b>AIを独学で学習</span></li>
+              <li><time>2026.06–2026.12</time><span><b>職業訓練（株式会社アルデザインカンパニー）</b>Illustrator・Photoshop・HTML/CSS・UI/UXを学び、Webサイト・広告・パッケージを制作。<br>2026年12月修了予定</span></li>
+          </ol>
+        </div>
+
+        <div class="reveal profile__strengths">
+          <p class="boxhead">Strengths<small>強み</small></p>
+          <ul class="strengths">
+            <li><h3>01　考える</h3><p>数字やユーザーの行動、現場の声から課題を捉え、改善の目的と方向性を明確にします。</p><p class="ref">→ <a href="works/ec.html">ECサイトリニューアル</a></p></li>
+            <li><h3>02　整理する</h3><p>複雑な情報や業務フローを整理し、優先順位をつけて実行可能な施策に落とし込みます。</p><p class="ref">→ <a href="works/order.html">受注業務の改善</a></p></li>
+            <li><h3>03　つなぐ</h3><p>関係部署や制作メンバーと認識を合わせ、課題や進捗を共有しながらプロジェクトを進めます。</p><p class="ref">→ <a href="#mirrove">MIRROVE</a></p></li>
+            <li><h3>04　成果につなげる</h3><p>公開後も数値や運用状況を確認し、次の改善につなげることを大切にしています。</p><p class="ref">→ <a href="works/professional.html">法人向けサイト改善</a></p></li>
+          </ul>
+        </div>
+
+        <div class="reveal profile__skill">
+          <p class="boxhead">Skill<small>スキル</small></p>
+          <dl class="skills">
+            <dt>Design</dt><dd>Photoshop／Illustrator／InDesign／Canva</dd>
+            <dt>Coding</dt><dd>HTML／CSS／JavaScript</dd>
+            <dt>EC</dt><dd>Shopify／W2Commerce</dd>
+            <dt>Analytics</dt><dd>GA4／Search Console／ユーザーローカル</dd>
+            <dt>SEO</dt><dd>キーワードプランナー／ラッコキーワード／Googleトレンド</dd>
+            <dt>Ads</dt><dd>Google広告／Meta広告／楽天RPP／Yahoo!アイテムマッチ</dd>
+            <dt>Office</dt><dd>Excel／PowerPoint／Word</dd>
+            <dt>Business</dt><dd>Outlook／Teams／ChatWork／スプレッドシート</dd>
+            <dt>Automation</dt><dd>RPAロボパットDX</dd>
+            <dt>AI</dt><dd>ChatGPT／Gemini／Claude</dd>
+          </dl>
+        </div>
+      </div>
     </section>
 
-    <!-- 扉 -->
-    <section class="wrap chapter reveal" id="works">
-      <h2 class="chapter__copy">行動まで届ける</h2>
-      <p class="chapter__sub">Web site / Comp</p>
+    <!-- 01 BUSINESS -->
+    <section id="business">
+      <div class="wrap chapter reveal">
+        <h2 class="chapter__no"><b>01</b><span>BUSINESS</span></h2>
+        <p class="chapter__vertical" aria-hidden="true">Achievements</p>
+        <div class="chapter__cross">
+          <p class="chapter__copy">成果を届ける</p>
+          <p class="chapter__intro">EC運営で取り組んだ4つの改善事例を紹介します。購買導線の見直し、法人向けサービスの改善、UGCの活用、受注業務の効率化を通じて、売上向上と運用負荷の軽減に取り組みました。</p>
+        </div>
+      </div>
+
+      <div class="wrap biz-grid">
+        <a class="biz-card reveal" href="works/ec.html">
+          <img class="biz-card__img" src="common/img/biz_ec.jpg" alt="" loading="lazy">
+          <div class="biz-card__body">
+            <p><span class="label label--work">実務</span></p>
+            <h3 class="biz-card__title"><b>01</b><span>ECサイトリニューアル</span></h3>
+            <div class="biz-card__stats"><p class="biz-card__result"><small>約＋</small>500<small>万円</small></p><p class="biz-card__result-label">月商の売上向上に寄与／カート離脱率 80%→76%／購入ステップ 8→4<br>2024年11月リニューアル／売上は2025年1月・2月の各月を前年同月と比較</p></div>
+            <p class="biz-card__text">既存カートの購入ステップの多さや高い離脱率を課題と捉え、Shopifyへの移行を推進。社内の関係部署と制作会社を調整し、購入ステップを8から4へ削減するなど、購入手続きの改善に取り組みました。</p>
+            <p class="biz-card__more">READ MORE →</p>
+          </div>
+        </a>
+        <a class="biz-card reveal" href="works/professional.html">
+          <img class="biz-card__img" src="common/img/biz_corp.jpg" alt="" loading="lazy">
+          <div class="biz-card__body">
+            <p><span class="label label--work">実務</span></p>
+            <h3 class="biz-card__title"><b>02</b><span>法人向けサイト改善</span></h3>
+            <div class="biz-card__stats"><p class="biz-card__result"><small>見積件数／約</small>2<small>倍</small></p><p class="biz-card__result-label">成約金額 約1.7倍／2023年度実績・2022年度比</p></div>
+            <p class="biz-card__text">法人顧客からの問い合わせ内容を分析し、導入実績や短納期対応に関する情報を整理。実績写真の充実と見積もりフォームへの導線改善により、顧客が必要な情報を確認しやすいサイトを目指しました。</p>
+            <p class="biz-card__more">READ MORE →</p>
+          </div>
+        </a>
+        <a class="biz-card reveal" href="works/ugc.html">
+          <img class="biz-card__img" src="common/img/biz_ugc.jpg" alt="" loading="lazy">
+          <div class="biz-card__body">
+            <p><span class="label label--work">実務</span></p>
+            <h3 class="biz-card__title"><b>03</b><span>ユーザー生成コンテンツの導入</span></h3>
+            <div class="biz-card__stats"><p class="biz-card__result"><small>約</small>1.2<small>倍</small></p><p class="biz-card__result-label">対象商品の売上／2024年度・2023年度比</p></div>
+            <p class="biz-card__text">照明を実際の住空間に設置した写真を活用し、購入後の使用イメージを伝えるUGC施策を企画。商品ページから使用事例を確認できる導線を整え、購入検討時の判断材料を充実させました。</p>
+            <p class="biz-card__more">READ MORE →</p>
+          </div>
+        </a>
+        <a class="biz-card reveal" href="works/order.html">
+          <img class="biz-card__img" src="common/img/biz_order.jpg" alt="" loading="lazy">
+          <div class="biz-card__body">
+            <p><span class="label label--work">実務</span></p>
+            <h3 class="biz-card__title"><b>04</b><span>受注業務の改善</span></h3>
+            <div class="biz-card__duo biz-card__stats">
+              <div><p class="biz-card__result-label">01 受注一元管理</p><p class="biz-card__result"><small>約</small>2<small>時間／日 削減</small></p></div>
+              <div><p class="biz-card__result-label">02 発送番号入力の自動化</p><p class="biz-card__result">120<small>分→</small>30<small>分</small></p></div>
+            </div>
+            <p class="biz-card__text">自社EC・楽天市場・Yahoo!ショッピングで異なる受注データの項目を整理し、スプレッドシートで一元化。IT管理部門と連携して基幹システムの登録項目との整合性を確保し、RPAによる入力自動化につなげました。</p>
+            <p class="biz-card__more">READ MORE →</p>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <!-- 作品一覧
-         ・フォルダ名を変えた場合は href を書き換えてください
-         ・assets/ にスクショ（例 assets/thumb-nata.jpg）を置き、
-           style="--thumb:url(assets/thumb-nata.jpg)" と class="has-thumb" を足すと
-           カードに画像が入ります -->
-    <div class="wrap works">
-
-      <article class="work work--nata reveal">
-        <a class="work__visual" href="https://air0323.github.io/portfolio-works/nata-de-encontro/index.html" aria-label="Nata de Encontro のサイトを見る">
-          <span class="work__plate">
-            <span class="name">Nata de Encontro</span>
-            <span class="kind">EGG TART BRAND SITE</span>
-          </span>
-        </a>
-        <span class="work__num" aria-hidden="true">01</span>
-        <div class="work__body">
-          <h3 class="work__catch">出会い。体験。来店へ。</h3>
-          <p class="work__tag">Design Comp / Coding / Logo / Banner</p>
-          <p class="work__title">CONCEPT <small>コンセプト</small></p>
-          <p class="work__text">
-            架空のエッグタルト専門店「Nata de Encontro」を企画し、ブランドサイトとInstagram広告を制作。
-            「小さな出会い、大きなときめき。」を軸に、商品との出会いから来店、再訪へとつながる体験を設計しました。
-          </p>
-          <dl class="work__meta">
-            <dt>PURPOSE</dt><dd>新規ブランドとの最初の接点をつくり、商品を知った人を来店・再訪までつなげる</dd>
-            <dt>TARGET</dt><dd>SNSや口コミで新しい店を探す、焼き菓子・スイーツ好きの人</dd>
-            <dt>ROLE</dt><dd>企画／ロゴ／デザイン／コーディング／広告バナー</dd>
-          </dl>
-          <a class="work__link" href="https://air0323.github.io/portfolio-works/nata-de-encontro/index.html">VIEW SITE</a>
+    <!-- 02 WEB -->
+    <section id="web">
+      <div class="wrap chapter reveal">
+        <h2 class="chapter__no"><b>02</b><span>WEB DIRECTION</span></h2>
+        <p class="chapter__vertical" aria-hidden="true">Web site</p>
+        <div class="chapter__cross">
+          <p class="chapter__copy">行動まで届ける</p>
+          <p class="chapter__intro">職業訓練で制作したチーム作品と自主制作サイトを紹介します。企画・情報設計・デザイン・コーディングを通じて、目的に合わせたWebサイト制作に取り組みました。</p>
         </div>
-      </article>
+      </div>
 
-      <article class="work work--osoroku reveal">
-        <a class="work__visual" href="https://air0323.github.io/portfolio-works/osoroku/index.html" aria-label="怖録 ファンサイトを見る">
-          <span class="work__plate">
-            <span class="name">怖録</span>
-            <span class="kind">HORROR GAME FAN SITE</span>
-          </span>
-        </a>
-        <span class="work__num" aria-hidden="true">02</span>
-        <div class="work__body">
-          <h3 class="work__catch">認知拡大　企業ファンサイト</h3>
-          <p class="work__tag">Design Comp / Coding / Banner</p>
-          <p class="work__title">CONCEPT <small>コンセプト</small></p>
-          <p class="work__text">
-            家族が制作に関わるホラーゲーム『怖録』の認知拡大を目的に、企業の許可を得てファンサイトを自主制作。
-            KVで世界観を伝え、PV・作品概要・配信情報へと興味が段階的に深まる構成に再設計しました。
-          </p>
-          <dl class="work__meta">
-            <dt>PURPOSE</dt><dd>作品の認知を広げ、知った人の興味をPV視聴・ゲームプレイ・実況配信まで広げる</dd>
-            <dt>TARGET</dt><dd>ホラーゲームを「遊ぶ人」「見る人」「届ける人」</dd>
-            <dt>ROLE</dt><dd>企画／KV／PC・SPデザイン／コーディング／Twitch広告</dd>
-          </dl>
-          <a class="work__link" href="https://air0323.github.io/portfolio-works/osoroku/index.html">VIEW SITE</a>
+      <div class="wrap works">
+        <article class="work reveal" id="mirrove">
+          <a class="work__visual work__visual--mirrove" href="https://air0323.github.io/portfolio-works/mirrove/index.html" target="_blank" rel="noopener" aria-label="MIRROVE のサイトを見る"><img src="common/img/web_mirrove.jpg" alt="MIRROVE のTOPページ（PC・スマートフォン）" class="work__img--mirrove" loading="lazy"></a>
+          <span class="work__num" aria-hidden="true">01</span>
+          <div class="work__body">
+            <p><span class="label label--school">チーム制作／架空ブランド</span></p>
+            <h3 class="work__catch">美と健康を、<br>食と運動の両面から。</h3>
+            <p class="pill">Team Project / Design Comp / Coding / Direction</p>
+            <p style="font-size: 13.5px; line-height: 1.95">女性向けフィットネススタジオ「MIRROVE」のWebサイトを、5名のチームで5日間かけて制作。TOP・About Usページのコーディングを担当するとともに、共通パーツやデザインルールの調整、各メンバーの進捗確認、実装時の課題解決をサポートしました。</p>
+            <dl class="work__meta">
+              <dt>PURPOSE</dt><dd>初めての人にスタジオの考え方とレッスン内容を知ってもらい、体験予約や入会につなげる</dd>
+              <dt>TARGET</dt><dd>恵比寿周辺で働く20〜50代の女性。仕事や生活に合わせて運動を取り入れたい人</dd>
+              <dt>CODING</dt><dd>TOPページ／About Usページ</dd>
+              <dt>DIRECTION</dt>
+              <dd><ul class="work__list"><li>共通パーツ・デザインルールの統一</li><li>PC・スマートフォン表示の確認と調整</li><li>メンバーの進捗確認と技術的なサポート</li><li>表示不具合の原因調査と修正方針の共有</li></ul></dd>
+            </dl>
+            <div class="work__btns"><a class="btn" href="https://air0323.github.io/portfolio-works/mirrove/index.html" target="_blank" rel="noopener">VIEW SITE</a><a class="btn" href="works/web.html#mirrove">DETAIL</a></div>
+          </div>
+        </article>
+
+        <article class="work reveal">
+          <a class="work__visual work__visual--sp work__visual--osoroku" href="https://air0323.github.io/portfolio-works/osoroku/index.html" target="_blank" rel="noopener" aria-label="怖録 ファンサイトを見る"><img src="common/img/web_osoroku.jpg" alt="怖録 ファンサイトのスマートフォン表示" loading="lazy"></a>
+          <span class="work__num" aria-hidden="true">02</span>
+          <div class="work__body">
+            <p><span class="label label--school">個人制作／制作許可取得済み・非公式ファンサイト</span></p>
+            <h3 class="work__catch">ホラーの世界観から、<br>作品への興味を広げる。</h3>
+            <p class="pill">Design Comp / Coding / Banner</p>
+            <p style="font-size: 13.5px; line-height: 1.95">ホラーゲーム『怖録』の認知拡大を目的に、権利元企業から制作許可を得て自主制作したファンサイトです。作品の世界観を印象づけるキービジュアルを起点に、PVや作品情報へと興味がつながる構成を設計しました。</p>
+            <dl class="work__meta">
+              <dt>PURPOSE</dt><dd>作品を知ってもらい、PVの視聴やゲームのプレイ、実況配信につなげる</dd>
+              <dt>TARGET</dt><dd>ホラーゲームを「遊ぶ人」「見る人」「届ける人」</dd>
+              <dt>ROLE</dt><dd>企画／KV／PC・SPデザイン／コーディング／Twitch広告</dd>
+            </dl>
+            <div class="work__btns"><a class="btn" href="https://air0323.github.io/portfolio-works/osoroku/index.html" target="_blank" rel="noopener">VIEW SITE</a><a class="btn" href="works/banner.html#osoroku">AD BANNER</a><a class="btn" href="works/web.html#osoroku">DETAIL</a></div>
+          </div>
+        </article>
+
+        <article class="work reveal">
+          <a class="work__visual" href="https://air0323.github.io/portfolio-works/nata-de-encontro/index.html" target="_blank" rel="noopener" aria-label="Nata de Encontro のサイトを見る"><img src="common/img/web_nata.jpg" alt="Nata de Encontro のTOPページ" loading="lazy" style="object-position: left center"></a>
+          <span class="work__num" aria-hidden="true">03</span>
+          <div class="work__body">
+            <p><span class="label label--school">個人制作／架空ブランド</span></p>
+            <h3 class="work__catch">小さな出会いから、<br>また訪れたくなるお店へ。</h3>
+            <p class="pill">Design Comp / Coding / Logo / Banner</p>
+            <p style="font-size: 13.5px; line-height: 1.95">架空のエッグタルト専門店「Nata de Encontro」のブランドサイトとInstagram広告を制作。コンセプト「小さな出会い、大きなときめき。」を軸に、ブランドの世界観を伝えながら、商品への興味から来店検討へとつながる情報構成を設計しました。</p>
+            <dl class="work__meta">
+              <dt>PURPOSE</dt><dd>新しいブランドを知ってもらい、来店検討につなげる（狙いとして再来店も想定）</dd>
+              <dt>TARGET</dt><dd>SNSや口コミで新しい店を探す、焼き菓子・スイーツ好きの人</dd>
+              <dt>ROLE</dt><dd>企画／ロゴ／デザイン／コーディング／広告バナー</dd>
+            </dl>
+            <div class="work__btns"><a class="btn" href="https://air0323.github.io/portfolio-works/nata-de-encontro/index.html" target="_blank" rel="noopener">VIEW SITE</a><a class="btn" href="works/banner.html#nata">AD BANNER</a><a class="btn" href="works/web.html#nata">DETAIL</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 CREATIVE -->
+    <section id="creative">
+      <div class="wrap chapter reveal">
+        <h2 class="chapter__no"><b>03</b><span>CREATIVE</span></h2>
+        <p class="chapter__vertical" aria-hidden="true">Key visual</p>
+        <div class="chapter__cross">
+          <p class="chapter__copy">印象を届ける</p>
+          <p class="chapter__intro">キービジュアル、ロゴ、広告・印刷物、パッケージの制作作品を紹介します。ターゲットや使用場面を踏まえ、伝えたい印象や目的に合わせて、配色・書体・モチーフを設計しました。</p>
         </div>
-      </article>
-
-      <article class="work work--mirrove reveal">
-        <a class="work__visual" href="https://air0323.github.io/portfolio-works/mirrove/index.html" aria-label="MIRROVE のサイトを見る">
-          <span class="work__plate">
-            <span class="name">MIRROVE</span>
-            <span class="kind">FITNESS STUDIO SITE</span>
-          </span>
-        </a>
-        <span class="work__num" aria-hidden="true">03</span>
-        <div class="work__body">
-          <h3 class="work__catch">美と健康を、食と運動の両面から。</h3>
-          <p class="work__tag">Team Project / Design Comp / Coding / Direction</p>
-          <p class="work__title">OVERVIEW <small>概要</small></p>
-          <p class="work__text">
-            恵比寿の女性向けフィットネススタジオ「MIRROVE」のWebサイトをチームで制作。
-            自分の担当ページだけでなく、各メンバーが制作したページを確認し、MIRROVE全体がひとつのWebサイトとして統一感を持つように調整しました。
-          </p>
-          <dl class="work__meta">
-            <dt>PURPOSE</dt><dd>スタジオの考え方とレッスン内容を伝え、初めての人を体験予約・入会につなげる</dd>
-            <dt>TARGET</dt><dd>運動と食事の両面から、無理なくきれいに健康になりたい恵比寿周辺の女性</dd>
-            <dt>CODING</dt>
-            <dd>TOPページ／About Usページのコーディング</dd>
-            <dt>DIRECTION</dt>
-            <dd>
-              <ul class="work__list">
-                <li>ヘッダー、フッター、ボタン、余白、文字サイズなど、ページ間のデザインを統一</li>
-                <li>各ページを確認し、サイト全体の見た目や共通パーツを調整</li>
-                <li>レスポンシブ対応の確認・調整</li>
-              </ul>
-            </dd>
-          </dl>
-          <a class="work__link" href="https://air0323.github.io/portfolio-works/mirrove/index.html">VIEW SITE</a>
+      </div>
+      <div class="wrap gallery-group">
+        <h3 class="gallery__head">KV・ロゴ<small>Key Visual / Logo</small></h3>
+        <div class="gallery">
+          <a class="reveal" href="works/creative.html#swt"><figure><img class="is-banner" src="common/img/cr_watch.jpg" alt="šwtのキービジュアル" loading="lazy"><figcaption><b>šwt</b>高級時計｜日時計に着想を得て、光と影で時間の概念を表現</figcaption></figure></a>
+          <a class="reveal" href="works/creative.html#kaguwa"><figure><img class="is-banner" src="common/img/cr_perfume.jpg" alt="KAGUWAのキービジュアル" loading="lazy"><figcaption><b>KAGUWA</b>香水｜余白と視線誘導を意識した、香水のキービジュアル</figcaption></figure></a>
+          <a class="reveal" href="works/creative.html#coral"><figure><img class="is-banner" src="common/img/cr_furniture.jpg" alt="Coralのキービジュアル" loading="lazy"><figcaption><b>Coral</b>家具｜家具単体の魅力と、暮らしの中での使用イメージを表現</figcaption></figure></a>
         </div>
-      </article>
+        <h3 class="gallery__head">プリントメディア<small>Flyer / Poster / Package</small></h3>
+        <div class="gallery">
+          <a class="reveal" href="works/creative.html#flyer"><figure><img src="common/img/cr_flyer.jpg" alt="さくらフェスタとタンブラー展のフライヤー" loading="lazy"><figcaption><b>さくらフェスタ／タンブラー展</b>フライヤー・ポスター｜表で世界観、裏で体験とアクセス</figcaption></figure></a>
+          <a class="reveal" href="works/creative.html#renhanten"><figure><img src="common/img/cr_panda.jpg" alt="蓮飯店の飲茶パッケージ" loading="lazy"><figcaption><b>蓮飯店</b>飲茶パッケージ｜赤を基調とした売り場での差別化を意識し、パンダと桃を採用</figcaption></figure></a>
+          <a class="reveal" href="works/creative.html#honey"><figure><img src="common/img/cr_honey.jpg" alt="蜂蜜のギフトボックス" loading="lazy"><figcaption><b>蜂蜜のギフトBOX</b>ギフトパッケージ｜組み立てた際に模様が面をまたいでつながる構成</figcaption></figure></a>
+        </div>
+      </div>
+      <p class="wrap gallery__more" style="margin-top: 0"><a class="btn" href="works/creative.html">READ MORE</a></p>
+    </section>
 
-    </div>
+    <!-- To Be -->
+    <section id="photo">
+      <div class="wrap chapter reveal">
+        <h2 class="chapter__no"><b>04</b><span>PHOTOGRAPH</span></h2>
+        <p class="chapter__vertical" aria-hidden="true">Photograph</p>
+        <div class="chapter__cross">
+          <p class="chapter__copy">瞬間を切り取る</p>
+          <p class="chapter__intro">光の入り方や構図、空間の見せ方を意識して撮影した写真です。ECの実務で担当した商品・空間の撮影と、個人で撮影した作品を掲載しています。画像をクリックすると拡大して見られます。</p>
+        </div>
+      </div>
+      <div class="wrap photo">
+        <div class="photo__groups" id="photoGrid">
+          <h3 class="gallery__head">BUSINESS<small>実務撮影</small></h3>
+          <p class="photo__desc">照明やインテリア空間を対象に、商品の魅力や空間の雰囲気が伝わる構図を意識して撮影しました。</p>
+          <ul class="photo__grid">
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_01.jpg" aria-label="木の棚に置いた照明が灯る、夜の展示空間を拡大"><img src="common/img/photo_01.jpg" alt="木の棚に置いた照明が灯る、夜の展示空間" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_02.jpg" aria-label="カウンターに並ぶ料理とワイングラスを拡大"><img src="common/img/photo_02.jpg" alt="カウンターに並ぶ料理とワイングラス" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_03.jpg" aria-label="円錐形のペンダントライトが照らすダイニングを拡大"><img src="common/img/photo_03.jpg" alt="円錐形のペンダントライトが照らすダイニング" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_04.jpg" aria-label="森に囲まれたガラス張りの空間とテーブルランプを拡大"><img src="common/img/photo_04.jpg" alt="森に囲まれたガラス張りの空間とテーブルランプ" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_05.jpg" aria-label="白いペンダントと棚の照明が灯るダイニングを拡大"><img src="common/img/photo_05.jpg" alt="白いペンダントと棚の照明が灯るダイニング" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_06.jpg" aria-label="球形のペンダントとソファのあるリビングを拡大"><img src="common/img/photo_06.jpg" alt="球形のペンダントとソファのあるリビング" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_07.jpg" aria-label="木製のライン照明が下がる明るいダイニングを拡大"><img src="common/img/photo_07.jpg" alt="木製のライン照明が下がる明るいダイニング" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_08.jpg" aria-label="夜のショールームを背にしたガラスの照明を拡大"><img src="common/img/photo_08.jpg" alt="夜のショールームを背にしたガラスの照明" loading="lazy"></button></li>
+          </ul>
+          <h3 class="gallery__head">PRIVATE<small>個人撮影</small></h3>
+          <p class="photo__desc">日常や旅先で出会った風景を、光や色彩、構図を意識しながら撮影しています。</p>
+          <ul class="photo__grid">
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_09.jpg" aria-label="青く染まった池と立ち枯れの木々を拡大"><img src="common/img/photo_09.jpg" alt="青く染まった池と立ち枯れの木々" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_10.jpg" aria-label="草の上に座るタヌキを拡大"><img src="common/img/photo_10.jpg" alt="草の上に座るタヌキ" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_11.jpg" aria-label="青空を背にした満開の桜を拡大"><img src="common/img/photo_11.jpg" alt="青空を背にした満開の桜" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_12.jpg" aria-label="鏡のような水面に映る空と傘を持つ二人を拡大"><img src="common/img/photo_12.jpg" alt="鏡のような水面に映る空と傘を持つ二人" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_13.jpg" aria-label="夕日に照らされた海と桟橋を拡大"><img src="common/img/photo_13.jpg" alt="夕日に照らされた海と桟橋" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_14.jpg" aria-label="屋台のスーパーボールすくいを拡大"><img src="common/img/photo_14.jpg" alt="屋台のスーパーボールすくい" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_15.jpg" aria-label="テラス席に並ぶ料理とパンを拡大"><img src="common/img/photo_15.jpg" alt="テラス席に並ぶ料理とパン" loading="lazy"></button></li>
+          <li><button type="button" class="photo__btn" data-src="common/img/photo_16.jpg" aria-label="夕暮れの港に灯るビル群を拡大"><img src="common/img/photo_16.jpg" alt="夕暮れの港に灯るビル群" loading="lazy"></button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="photo-modal" id="photoModal" hidden>
+        <button type="button" class="photo-modal__close" aria-label="閉じる">×</button>
+        <button type="button" class="photo-modal__nav photo-modal__nav--prev" aria-label="前の写真">‹</button>
+        <figure class="photo-modal__fig"><img class="photo-modal__img" src="" alt=""><figcaption class="photo-modal__count"></figcaption></figure>
+        <button type="button" class="photo-modal__nav photo-modal__nav--next" aria-label="次の写真">›</button>
+      </div>
+    </section>
+
+    <section class="tobe" id="tobe">
+      <div class="wrap">
+        <p class="tobe__en reveal">To Be<small>これから</small></p>
+        <p class="tobe__copy reveal">企画から制作、公開後の改善まで。<br>これまで培ってきたEC運営の経験と、デザイン・コーディングの知識を生かし、ユーザー体験と事業成果の双方を考えられるWebディレクターを目指します。</p>
+        <ul class="tobe__list">
+          <li class="reveal"><b>01</b><h3>数字と現場の声から、課題を捉える</h3><p>売上やアクセスの数字と、問い合わせや現場の声の両方から、取り組むべき課題を決めます。</p><p class="ref">→ <a href="works/ec.html">ECサイトリニューアル</a>／<a href="works/professional.html">法人向けサイト改善</a></p></li>
+          <li class="reveal"><b>02</b><h3>制作への理解を生かし、人と仕事をつなぐ</h3><p>デザインとコーディングの経験を生かして制作側の業務を理解し、関係者と認識を合わせながら進行します。</p><p class="ref">→ <a href="#mirrove">MIRROVE</a></p></li>
+          <li class="reveal"><b>03</b><h3>公開後も検証を重ね、改善につなげる</h3><p>リリースで終わらせず、数字を確かめて次の改善につなげ、運用の負担も軽くします。</p><p class="ref">→ <a href="works/ugc.html">UGC導入</a>／<a href="works/order.html">受注業務の改善</a></p></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="wrap">
       <div class="footer__inner">
-        <p class="footer__name">その先まで届ける<span>Airi Kita Portfolio</span></p>
-        <span class="footer__word" aria-hidden="true">AsIs<span class="footer__gap"></span>ToBe</span>
+        <a class="footer__word" href="#top" aria-label="ページの先頭（トップ）へ戻る">AsIs<i></i>ToBe</a>
+        <p class="footer__name">その先まで届ける</p>
       </div>
-      <p class="footer__copy">© Airi Kita — 掲載作品の無断転用はご遠慮ください。</p>
+      <div class="footer__legal">
+        <p>職務経歴や連絡先の詳細は、応募書類をご参照ください。</p>
+        <p>掲載内容の無断転用はご遠慮ください。</p>
+        <p class="footer__copy">&copy; Kita Portfolio - AsIs ToBe -</p>
+      </div>
     </div>
   </footer>
 

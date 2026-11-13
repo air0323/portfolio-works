@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>受注業務の改善｜喜多 Portfolio</title>
+  <link rel="icon" href="../common/img/favicon.ico" sizes="64x64">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;800&family=Shippori+Mincho:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../common/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="site-header__logo" href="../index.html">喜多<span>PORTFOLIO</span></a>
+      <nav class="site-header__nav" aria-label="サイト内">
+        <a href="../index.html#business">BUSINESS</a>
+        <a href="../index.html#web">WEB</a>
+        <a href="../index.html#creative">CREATIVE</a>
+        <a href="../index.html#photo">PHOTO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <span class="case-hero__badge" aria-hidden="true">04</span>
+      <div class="wrap">
+        <div class="case-hero__head">
+          <h1 class="case-hero__title">受注業務の改善</h1>
+          <div class="case-hero__rule"></div>
+          <div class="case-hero__tags"><span class="label label--work">実務</span><span class="pill">Operation Design / Data / Automation</span></div>
+        </div>
+        <p class="case-hero__catch">チャネルごとに異なる受注データを、<br>ひとつの形式にそろえる。</p>
+        <p class="case-hero__lead">販売チャネルごとに形式が異なる受注データと、手入力に頼っていた登録作業を見直した2つの改善施策です。データの統合と項目の統一により、RPAによる入力自動化を実現し、日々の受注業務にかかる時間を削減しました。</p>
+        <img class="case-hero__img" src="../common/img/biz_order.jpg" alt="ノートパソコンで作業する手元">
+
+        <div class="results" style="--n: 2">
+          <div><b><small>約</small>2<small>時間／日 削減</small></b><span>01 受注データの一元管理</span><em>受注管理の作業時間（1日あたり）</em></div>
+          <div><b>120<small>分 →</small> 30<small>分</small></b><span>02 送り状番号の入力自動化</span><em>送り状番号の入力時間（1日あたり）</em></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 受注データの一元管理 -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="eh section__head"><span class="od-num">01</span>受注データの一元管理</h2>
+        <p class="reveal od-lead">自社EC・楽天市場・Yahoo!ショッピングなど、販売チャネルごとに異なる受注データを整理し、スプレッドシートで統合。基幹システムへの登録に向けてデータ項目を統一し、RPAによる入力自動化につなげました。</p>
+        <div class="flow reveal od-flow">
+          <div class="flow__row"><span class="flow__tag flow__tag--before">Before</span><span>手入力中心の運用</span></div>
+          <div class="chev chev--before"><span>各CMS</span><span>印刷</span><span>手入力</span><span>基幹システム</span></div>
+          <div class="flow__row" style="margin-top: 10px"><span class="flow__tag flow__tag--after">After</span><span>CSV統合・RPA入力</span></div>
+          <div class="chev chev--after"><span>各チャネルのCSV</span><span class="wide">スプレッドシートで統合（関数で項目を統一）</span><span>RPAで自動入力</span><span>基幹システム</span></div>
+        </div>
+        <dl class="info od-info reveal">
+          <div class="od-result"><dt>成果</dt><dd>受注管理業務の作業時間を、1日あたり約2時間削減</dd></div>
+          <div><dt>担当</dt><dd>業務整理／チャネル別CSVの統合／スプレッドシートの関数設計／基幹システムとのデータ項目・キーの統一</dd></div>
+          <div><dt>連携</dt><dd>IT管理室の担当者（1名）</dd></div>
+          <div><dt>使用ツール</dt><dd>スプレッドシート／RPAロボパットDX</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 02 送り状番号の入力自動化 -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="eh section__head"><span class="od-num">02</span>送り状番号の入力自動化</h2>
+        <p class="reveal od-lead">倉庫からExcel形式で受領していた送り状番号データについて、RPAによる処理を前提に、スプレッドシートのレイアウトと関数を整理しました。自動化したい業務内容と処理手順をまとめてIT管理室の担当者にRPAの実装を依頼し、導入後の運用を見据えて手順書も作成しました。</p>
+        <div class="flow reveal od-flow">
+          <div class="flow__row"><span class="flow__tag flow__tag--before">Before</span><span>各CMSへ手入力</span></div>
+          <div class="chev chev--before"><span class="wide">注文番号をもとに送り状番号を確認</span><span class="wide">各CMSに1件ずつ手入力</span></div>
+          <div class="flow__row" style="margin-top: 10px"><span class="flow__tag flow__tag--after">After</span><span>RPAによる自動登録</span></div>
+          <div class="chev chev--after"><span>倉庫のExcelデータ</span><span class="wide">スプレッドシートで整理（レイアウト・関数）</span><span class="wide">RPAで各CMSへ自動入力</span></div>
+        </div>
+        <dl class="info od-info reveal">
+          <div class="od-result"><dt>成果</dt><dd>作業時間を、1日あたり120分から30分に短縮</dd></div>
+          <div><dt>担当</dt><dd>業務フロー整理／スプレッドシートのレイアウト・関数設計／RPA実装要件の整理／手順書作成</dd></div>
+          <div><dt>連携</dt><dd>IT管理室の担当者（1名）※RPAの実装を依頼</dd></div>
+          <div><dt>使用ツール</dt><dd>Excel／スプレッドシート／RPAロボパットDX</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <nav class="wrap case-nav" aria-label="実績の移動">
+      <a href="ugc.html"><span>PREV 03</span>← ユーザー生成コンテンツの導入</a>
+      <a href="web.html" style="text-align: right"><span>NEXT</span>Webサイト制作へ →</a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <a class="footer__word" href="../index.html" aria-label="ページの先頭（トップ）へ戻る">AsIs<i></i>ToBe</a>
+        <p class="footer__name">その先まで届ける</p>
+      </div>
+      <div class="footer__legal">
+        <p>職務経歴や連絡先の詳細は、応募書類をご参照ください。</p>
+        <p>掲載内容の無断転用はご遠慮ください。</p>
+        <p class="footer__copy">&copy; Kita Portfolio - AsIs ToBe -</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../common/js/main.js"></script>
+</body>
+</html>
