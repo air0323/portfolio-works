@@ -38,14 +38,14 @@ https://air0323.github.io/portfolio-works/top/
 ## 使用技術
  
 HTML / CSS / JavaScript（フレームワーク不使用）
-GitHub Pagesで公開
  
  
 ## 注意事項
  
-- 応募先での閲覧を目的としているため、検索エンジンにはインデックスさせない設定（noindex）にしています。
 - 架空ブランドの制作物は、学習・ポートフォリオ用に作成したものです。
 - 掲載内容・画像の無断転用はご遠慮ください。
  
+
+
  
 © Kita Portfolio - AsIs ToBe -
