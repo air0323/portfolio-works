@@ -124,12 +124,13 @@ p { margin: 0; }
   letter-spacing: .16em;
   text-decoration: none;
   color: var(--blue);
+  line-height: 1;
 }
 .site-header__logo span { font-family: var(--en); font-size: 12px; letter-spacing: .2em; margin-left: 8px; }
 .site-header__nav { display: flex; gap: 22px; font-family: var(--en); font-size: 13px; letter-spacing: .14em; }
 .site-header__nav a { text-decoration: none; color: var(--blue); }
 .site-header__nav a:hover { text-decoration: underline; }
-@media (max-width: 640px) { .site-header__nav { gap: 14px; font-size: 12px; } .site-header__logo span { display: none; } }
+@media (max-width: 640px) { .site-header__nav { gap: 14px; font-size: 12px; } .site-header__logo span { margin: 0; font-size: 10px; } }
 
 /* ---------- Hero（トップ） ---------- */
 .hero {
@@ -766,3 +767,16 @@ a.footer__word:hover, a.footer__word:focus-visible { opacity: .75; }
   .steps li, .tobe__list li { display: grid; grid-row: span 4; grid-template-rows: subgrid; gap: 10px; }
   .steps li > *, .tobe__list li > * { margin: 0; }
 }
+
+/* 別タブで開くボタン：右側の線を open_in_new アイコンに置き換え */
+.btn[target="_blank"]::after {
+  width: 15px; height: 15px; flex: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h7V5H5V19H19V12h2v7q0,0.82-0.59,1.41T19,21H5Zm4.7-5.3L8.3,14.3L17.6,5H14V3h7v7H19V6.4L9.7,15.7Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .25s;
+}
+.btn[target="_blank"]:hover::after, .btn[target="_blank"]:focus-visible::after { width: 15px; transform: translate(2px, -2px); }
+/* SP：ロゴにPORTFOLIOを出したぶん、ナビを詰めてはみ出しを防ぐ */
+@media (max-width: 640px) { .site-header__nav { gap: 12px; letter-spacing: .08em; } .site-header__logo span { letter-spacing: .14em; } }
+@media (max-width: 374px) { .site-header__nav { gap: 9px; font-size: 11px; letter-spacing: .04em; } }
+@media (max-width: 340px) { .site-header__nav { gap: 7px; letter-spacing: 0; } .site-header__logo span { letter-spacing: .06em; } }
