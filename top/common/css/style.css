@@ -802,3 +802,17 @@ html, body { overflow-x: clip; }
   .reveal.rv-right { transform: translateX(48px); }
   .reveal.rv-fade.is-in { opacity: 1; transform: none; }
 }
+
+/* Profile：好きなこと（アイコン付き） */
+@media (min-width: 900px) {
+  .profile__grid { grid-template-areas: "intro strengths" "career skill" "fav fav"; }
+  .profile__fav { grid-area: fav; }
+}
+.fav { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 760px) { .fav { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+.fav li { background: rgba(255, 255, 255, .55); border: 1px solid rgba(50, 102, 153, .18); border-radius: 10px; padding: 18px 16px 16px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.fav img { width: 28px; height: 28px; }
+.fav__ttl { font-family: var(--mincho); font-size: 16px; color: var(--blue); line-height: 1.5; }
+.fav__ttl small { display: block; font-family: var(--en); font-size: 11px; letter-spacing: .12em; color: var(--ink-soft); }
+.fav__txt { font-size: 12.5px; line-height: 1.8; color: var(--ink); }
+.fav__more { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
