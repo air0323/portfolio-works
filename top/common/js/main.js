@@ -1,6 +1,19 @@
-// スクロールでふわっと表示
+// スクロール表示：画像だけフェード（横並びの画像は左右から）。文章は最初から表示
 (function () {
-  var items = document.querySelectorAll('.reveal');
+  var all = document.querySelectorAll('.reveal');
+  var wide = window.innerWidth >= 760;
+  var items = [];
+  Array.prototype.forEach.call(all, function (el) {
+    if (el.classList.contains('flow')) return; // フロー図は別の動き
+    var hasImg = el.matches('img, figure') || el.querySelector('img');
+    if (!hasImg) { el.classList.remove('reveal'); return; } // 文章・カード・リストは動かさない
+    el.classList.add('rv-fade');
+    if (wide) {
+      var r = el.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+      if (r.width < vw * 0.55) el.classList.add((r.left + r.width / 2) < vw / 2 ? 'rv-left' : 'rv-right');
+    }
+    items.push(el);
+  });
   if (!('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('is-in'); });
     return;
@@ -168,4 +181,39 @@
   if (ro) ro.observe(document.body);
   window.addEventListener('load', go); go();
   setTimeout(stop, 4000);
+})();
+
+// 見出しのふわっと表示 ＋ Before／After フローを左から順に表示
+(function () {
+  if (!window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
+
+  // 見出し：下からふわっと表示（元の動き）
+  var heads = document.querySelectorAll('.asis__en, .tobe__en, .chapter__copy, .profile__lead, .case-hero__catch, .cw__catch, .section__head');
+  heads.forEach(function (h) {
+    h.classList.remove('reveal', 'is-in');
+    h.classList.add('rv-up');
+    io.observe(h);
+  });
+
+  // フロー図：Before → After の順に、左から1つずつ
+  document.querySelectorAll('.flow').forEach(function (f) {
+    var d = 0;
+    Array.prototype.forEach.call(f.children, function (c) {
+      if (c.classList.contains('chev')) {
+        Array.prototype.forEach.call(c.children, function (s) { s.classList.add('fl-item'); s.style.setProperty('--d', d + 's'); d += 0.12; });
+        d += 0.15;
+      } else {
+        c.classList.add('fl-item', c.classList.contains('flow__row') ? 'fl-row' : 'fl-fade');
+        c.style.setProperty('--d', d + 's'); d += 0.1;
+      }
+    });
+    f.classList.add('flow--seq');
+    io.observe(f);
+  });
 })();
