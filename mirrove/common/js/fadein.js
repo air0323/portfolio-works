@@ -5,20 +5,20 @@
    ★ このファイルが読み込まれた時だけ <html> に .js を付ける
      → ファイルが無い・パスが違う場合は、要素は隠れず普通に表示される
    - REPLAY = true の時は、上にスクロールして戻ると再度アニメーションする
-   - 遅延は HTML 側の style="--fade-delay:.2s" で指定
+   - 遅延は HTML 側のクラス（fd-0 / fd-10 / fd-15 / fd-20 / fd-30 / fd-40。common.css）で指定
    - <head> 内で defer なしで読み込むこと（表示のちらつき防止）
 ========================================================= */
 (function () {
 	'use strict';
 
 	// 発火ライン：画面の上から何%の位置に要素の上端が来たら始めるか
-	var TRIGGER_LINE = 70;
+	const TRIGGER_LINE = 70;
 
 	// 上にスクロールして戻った時に、もう一度アニメーションさせるか（true / false）
-	var REPLAY = true;
+	const REPLAY = true;
 
-	var supportsIO = 'IntersectionObserver' in window;
-	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const supportsIO = 'IntersectionObserver' in window;
+	const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	// 非対応ブラウザ・「動きを減らす」設定のときは何もしない（=最初から全部表示）
 	if (!supportsIO || reduce) { return; }
@@ -27,10 +27,10 @@
 	document.documentElement.classList.add('js');
 
 	function init() {
-		var targets = document.querySelectorAll('.fade');
+		const targets = document.querySelectorAll('.fade');
 		if (!targets.length) { return; }
 
-		var observer = new IntersectionObserver(function (entries) {
+		const observer = new IntersectionObserver(function (entries) {
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('is-visible');

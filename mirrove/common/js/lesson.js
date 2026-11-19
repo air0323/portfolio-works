@@ -1,89 +1,27 @@
-/************* lessonのjs ***************/
+/* =========================================================
+   lesson.js  ―  レッスン内容ページ専用（jQuery不要）
+   ・パーソナルレッスン／食事指導の画像を、画面に入ったら下からふわっと表示
+     （表示前の状態と動きは lesson.css の .frPersonal img / .flFood img）
+   ※ 画像ホバー時の透明度・明るさの変化は CSS（:hover）で指定
+========================================================= */
+(function () {
+	const imgs = document.querySelectorAll('.frPersonal img, .flFood img');
+	if (!imgs.length) { return; }
 
+	// 古いブラウザ：アニメーションなしで全部表示
+	if (!('IntersectionObserver' in window)) {
+		imgs.forEach(function (img) { img.classList.add('is-in'); });
+		return;
+	}
 
-$(function() {
+	// 画像の上端が、画面の下から100pxの位置まで来たら表示（旧：jQueryのスクロール判定と同じ位置）
+	const observer = new IntersectionObserver(function (entries) {
+		entries.forEach(function (entry) {
+			if (!entry.isIntersecting) { return; }
+			entry.target.classList.add('is-in');
+			observer.unobserve(entry.target);
+		});
+	}, { rootMargin: '0px 0px -100px 0px' });
 
-    // プログラム画像のホバー時の透明度変更
-    $('.photo img').hover(
-        function() {
-            $(this).stop().animate({
-                opacity: 0.8
-            }, 300);
-        },
-        function() {
-            $(this).stop().animate({
-                opacity: 1
-            }, 300);
-        }
-    );
-
-
-    // プログラム画像のホバー時の透明度変更
-    $(window).on('scroll', function() {
-
-        if ($(this).scrollTop() > 300) {
-            $('#pageTop').fadeIn();
-        } else {
-            $('#pageTop').fadeOut();
-        }
-
-        // パーソナルレッスンふわっと出てくる
-        $('.frPersonal img, .flFood img').each(function() {
-
-            var imgTop = $(this).offset().top;
-            var scrollTop = $(window).scrollTop();
-            var windowHeight = $(window).height();
-
-            if (scrollTop + windowHeight > imgTop + 100) {
-
-                $(this).stop().animate({
-                    opacity: 1
-                }, 1000);
-
-                $(this).css({
-                    transform: 'translateY(0)',
-                    transition: 'transform 0.8s ease'
-                });
-
-            }
-
-        });
-
-    });
-
-
-   // パーソナルレッスンふわっと出てくる
-    $('.frPersonal, .flFood').css({
-        position: 'relative'
-    });
-
-    $('.frPersonal img, .flFood img').css({
-        opacity: 0,
-        transform: 'translateY(40px)'
-    });
-
-
-
-
-    // インストラクター画像ホバー時の明るさ変更
-    $('.instructor_photo img').hover(
-
-        function() {
-            $(this).css({
-                filter: 'brightness(0.9)',
-                transition: '0.4s'
-            });
-        },
-
-        function() {
-            $(this).css({
-                filter: 'brightness(0.7)',
-                transition: '0.4s'
-            });
-        }
-
-    );
-
-});
-
-
+	imgs.forEach(function (img) { observer.observe(img); });
+})();

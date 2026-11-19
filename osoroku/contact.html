@@ -22,8 +22,8 @@
 @media (max-width:760px){ :root{ --hdr:56px } }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0; background:var(--ink); color:var(--paper); font-family:var(--f-body); font-size:15px; line-height:1.95; letter-spacing:.06em; -webkit-font-smoothing:antialiased}
+html{font-size:62.5%; padding-top:env(safe-area-inset-top,0); padding-bottom:env(safe-area-inset-bottom,0)}
+body{margin:0; background:var(--ink); color:var(--paper); font-family:var(--f-body); font-size:1.5rem; line-height:1.95; letter-spacing:.06em; -webkit-font-smoothing:antialiased}
 @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
 a{color:inherit}
 img{display:block; max-width:100%}
@@ -31,12 +31,12 @@ button,input,select,textarea{font:inherit; color:inherit; letter-spacing:inherit
 :focus-visible{outline:2px solid var(--red); outline-offset:3px}
 .wrap{width:100%; max-width:960px; margin-inline:auto; padding-left:var(--gut-l); padding-right:var(--gut-r)}
 
-.hdr{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; height:var(--hdr); background:rgba(15,13,13,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line)}
-.hdr-in{height:100%; max-width:1200px; margin-inline:auto; padding-left:var(--gut-l); padding-right:var(--gut-r); display:flex; align-items:center; gap:20px}
+.hdr{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; height:var(--hdr); background:rgba(15,13,13,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); border-bottom:1px solid var(--line)}
+.hdr-in{height:100%; max-width:1200px; margin-inline:auto; padding-left:var(--gut-l); padding-right:var(--gut-r); display:flex; align-items:center; gap:2rem}
 .hdr-logo img{height:40px; width:auto}
-.back{margin-left:auto; font-family:var(--f-head); font-weight:700; font-size:14px; letter-spacing:.14em; text-decoration:none; padding:8px 4px}
+.back{margin-left:auto; font-family:var(--f-head); font-weight:700; font-size:1.4rem; letter-spacing:.14em; text-decoration:none; padding:0.8rem 0.4rem}
 .back:hover{color:var(--red)}
-.sns-row{display:flex; align-items:center; gap:4px}
+.sns-row{display:flex; align-items:center; gap:0.4rem}
 .sns{display:grid; place-items:center; width:38px; height:38px; opacity:.85; color:var(--paper); transition:opacity .2s}
 .sns:hover{opacity:1}
 .sns img{height:24px; width:auto}
@@ -44,62 +44,62 @@ button,input,select,textarea{font:inherit; color:inherit; letter-spacing:inherit
 .sns svg{width:21px; height:21px}
 @media (max-width:760px){ .hdr-logo img{height:34px} .sns-row{display:none} }
 
-.hero{position:relative; padding-block:96px 140px; text-align:center; overflow:hidden; isolation:isolate}
+.hero{position:relative; padding-block:9.6rem 14rem; text-align:center; overflow:hidden; isolation:isolate}
 .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.6; z-index:-2}
 .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(15,13,13,.3) 0%, rgba(15,13,13,.45) 60%, var(--ink) 100%)}
-.hero .en{text-transform:uppercase; font-family:var(--f-num); font-weight:500; font-size:13px; letter-spacing:.42em; color:var(--paper-dim); padding-left:.42em}
-.hero h1{margin:6px 0 14px; font-family:var(--f-head); font-weight:800; font-size:clamp(28px, 3.4vw, 36px); letter-spacing:.2em; padding-left:.2em}
+.hero .en{text-transform:uppercase; font-family:var(--f-num); font-weight:500; font-size:1.3rem; letter-spacing:.42em; color:var(--paper-dim); padding-left:.42em}
+.hero h1{margin:0.6rem 0 1.4rem; font-family:var(--f-head); font-weight:800; font-size:clamp(2.8rem, 3.4vw, 3.6rem); letter-spacing:.2em; padding-left:.2em}
 .hero p{margin:0 auto; max-width:34em; color:var(--paper)}
-@media (max-width:760px){ .hero{padding-block:56px 90px} }
+@media (max-width:760px){ .hero{padding-block:5.6rem 9rem} }
 
-.form{position:relative; max-width:720px; margin:-80px auto 0; display:grid; gap:22px; background:rgba(15,13,13,.92); border:1px solid var(--line); padding:36px 40px}
-.field{display:grid; gap:8px; min-width:0}
-.field label{font-family:var(--f-head); font-weight:700; font-size:14px; letter-spacing:.12em; display:flex; align-items:center; gap:8px}
-.req{font-family:var(--f-num); font-size:11px; font-weight:600; letter-spacing:.12em; background:var(--red-deep); border:1px solid #7d0c10; padding:0 6px; line-height:1.6}
-.opt{font-family:var(--f-num); font-size:11px; letter-spacing:.12em; color:var(--paper-dim); border:1px solid var(--line); padding:0 6px; line-height:1.6}
-input[type=text], input[type=email], select, textarea{width:100%; font-size:15px; letter-spacing:.04em; background:#0a0909; border:1px solid rgba(236,230,226,.22); border-radius:2px; padding:12px 14px; transition:border-color .2s}
+.form{position:relative; max-width:720px; margin:-80px auto 0; display:grid; gap:2.2rem; background:rgba(15,13,13,.92); border:1px solid var(--line); padding:3.6rem 4rem}
+.field{display:grid; gap:0.8rem; min-width:0}
+.field label{font-family:var(--f-head); font-weight:700; font-size:1.4rem; letter-spacing:.12em; display:flex; align-items:center; gap:0.8rem}
+.req{font-family:var(--f-num); font-size:1.1rem; font-weight:600; letter-spacing:.12em; background:var(--red-deep); border:1px solid #7d0c10; padding:0 0.6rem; line-height:1.6}
+.opt{font-family:var(--f-num); font-size:1.1rem; letter-spacing:.12em; color:var(--paper-dim); border:1px solid var(--line); padding:0 0.6rem; line-height:1.6}
+input[type=text], input[type=email], select, textarea{width:100%; font-size:1.5rem; letter-spacing:.04em; background:#0a0909; border:1px solid rgba(236,230,226,.22); border-radius:2px; padding:1.2rem 1.4rem; transition:border-color .2s}
 textarea{min-height:200px; resize:vertical; line-height:1.8}
-select{appearance:none; background-image:linear-gradient(45deg, transparent 50%, var(--paper-dim) 50%), linear-gradient(135deg, var(--paper-dim) 50%, transparent 50%); background-position:calc(100% - 20px) 52%, calc(100% - 14px) 52%; background-size:6px 6px; background-repeat:no-repeat; padding-right:40px}
+select{appearance:none; background-image:linear-gradient(45deg, transparent 50%, var(--paper-dim) 50%), linear-gradient(135deg, var(--paper-dim) 50%, transparent 50%); background-position:calc(100% - 20px) 52%, calc(100% - 14px) 52%; background-size:6px 6px; background-repeat:no-repeat; padding-right:4rem}
 input:focus, select:focus, textarea:focus{outline:none; border-color:var(--red)}
 ::placeholder{color:#6f6764}
-.err{display:none; font-size:12.5px; color:#ff6b6f; letter-spacing:.04em}
+.err{display:none; font-size:1.25rem; color:#ff6b6f; letter-spacing:.04em}
 .field.invalid .err{display:block}
 .field.invalid input, .field.invalid select, .field.invalid textarea{border-color:#ff6b6f}
-.row2{display:grid; grid-template-columns:1fr 1fr; gap:22px}
-.field label.agree{font-family:var(--f-body); font-weight:400; font-size:13.5px; letter-spacing:.06em; align-items:flex-start; gap:10px; cursor:pointer}
-.agree input{width:18px; height:18px; margin:4px 0 0; accent-color:var(--red); flex:none}
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:52px; padding:0 26px; font-family:var(--f-head); font-weight:700; font-size:15px; letter-spacing:.16em; text-decoration:none; border-radius:2px; cursor:pointer; border:1px solid transparent; transition:background .2s, border-color .2s}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:2.2rem}
+.field label.agree{font-family:var(--f-body); font-weight:400; font-size:1.35rem; letter-spacing:.06em; align-items:flex-start; gap:1rem; cursor:pointer}
+.agree input{width:18px; height:18px; margin:0.4rem 0 0; accent-color:var(--red); flex:none}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:1.2rem; min-height:52px; padding:0 2.6rem; font-family:var(--f-head); font-weight:700; font-size:1.5rem; letter-spacing:.16em; text-decoration:none; border-radius:2px; cursor:pointer; border:1px solid transparent; transition:background .2s, border-color .2s}
 .btn-red{background:var(--red-deep); border-color:#7d0c10}
 .btn-red:hover{background:#760a0e}
 .btn-ghost{background:transparent; border-color:rgba(236,230,226,.4)}
 .btn-ghost:hover{border-color:var(--paper)}
-.submit{justify-self:center; min-width:260px; margin-top:6px}
-.note{margin:0; text-align:center; font-size:12px; color:var(--paper-dim)}
-.sent{max-width:720px; margin:-80px auto 0; position:relative; text-align:center; background:rgba(15,13,13,.94); border:1px solid var(--red); padding:44px 28px}
-.sent h2{margin:0 0 10px; font-family:var(--f-head); font-weight:800; font-size:22px; letter-spacing:.16em}
-.sent p{margin:0 0 6px; color:var(--paper-dim); font-size:14px}
-.sent dl{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; max-width:460px; margin:20px auto 24px; text-align:left; font-size:13.5px}
+.submit{justify-self:center; min-width:260px; margin-top:0.6rem}
+.note{margin:0; text-align:center; font-size:1.2rem; color:var(--paper-dim)}
+.sent{max-width:720px; margin:-80px auto 0; position:relative; text-align:center; background:rgba(15,13,13,.94); border:1px solid var(--red); padding:4.4rem 2.8rem}
+.sent h2{margin:0 0 1rem; font-family:var(--f-head); font-weight:800; font-size:2.2rem; letter-spacing:.16em}
+.sent p{margin:0 0 0.6rem; color:var(--paper-dim); font-size:1.4rem}
+.sent dl{display:grid; grid-template-columns:auto 1fr; gap:0.4rem 1.6rem; max-width:460px; margin:2rem auto 2.4rem; text-align:left; font-size:1.35rem}
 .sent dt{color:var(--red); font-family:var(--f-head); font-weight:700}
 .sent dd{margin:0; word-break:break-all}
-.sent .row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-@media (max-width:760px){ .form, .sent{padding:24px 18px; gap:18px; margin-top:-60px} .row2{grid-template-columns:1fr; gap:18px} .submit{width:100%; min-width:0} }
+.sent .row{display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap}
+@media (max-width:760px){ .form, .sent{padding:2.4rem 1.8rem; gap:1.8rem; margin-top:-60px} .row2{grid-template-columns:1fr; gap:1.8rem} .submit{width:100%; min-width:0} }
 
-main{padding-bottom:96px}
+main{padding-bottom:9.6rem}
 /* footer：背景は黒のみ。上60 / ロゴ枠447×212 / 本文13px・幅1200 / 下37 */
-.ftr{background:#000; padding:60px var(--gut-r) 37px var(--gut-l); text-align:center; font-size:13px; line-height:1.9; letter-spacing:.04em; color:var(--paper)}
+.ftr{background:#000; padding:6rem var(--gut-r) 3.7rem var(--gut-l); text-align:center; font-size:1.3rem; line-height:1.9; letter-spacing:.04em; color:var(--paper)}
 .ftr-logo{position:relative; width:min(447px, 100%); aspect-ratio:447/212; margin:0 auto -24px; display:grid; place-items:center; isolation:isolate}
 .ftr-logo img{width:150px; max-width:34%; height:auto; margin-top:-14px}
 .ftr .legal{max-width:1200px; margin:0 auto}
 .ftr p{margin:0}
-.ftr .copy{margin-top:26px}
+.ftr .copy{margin-top:2.6rem}
 .sp-br{display:none}
 @media (max-width:760px){
-  .ftr{padding-top:44px; padding-bottom:32px; font-size:10.5px; line-height:1.75; letter-spacing:0}
+  .ftr{padding-top:4.4rem; padding-bottom:3.2rem; font-size:1.05rem; line-height:1.75; letter-spacing:0}
   .ftr .legal{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif}
-  .ftr .legal p + p{margin-top:12px}
+  .ftr .legal p + p{margin-top:1.2rem}
   .sp-br{display:inline}
-  .ftr-logo{width:auto; aspect-ratio:auto; margin:0 auto 26px} .ftr-logo img{width:120px; max-width:none; margin-top:0}
-  .ftr .copy{margin-top:20px; font-size:11px}
+  .ftr-logo{width:auto; aspect-ratio:auto; margin:0 auto 2.6rem} .ftr-logo img{width:120px; max-width:none; margin-top:0}
+  .ftr .copy{margin-top:2rem; font-size:1.1rem}
 }
 </style>
 </head>
@@ -129,15 +129,15 @@ main{padding-bottom:96px}
   <div class="wrap">
     <form class="form" id="form" novalidate>
       <div class="row2">
-        <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" placeholder="怖録 太郎"><span class="err">お名前を入力してください</span></div>
+        <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" placeholder="怖録 太郎" aria-describedby="e-name"><span class="err" id="e-name">お名前を入力してください</span></div>
         <div class="field"><label for="f-org">会社名・チャンネル名<span class="opt">任意</span></label><input type="text" id="f-org" name="org" autocomplete="organization" placeholder="〇〇ゲームス / 〇〇チャンネル"></div>
       </div>
-      <div class="field"><label for="f-mail">メールアドレス<span class="req">必須</span></label><input type="email" id="f-mail" name="mail" autocomplete="email" placeholder="example@mail.com"><span class="err">メールアドレスを正しい形式で入力してください</span></div>
+      <div class="field"><label for="f-mail">メールアドレス<span class="req">必須</span></label><input type="email" id="f-mail" name="mail" autocomplete="email" placeholder="example@mail.com" aria-describedby="e-mail"><span class="err" id="e-mail">メールアドレスを正しい形式で入力してください</span></div>
       <div class="field"><label for="f-type">お問合せ種別<span class="req">必須</span></label>
-        <select id="f-type" name="type"><option value="">選択してください</option><option>取材・メディア掲載について</option><option>配信・動画投稿について</option><option>イベント・出展について</option><option>ゲームの内容・不具合について</option><option>その他</option></select>
-        <span class="err">お問合せ種別を選択してください</span></div>
-      <div class="field"><label for="f-body">お問合せ内容<span class="req">必須</span></label><textarea id="f-body" name="body" placeholder="お問合せ内容をご記入ください"></textarea><span class="err">お問合せ内容を入力してください</span></div>
-      <div class="field"><label class="agree" for="f-agree"><input type="checkbox" id="f-agree" name="agree">個人情報の取り扱いに同意のうえ送信します</label><span class="err">同意にチェックしてください</span></div>
+        <select id="f-type" name="type" aria-describedby="e-type"><option value="">選択してください</option><option>取材・メディア掲載について</option><option>配信・動画投稿について</option><option>イベント・出展について</option><option>ゲームの内容・不具合について</option><option>その他</option></select>
+        <span class="err" id="e-type">お問合せ種別を選択してください</span></div>
+      <div class="field"><label for="f-body">お問合せ内容<span class="req">必須</span></label><textarea id="f-body" name="body" placeholder="お問合せ内容をご記入ください" aria-describedby="e-body"></textarea><span class="err" id="e-body">お問合せ内容を入力してください</span></div>
+      <div class="field"><label class="agree" for="f-agree"><input type="checkbox" id="f-agree" name="agree" aria-describedby="e-agree">個人情報の取り扱いに同意のうえ送信します</label><span class="err" id="e-agree">同意にチェックしてください</span></div>
       <button class="btn btn-red submit" type="submit">送信する</button>
       <p class="note">※このページはデモのため、送信しても実際には届きません。</p>
     </form>
@@ -162,17 +162,19 @@ main{padding-bottom:96px}
 
 <script>
 (function(){
-  var form=document.getElementById('form'), sent=document.getElementById('sent');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rules=[['f-name',function(v){return v.trim()!==''}],['f-mail',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())}],['f-type',function(v){return v!==''}],['f-body',function(v){return v.trim()!==''}],['f-agree',function(v,el){return el.checked}]];
-  function check(id,fn){ var el=document.getElementById(id), ok=fn(el.value,el); el.closest('.field').classList.toggle('invalid',!ok); el.setAttribute('aria-invalid',!ok); return ok; }
-  rules.forEach(function(r){ var el=document.getElementById(r[0]); el.addEventListener(el.type==='checkbox'||el.tagName==='SELECT'?'change':'blur',function(){ if(el.closest('.field').classList.contains('invalid')||el.value) check(r[0],r[1]); }); });
+  const form=document.getElementById('form'), sent=document.getElementById('sent');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rules=[['f-name',function(v){return v.trim()!==''}],['f-mail',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())}],['f-type',function(v){return v!==''}],['f-body',function(v){return v.trim()!==''}],['f-agree',function(v,el){return el.checked}]];
+  function check(id,fn){ const el=document.getElementById(id), ok=fn(el.value,el); el.closest('.field').classList.toggle('invalid',!ok); el.setAttribute('aria-invalid',!ok); return ok; }
+  rules.forEach(function(r){ const el=document.getElementById(r[0]); el.addEventListener(el.type==='checkbox'||el.tagName==='SELECT'?'change':'blur',function(){ if(el.closest('.field').classList.contains('invalid')||el.value) check(r[0],r[1]); }); });
+  // エラー表示中の欄は、入力のたびに判定し直す（押した瞬間にエラー文が消えて、下のチェックボックスがずれるのを防ぐ）
+  rules.forEach(function(r){ const el=document.getElementById(r[0]); if(el.type==='checkbox'||el.tagName==='SELECT') return; el.addEventListener('input',function(){ if(el.closest('.field').classList.contains('invalid')) check(r[0],r[1]); }); });
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var bad=null; rules.forEach(function(r){ if(!check(r[0],r[1]) && !bad) bad=r[0]; });
+    let bad=null; rules.forEach(function(r){ if(!check(r[0],r[1]) && !bad) bad=r[0]; });
     if(bad){ document.getElementById(bad).focus(); return; }
-    var dl=document.getElementById('sentList'); dl.innerHTML='';
-    [['お名前','f-name'],['会社名・チャンネル名','f-org'],['メールアドレス','f-mail'],['種別','f-type']].forEach(function(p){ var v=document.getElementById(p[1]).value.trim(); if(!v) return; var dt=document.createElement('dt'), dd=document.createElement('dd'); dt.textContent=p[0]; dd.textContent=v; dl.appendChild(dt); dl.appendChild(dd); });
+    const dl=document.getElementById('sentList'); dl.innerHTML='';
+    [['お名前','f-name'],['会社名・チャンネル名','f-org'],['メールアドレス','f-mail'],['種別','f-type']].forEach(function(p){ const v=document.getElementById(p[1]).value.trim(); if(!v) return; const dt=document.createElement('dt'), dd=document.createElement('dd'); dt.textContent=p[0]; dd.textContent=v; dl.appendChild(dt); dl.appendChild(dd); });
     form.hidden=true; sent.hidden=false; sent.scrollIntoView({block:'center', behavior: reduce?'auto':'smooth'});
   });
   document.getElementById('again').addEventListener('click',function(){ form.reset(); sent.hidden=true; form.hidden=false; document.getElementById('f-name').focus(); });

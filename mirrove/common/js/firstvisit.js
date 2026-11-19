@@ -8,11 +8,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /*== よくあるご質問（Q&A） ==*/
-  var buttons = document.querySelectorAll('.firstvisit-qa-pict button');
-  var items = document.querySelectorAll('.firstvisit-qa-list details');
-  var moreItems = document.querySelectorAll('.firstvisit-qa-list details[data-more]');
-  var moreButton = document.querySelector('.firstvisit-qa-more');
-  var moreOpen = false; // 「more...」で残りを開いているか
+  const buttons = document.querySelectorAll('.firstvisit-qa-pict button');
+  const items = document.querySelectorAll('.firstvisit-qa-list details');
+  const moreItems = document.querySelectorAll('.firstvisit-qa-list details[data-more]');
+  const moreButton = document.querySelector('.firstvisit-qa-more');
+  let moreOpen = false; // 「more...」で残りを開いているか
 
   // ふわっと表示するアニメーション（毎回やり直せるようにclassを付け直す）
   function fadeIn(item) {
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // 選んでいるアイコンをもう一度押す → 最初の表示に戻す
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
-      var category = button.dataset.qa;
-      var isActive = button.classList.contains('is-active');
+      const category = button.dataset.qa;
+      const isActive = button.classList.contains('is-active');
 
       buttons.forEach(function (b) {
         b.classList.remove('is-active');
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 絞り込み中に、アイコンとQ&A以外の場所をクリック → 最初の表示（6問・折りたたみ）に戻す
   document.addEventListener('click', function (e) {
-    var isFiltering = document.querySelector('.firstvisit-qa-pict .is-active');
+    const isFiltering = document.querySelector('.firstvisit-qa-pict .is-active');
     if (!isFiltering) return;
     if (e.target.closest('.firstvisit-qa-pict, .firstvisit-qa-list')) return;
     buttons.forEach(function (b) {
@@ -91,20 +91,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /*== ページトップへ戻るボタン ==*/
-  var pagetop = document.querySelector('.firstvisit-pagetop');
+  const pagetop = document.querySelector('.firstvisit-pagetop');
 
   // 押すと、ゆっくり始まってゆっくり止まる動きで一番上まで戻る（約1秒）
   pagetop.addEventListener('click', function (e) {
     e.preventDefault();
-    var start = window.scrollY;
-    var duration = 1000;
-    var startTime = null;
+    const start = window.scrollY;
+    const duration = 1000;
+    let startTime = null;
     function easeInOut(t) { // 0〜1 の進み具合を、なめらかなカーブに変える
       return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
     function step(now) {
       if (startTime === null) startTime = now;
-      var progress = Math.min((now - startTime) / duration, 1);
+      const progress = Math.min((now - startTime) / duration, 1);
       window.scrollTo(0, start * (1 - easeInOut(progress)));
       if (progress < 1) requestAnimationFrame(step);
     }

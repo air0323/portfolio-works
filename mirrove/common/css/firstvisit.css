@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 body,
-h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd {
+h1, h2, h3, p, ul, ol, li {
   margin: 0;
   padding: 0;
 }
@@ -58,14 +58,14 @@ small {
   --color-cream: #f8f7e5;  /* ベース：黄（カンプの背景色） */
   --color-green: #b0c99a;  /* メインカラー：グリーン */
   --color-yellow: #e5dfa4; /* サブカラー：薄黄色 */
-  --color-green-dark: #6f9156; /* 濃い緑（必須マーク・Aなど、文字を目立たせたいところ） */
+  --color-green-dark: #567645; /* 濃い緑（必須マーク・Aなど、文字を目立たせたいところ） */
   --color-footer: #494848; /* フッター背景 */
 }
 
 /* 本文の設定（スプレッドシート「共通」シートのbody指定） */
 body {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.8;
   color: #494848;
   background: var(--color-bg);
@@ -87,9 +87,11 @@ body {
 
 /* セクション見出し（H2 24px） */
 .firstvisit-page main h2 {
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: 45px;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: normal;
+  margin-bottom: 4rem;
 }
 
 /* ページタイトルの画像を、下の「ようこそ」の背景写真より前に出す（このページだけの指定） */
@@ -101,22 +103,22 @@ body {
 .firstvisit-pagenav {
   position: relative;
   z-index: 2; /* ようこその背景写真より前に出す */
-  padding: 30px 0;
+  padding: 3rem 0;
 }
 .firstvisit-pagenav ul {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 6rem;
 }
 .firstvisit-pagenav a {
   display: inline-block;
-  padding-bottom: 6px;
+  padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--color-green);
 }
 .firstvisit-pagenav a::after {
   content: "";
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 1rem;
   border-style: solid;
   border-width: 8px 6px 0 6px;
   border-color: var(--color-green) transparent transparent transparent;
@@ -129,7 +131,7 @@ body {
   z-index: 1;           /* 次のセクション（６STEP）の上に重ねる */
   overflow-x: clip;     /* 横のはみ出しだけ切る（縦は上下のセクションへはみ出してOK） */
   overflow-y: visible;
-  padding: 60px 0 360px; /* 上の余白を詰めた（190px→60px）／下は写真の女性が入る高さ */
+  padding: 6rem 0 36rem; /* 上の余白を詰めた（190px→60px）／下は写真の女性が入る高さ */
   text-align: center;
 }
 /* 背景写真（firstvisit_09）：写真全体（女性のひざまで）が入るように、高さ880pxで下端合わせ。
@@ -153,35 +155,35 @@ body {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.7); /* 写真の上でも文字が読めるように */
 }
 .firstvisit-page .firstvisit-welcome h2 {
-  font-size: 32px;
+  font-size: 2.4rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  margin-bottom: 40px;
+  letter-spacing: normal;
+  margin-bottom: 4rem;
 }
 .firstvisit-welcome p {
-  font-size: 18px;
-  line-height: 2.2;
+  font-size: 1.8rem;
+  line-height: 2;
 }
 
 /*== 無料体験レッスンの流れ（６STEP） ==*/
 .firstvisit-step {
-  padding: 100px 0;
+  padding: 10rem 0;
   background: var(--color-cream);
 }
 .firstvisit-step-head {
   display: flex;
   align-items: baseline;
-  gap: 25px;
-  margin-bottom: 45px;
+  gap: 2.5rem;
+  margin-bottom: 4.5rem;
 }
 .firstvisit-page .firstvisit-step-head h2 {
   margin-bottom: 0;
 }
 .firstvisit-step-head span {
   display: inline-block;
-  margin-right: 12px;
-  padding: 2px 14px;
-  font-size: 15px;
+  margin-right: 1.2rem;
+  padding: 0.2rem 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   background: var(--color-green);
   border-radius: 9999px;
@@ -190,7 +192,7 @@ body {
 .firstvisit-step-list {
   display: grid;
   grid-template-columns: 300px 70px 300px 70px 300px;
-  row-gap: 50px;
+  row-gap: 5rem;
 }
 .firstvisit-step-item {
   display: flex;
@@ -199,14 +201,12 @@ body {
 .firstvisit-step-photo {
   position: relative;
 }
-.firstvisit-step-photo img {
-  width: 300px;
-  height: 270px;
-  object-fit: cover;
-  border-radius: 20px;
-}
 /* 写真：ふだんはうっすらグレー、カーソルを当てるとふわっとカラーに */
 .firstvisit-step-photo img {
+	width: 300px;
+	height: 270px;
+	object-fit: cover;
+	border-radius: 20px;
   filter: saturate(70%);
   transition: filter 0.2s ease;
 }
@@ -243,7 +243,7 @@ body {
   justify-content: center;
   width: 78px;
   height: 78px;
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 500;
   line-height: 1;
   color: var(--color-text);
@@ -252,8 +252,8 @@ body {
   box-shadow: 0 4px 10px rgba(73, 72, 72, 0.12);
 }
 .firstvisit-step-num small {
-  margin-bottom: 3px;
-  font-size: 10px;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
   letter-spacing: 0.12em;
   color: var(--color-green-dark);
 }
@@ -265,20 +265,20 @@ body {
 .firstvisit-step-text {
   flex: 1;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 6px;
-  padding: 15px 20px;
+  margin-top: 0.6rem;
+  padding: 1.5rem 2rem;
   background: #fff;
   border-radius: 10px;
 }
 .firstvisit-step-text h3 {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 500;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
 }
 .firstvisit-step-text p {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 1.6rem;
+  line-height: 1.8;
   text-wrap: pretty; /* 1字落ち防止 */
 }
 /* ▶（TOPと同じ形・色） */
@@ -317,7 +317,7 @@ body {
 
 /*== よくあるご質問（Q&A） ==*/
 .firstvisit-qa {
-  padding: 100px 0;
+  padding: 10rem 0;
 }
 .firstvisit-qa-wrap {
   display: flex;
@@ -328,14 +328,14 @@ body {
 .firstvisit-qa-pict {
   display: grid;
   grid-template-columns: 170px 170px;
-  gap: 25px 30px;
+  gap: 2.5rem 3rem;
 }
 .firstvisit-qa-pict button {
   display: block;
   width: 100%;
   padding: 0;
   font: inherit;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: inherit;
   text-align: center;
@@ -346,7 +346,7 @@ body {
 .firstvisit-qa-pict img {
   width: 170px;
   height: 170px;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
   object-fit: cover;
   border-radius: 50%;
   outline: 4px solid transparent;
@@ -384,15 +384,15 @@ body {
   scroll-margin-top: 20px;
 }
 .firstvisit-qa-list details + details {
-  margin-top: 12px;
+  margin-top: 1.2rem;
 }
 .firstvisit-qa-list summary {
   position: relative;
   display: flex;
   align-items: center;
   min-height: 62px;
-  padding: 10px 45px 10px 55px;
-  font-size: 15px;
+  padding: 1rem 4.5rem 1rem 5.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
   list-style: none;
   text-wrap: pretty; /* 1字だけ次の行に落ちるのを防ぐ */
@@ -404,7 +404,7 @@ body {
   content: "Q.";
   position: absolute;
   left: 20px;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 500;
 }
 /* 開閉アイコン ＋ / − */
@@ -420,19 +420,19 @@ body {
   position: relative;
   /* 白いボックス全体を右へ10pxずらす：左は10px内側にひっこめ、右は10pxはみ出す。
      下はQの黄色いボックスの下の端にそろえる（Qのボックスの高さ＝Aのボックスの下まで） */
-  margin: 0 -10px 0 10px;
-  padding: 14px 19px 14px 49px; /* 枠を太くした1px分、内側の余白を減らして外側の大きさは変えない */
+  margin: 0 -10px 0 1rem;
+  padding: 1.4rem 1.9rem 1.4rem 4.9rem; /* 枠を太くした1px分、内側の余白を減らして外側の大きさは変えない */
   background: #fff;
   border: 3px solid var(--color-yellow); /* 黄色の枠（3px） */
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 1.6rem;
   text-wrap: pretty;
 }
 .firstvisit-qa-list details p::before {
   content: "A.";
   position: absolute;
   left: 17px;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.4;
   font-weight: 700;
   color: var(--color-green-dark);
@@ -441,19 +441,19 @@ body {
 .firstvisit-qa-more {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 15px;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
   padding: 0;
   font: inherit;
-  font-size: 20px;
+  font-size: 2rem;
   color: inherit;
   background: none;
   border: none;
   cursor: pointer;
 }
 .firstvisit-qa-more span {
-  padding: 2px 12px;
-  font-size: 12px;
+  padding: 0.2rem 1.2rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #fff;
   background: var(--color-green-dark);
@@ -475,15 +475,15 @@ body {
 
 /*== 無料体験レッスンご予約フォーム ==*/
 .firstvisit-form {
-  padding: 100px 0;
+  padding: 10rem 0;
   background: var(--color-cream);
 }
 .firstvisit-form-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 30px;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
 }
 .firstvisit-form-logo img:first-child {
   width: 80px;  /* ロゴマーク */
@@ -500,7 +500,7 @@ body {
   align-items: center;
 }
 .firstvisit-form-item + .firstvisit-form-item {
-  margin-top: 16px;
+  margin-top: 1.6rem;
 }
 /* 項目タイトル（左寄せ・必須マークは右端） */
 .firstvisit-form-title {
@@ -509,14 +509,14 @@ body {
   align-items: center;
   width: 240px;
   flex-shrink: 0;
-  margin-right: 25px;
-  font-size: 15px;
+  margin-right: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 .firstvisit-form-title span {
   margin-left: auto;
-  padding: 1px 10px;
-  font-size: 12px;
+  padding: 0.1rem 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #fff; /* 白抜き文字 */
   background: var(--color-green-dark);
@@ -525,18 +525,18 @@ body {
 .firstvisit-form-title small {
   display: block;
   width: 100%;
-  font-size: 11px;
+  font-size: 1.1rem;
 }
 .firstvisit-form-field {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 14px;
+  gap: 1.4rem;
+  font-size: 1.4rem;
 }
 .firstvisit-form-field label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
   cursor: pointer;
 }
 /* 入力欄（白） */
@@ -546,7 +546,7 @@ body {
 .firstvisit-form input[type="date"],
 .firstvisit-form select {
   height: 34px;
-  padding: 0 10px;
+  padding: 0 1rem;
   background: #fff;
   border: 1px solid var(--color-green);
   border-radius: 5px;
@@ -555,7 +555,7 @@ body {
 .firstvisit-form-name label {
   display: grid;
   grid-template-columns: 2.2em 1fr;
-  gap: 6px;
+  gap: 0.6rem;
   width: 165px;
 }
 .firstvisit-form-name input {
@@ -588,15 +588,15 @@ body {
   accent-color: var(--color-green);
 }
 .firstvisit-form-submit {
-  margin-top: 45px;
+  margin-top: 4.5rem;
   text-align: center;
 }
 .firstvisit-form-agree {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  font-size: 14px;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
   cursor: pointer;
 }
 .firstvisit-form-agree a {
@@ -607,7 +607,7 @@ body {
   width: 300px;
   height: 50px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 2rem;
   background: var(--color-green);
   border: none;
   border-radius: 5px;
@@ -670,7 +670,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.8;
   letter-spacing: 0.08em;
@@ -687,7 +687,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: serif; /* いちばんシンプルなセリフ体（料金ページと同じ指定） */
-  font-size: 52px;
+  font-size: 5.2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.05em;
@@ -698,10 +698,10 @@ body {
 /* タイトル下の日本語（- 〇〇 -：20px） */
 .common-pagehead h1 span {
   display: block;
-  margin: 8px 0 0;
+  margin: 0.8rem 0 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.15em;
@@ -784,11 +784,11 @@ body {
 	.firstvisit-page { min-width: 0; }
 	.firstvisit-inner {
 		width: auto;
-		padding: 0 20px;
+		padding: 0 2rem;
 	}
 	.firstvisit-page main h2 {
-		font-size: 20px;
-		margin-bottom: 28px;
+		font-size: 2rem;
+		margin-bottom: 3rem;
 	}
 	[id] { scroll-margin-top: 20px; }
 
@@ -798,53 +798,53 @@ body {
 	.common-pagehead-inner p { display: none; }
 	.common-pagehead h1 {
 		top: 50%;
-		font-size: 40px;
+		font-size: 4rem;
 	}
 	.common-pagehead h1 span {
-		margin-top: 6px;
-		font-size: 16px;
+		margin-top: 0.6rem;
+		font-size: 1.6rem;
 	}
 
 	/* ページ内リンク：縦並び */
-	.firstvisit-pagenav { padding: 24px 20px; }
+	.firstvisit-pagenav { padding: 2.4rem 2rem; }
 	.firstvisit-pagenav ul {
 		flex-direction: column;
 		align-items: center;
-		gap: 10px;
-		font-size: 15px;
+		gap: 1rem;
+		font-size: 1.5rem;
 	}
 	.firstvisit-pagenav a {
-		padding: 12px 4px 10px;
+		padding: 1.2rem 0.4rem 1rem;
 	}
 
 	/* ようこそ */
-	.firstvisit-welcome { padding: 40px 20px 220px; }
+	.firstvisit-welcome { padding: 4rem 2rem 22rem; }
 	.firstvisit-welcome-bg {
 		top: -60px;
 		height: 560px;
 	}
 	.firstvisit-page .firstvisit-welcome h2 {
-		font-size: 22px;
-		margin-bottom: 24px;
+		font-size: 2rem;
+		margin-bottom: 3rem;
 	}
 	.firstvisit-welcome p {
-		font-size: 14px;
-		line-height: 2;
+		font-size: 1.5rem;
+		line-height: 1.9;
 	}
 	.firstvisit-welcome p br { display: none; }
 
 	/* 6STEP：1列 */
-	.firstvisit-step { padding: 60px 0; }
+	.firstvisit-step { padding: 6rem 0; }
 	.firstvisit-step-head {
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 10px;
-		margin-bottom: 36px;
+		gap: 1rem;
+		margin-bottom: 3.6rem;
 	}
-	.firstvisit-step-head p { font-size: 13px; }
+	.firstvisit-step-head p { font-size: 1.3rem; }
 	.firstvisit-step-list {
 		grid-template-columns: 1fr;
-		row-gap: 36px;
+		row-gap: 3.6rem;
 	}
 	.firstvisit-step-arrow { display: none; }
 	.firstvisit-step-next::after,
@@ -858,20 +858,20 @@ body {
 		left: -8px;
 		width: 66px;
 		height: 66px;
-		font-size: 26px;
+		font-size: 2.6rem;
 	}
-	.firstvisit-step-text h3 { font-size: 18px; }
+	.firstvisit-step-text h3 { font-size: 1.8rem; }
 
 	/* Q&A：ピクトグラム→質問の縦並び */
-	.firstvisit-qa { padding: 60px 0; }
+	.firstvisit-qa { padding: 6rem 0; }
 	.firstvisit-qa-wrap {
 		flex-direction: column;
 		align-items: stretch;
 	}
 	.firstvisit-qa-pict {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 20px 16px;
-		margin-bottom: 36px;
+		gap: 2rem 1.6rem;
+		margin-bottom: 3.6rem;
 		justify-items: center;
 	}
 	.firstvisit-qa-pict li { width: 100%; max-width: 150px; }
@@ -882,37 +882,37 @@ body {
 	}
 	.firstvisit-qa-list { width: 100%; }
 	.firstvisit-qa-list summary {
-		padding: 10px 40px 10px 46px;
-		font-size: 14px;
+		padding: 1rem 4rem 1rem 4.6rem;
+		font-size: 1.4rem;
 	}
 	.firstvisit-qa-list summary::before { left: 16px; }
 	.firstvisit-qa-list summary::after { right: 14px; }
 	.firstvisit-qa-list details p {
 		margin: 0;
-		padding: 12px 14px 12px 42px;
-		font-size: 14px;
+		padding: 1.2rem 1.4rem 1.2rem 4.2rem;
+		font-size: 1.4rem;
 	}
 	.firstvisit-qa-list details p::before { left: 12px; }
 
 	/* 予約フォーム：項目を縦並び */
-	.firstvisit-form { padding: 60px 0; }
+	.firstvisit-form { padding: 6rem 0; }
 	.firstvisit-form form {
 		width: auto;
-		padding: 0 20px;
+		padding: 0 2rem;
 	}
 	.firstvisit-form-item {
 		flex-direction: column;
 		align-items: stretch;
 	}
-	.firstvisit-form-item + .firstvisit-form-item { margin-top: 20px; }
+	.firstvisit-form-item + .firstvisit-form-item { margin-top: 2rem; }
 	.firstvisit-form-title {
 		width: 100%;
-		margin: 0 0 6px;
+		margin: 0 0 0.6rem;
 	}
-	.firstvisit-form-title span { margin-left: 10px; }
+	.firstvisit-form-title span { margin-left: 1rem; }
 	.firstvisit-form-field {
 		flex-wrap: wrap;
-		gap: 10px;
+		gap: 1rem;
 	}
 	.firstvisit-form-name label {
 		width: calc(50% - 5px);
@@ -935,7 +935,7 @@ body {
 	.firstvisit-form input[type="date"],
 	.firstvisit-form select {
 		height: 44px;
-		font-size: 16px;
+		font-size: 1.6rem;
 	}
 	.firstvisit-form-field label {
 		min-height: 44px;
@@ -945,11 +945,11 @@ body {
 		width: 20px;
 		height: 20px;
 	}
-	.firstvisit-form-agree { min-height: 44px; }
-	.firstvisit-qa-more { min-height: 44px; }
-	.firstvisit-form-submit { margin-top: 36px; }
+		.firstvisit-qa-more { min-height: 44px; }
+	.firstvisit-form-submit { margin-top: 3.6rem; }
 	.firstvisit-form-agree {
-		font-size: 13px;
+	min-height: 44px;
+		font-size: 1.3rem;
 		text-align: left;
 	}
 	.firstvisit-form-submit button {
@@ -963,4 +963,5 @@ body {
 		width: 48px;
 		height: 48px;
 	}
+	.firstvisit-step-text p { font-size: 1.4rem; }
 }

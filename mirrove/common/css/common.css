@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 /* =====================================================================
    common.css  ―  全ページ共通（フォント / ヘッダー / SPヘッダー / ボタン / フッター / フェードイン）
@@ -67,7 +67,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: #ffffff;
+	background-color: #fffff8; /* TOPのヘッダー（style.css の header）と同じクリーム色 */
 	z-index: 1000;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -76,13 +76,17 @@ body {
 .nav-container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 12px 30px;
+	padding: 1.2rem 3rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 /* MIRROVEロゴ */
+.nav-logo {
+	flex-shrink: 0; /* 画面幅が狭くてもロゴを縮めない（about-us でロゴが消えていた） */
+}
+
 .nav-logo a {
 	display: flex;
 	align-items: center;
@@ -98,7 +102,7 @@ body {
 .nav-menu {
 	display: flex;
 	align-items: center;
-	gap: 24px;
+	gap: 2.4rem;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -107,7 +111,7 @@ body {
 .nav-menu li a {
 	text-decoration: none;
 	color: #494848;
-	font-size: 15px;
+	font-size: 1.5rem;
 	transition: color 0.2s ease;
 	white-space: nowrap;
 }
@@ -123,12 +127,12 @@ body {
 	text-decoration: none;
 	background-color: #B0C99A;
 	color: #494848;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 300;
 	border: 4px solid #E5DFA4;
 	border-radius: 9999px;
-	padding: 5px 6px 5px 18px;
-	gap: 12px;
+	padding: 0.5rem 0.6rem 0.5rem 1.8rem;
+	gap: 1.2rem;
 	transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
@@ -162,10 +166,10 @@ body {
 	background-color: #ffffff;
 	border-radius: 50%;
 	color: #494848;
-	font-size: 12px;
+	font-size: 1.2rem;
 	font-weight: bold;
 	letter-spacing: -1px;
-	padding-right: 1px;
+	padding-right: 0.1rem;
 	flex-shrink: 0;
 }
 
@@ -178,19 +182,11 @@ body {
 
 /* CTA BUTTON（style-price.css の .reserve-btn--large と同一仕様）
    ※ベースの .reserve-btn は HEADER PC 内で定義 */
-.reserve-btn--large {
-	font-size: 22px;
-	font-weight: bold;
-	padding: 8px 12px 8px 32px;
-	border-width: 6px;
-	gap: 20px;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
 
 .reserve-btn--large .reserve-btn-icon {
 	width: 44px;
 	height: 44px;
-	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 .reserve-btn--large:hover {
@@ -227,6 +223,12 @@ body {
 }
 
 .reserve-btn--large {
+	font-size: 2.2rem;
+	font-weight: bold;
+	padding: 0.8rem 1.2rem 0.8rem 3.2rem;
+	border-width: 6px;
+	gap: 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -241,16 +243,6 @@ body {
       ページ側の body 指定や reset.css の違いで、文字の位置がずれないようにするためです。
       セレクタに #footer を付けているのは、ページ側CSSの p / ul / img などの指定に負けないためです。
 ========================= */
-#footer {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 1.8;
-	letter-spacing: normal;
-	text-align: left;
-	text-transform: none;
-}
 
 #footer p,
 #footer ul,
@@ -259,7 +251,7 @@ body {
 #footer div {
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
+	font-size: 1.6rem;
 	font-weight: 400;
 	line-height: 1.8;
 	letter-spacing: normal;
@@ -286,16 +278,24 @@ body {
 }
 
 #footer {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.6rem;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.8;
+	letter-spacing: normal;
+	text-align: left;
+	text-transform: none;
 	background-color: #494848;
 	color: #ffffff;
-	padding: 50px 0 50px;
+	padding: 5rem 0 5rem;
 }
 
 /* インナー幅制御と全体横並び */
 #footer .footer-container {
 	max-width: 1080px;
 	margin: 0 auto;
-	padding: 0 40px;
+	padding: 0 4rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -313,24 +313,24 @@ body {
 }
 
 #footer .footer-copy {
-	margin-top: 20px;
-	font-size: 14px;
+	margin-top: 2rem;
+	font-size: 1.4rem;
 	line-height: 1.6;
 	color: #eaeaea;
 }
 
 /* 共通見出し（Site Map / Contents） */
 #footer .footer-heading {
-	font-size: 16px;
+	font-size: 1.6rem;
 	letter-spacing: 0.05em;
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
 	color: #ffffff;
 }
 
 /* --- 中央：サイトマップ --- */
 #footer .footer-nav-columns {
 	display: flex;
-	gap: 30px;
+	gap: 3rem;
 }
 
 #footer .footer-nav-list {
@@ -341,15 +341,15 @@ body {
 }
 
 #footer .footer-nav-list li {
-	margin-bottom: 12px;
-	font-size: 16px;
+	margin-bottom: 1.2rem;
+	font-size: 1.6rem;
 	line-height: 1.8;
 }
 
 #footer .footer-nav-list a {
 	color: #ffffff;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 1.4rem;
 	transition: opacity 0.2s ease;
 }
 
@@ -369,7 +369,7 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 1.6rem;
 	align-items: flex-end;
 }
 
@@ -393,9 +393,9 @@ body {
 	display: block;
 	text-align: center;
 	width: 100%;
-	font-size: 12px;
+	font-size: 1.2rem;
 	color: #cccccc;
-	padding-top: 20px;
+	padding-top: 2rem;
 }
 
 
@@ -441,7 +441,7 @@ body {
 		width: 72px;
 		height: 72px;
 
-		gap: 6px;
+		gap: 0.6rem;
 
 		background-color: rgba(255, 255, 248, 0.9);
 		border-radius: 50%;
@@ -470,9 +470,9 @@ body {
 .sp-menu-text {
 		display: block;
 
-		margin-top: 2px;
+		margin-top: 0.2rem;
 
-		font-size: 12px;
+		font-size: 1.2rem;
 		line-height: 1;
 
 		color: #494848;
@@ -517,14 +517,14 @@ body {
 	}
 
 	.sp-trial-main {
-		font-size: 13px;
+		font-size: 1.3rem;
 		font-weight: 700;
 	}
 
 	.sp-trial-sub {
-		margin-top: 2px;
+		margin-top: 0.2rem;
 
-		font-size: 8px;
+		font-size: 1rem; /* 旧 8px（読める大きさに） */
 	}
 
 	/* =========================
@@ -540,9 +540,9 @@ body {
 		align-items: center;
 
 		width: 100%;
-		height: 100vh;
+		height: 100dvh; /* スマホのアドレスバーの出し入れに合わせる */
 
-		padding: 70px 20px 40px;
+		padding: 7rem 2rem 4rem;
 
 		background-color: #fffff8;
 
@@ -601,7 +601,7 @@ body {
 	   SP MENU LOGO
 	========================= */
 .sp-menu-logo {
-		margin-bottom: 60px;
+		margin-bottom: 6rem;
 	}
 
 	.sp-menu-logo img {
@@ -629,36 +629,11 @@ body {
 		margin: 0;
 	}
 
-	.sp-menu-list li + li {
-		margin-top: 22px;
-	}
-
-	.sp-menu-list a {
-		display: inline-block;
-
-		padding-bottom: 10px;
-
-		border-bottom: 1px solid #494848;
-
-		font-size: 16px;
-		line-height: 1.2;
-
-		color: #494848;
-	}
-
+	
+	
 	/* =========================
 	   SP SNS
 	========================= */
-.sp-menu .sp-sns {
-		display: flex;
-
-		gap: 25px;
-
-		margin: 60px 0 0;
-		padding: 0;
-
-		list-style: none;
-	}
 
 	.sp-sns li {
 		margin: 0;
@@ -674,30 +649,21 @@ body {
 	}
 
 	.reserve-btn--large {
-		font-size: 18px;
-		padding: 6px 8px 6px 22px;
+		font-size: 1.8rem;
+		padding: 0.6rem 0.8rem 0.6rem 2.2rem;
 		border-width: 5px;
-		gap: 14px;
+		gap: 1.4rem;
 	}
 
 	.reserve-btn--large .reserve-btn-icon {
 		width: 36px;
 		height: 36px;
-		font-size: 15px;
+		font-size: 1.5rem;
 	}
 
 	/* =========================
    FOOTER SP
 ========================= */
-#footer {
-	width: 100%;
-	padding: 50px 25px 30px;
-
-	background-color: #494848;
-	color: #fff;
-
-	box-sizing: border-box;
-}
 
 	#footer .footer-container {
 	display: flex;
@@ -714,7 +680,7 @@ body {
 	order: 1;
 
 	width: 100%;
-	margin-bottom: 30px;
+	margin-bottom: 3rem;
 }
 
 	#footer .footer-logo {
@@ -728,15 +694,7 @@ body {
 	height: auto;
 }
 
-	#footer .footer-copy {
-	margin: 15px 0 0;
-
-	font-size: 12px;
-	line-height: 1.8;
-
-	color: #fff;
-}
-
+	
 	/* CONTENTS / SNS */
 #footer .footer-contents {
 	position: static;
@@ -744,7 +702,7 @@ body {
 	order: 2;
 
 	width: 100%;
-	margin: 0 0 40px;
+	margin: 0 0 4rem;
 
 	text-align: left;
 }
@@ -753,19 +711,7 @@ body {
 	display: none;
 }
 
-	#footer .footer-sns-list {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	gap: 18px;
-
-	margin: 0;
-	padding: 0;
-
-	list-style: none;
-}
-
+	
 	#footer .footer-sns-list li {
 	margin: 0;
 }
@@ -788,20 +734,7 @@ body {
 	margin: 0;
 }
 
-	#footer .footer-heading {
-	margin: 0 0 20px;
-
-	font-size: 16px;
-	letter-spacing: 0.05em;
-}
-
-	#footer .footer-nav-columns {
-	display: flex;
-	flex-direction: column;
-
-	gap: 0;
-}
-
+	
 	#footer .footer-nav-list {
 	width: 100%;
 
@@ -812,7 +745,7 @@ body {
 }
 
 	#footer .footer-nav-list + .footer-nav-list {
-	margin-top: 12px;
+	margin-top: 1.2rem;
 }
 
 	#footer .footer-nav-list li {
@@ -820,26 +753,10 @@ body {
 }
 
 	#footer .footer-nav-list li + li {
-	margin-top: 12px;
+	margin-top: 1.2rem;
 }
 
-	#footer .footer-nav-list a {
-	font-size: 13px;
-	color: #fff;
-}
-
-	/* COPYRIGHT */
-#footer .small {
-	width: 100%;
-
-	margin: 40px 0 0;
-	padding: 0;
-
-	font-size: 10px;
-	color: #aaa;
-
-	text-align: left;
-}
+	
 
 }
 
@@ -913,27 +830,38 @@ body {
 
 	/* SPメニューのリンク */
 	.sp-menu-list a {
-		padding: 8px 6px 10px;
+	display: inline-block;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #494848;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	color: #494848;
+		padding: 0.8rem 0.6rem 1rem;
 	}
 	.sp-menu-list li + li {
-		margin-top: 14px;
+		margin-top: 1.4rem;
 	}
 
 	/* SPメニューのSNSアイコン：見た目32px・押せる範囲44px */
 	.sp-menu .sp-sns {
-		gap: 14px;
+	display: flex;
+	margin: 6rem 0 0;
+	padding: 0;
+	list-style: none;
+		gap: 1.4rem;
 	}
 	.sp-sns a {
 		display: block;
-		padding: 6px;
+		padding: 0.6rem;
 	}
 
 	/* フッターのリンク：2列・1行ごとに44px程度の押せる範囲
 	   （3つのリストを display:contents で1つのグリッドにまとめ、左→右の順に並べる） */
 	#footer .footer-nav-columns {
+		flex-direction: column;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		column-gap: 16px;
+		column-gap: 1.6rem;
 		row-gap: 0;
 	}
 	#footer .footer-nav-list,
@@ -945,41 +873,58 @@ body {
 		margin: 0;
 	}
 	#footer .footer-nav-list a {
+	color: #fff;
 		display: block;
-		padding: 11px 0;
-		font-size: 14px;
+		padding: 1.1rem 0;
+		font-size: 1.4rem;
 		line-height: 1.4;
 	}
 
 	/* フッター各ブロックの上下余白をそろえる（ブロック間はすべて32px） */
 	#footer {
-		padding: 40px 25px 24px;
+	width: 100%;
+	background-color: #494848;
+	color: #fff;
+	box-sizing: border-box;
+		padding: 4rem 2.5rem 2.4rem;
 	}
 	#footer .footer-brand,
 	#footer .footer-contents {
-		margin: 0 0 32px;
+		margin: 0 0 3.2rem;
 	}
-	#footer .footer-copy {
-		margin-top: 12px;
+		#footer .footer-heading {
+	font-size: 1.6rem;
+	letter-spacing: 0.05em;
+		margin: 0 0 0.8rem;
 	}
-	#footer .footer-heading {
-		margin: 0 0 8px;
-	}
+	/* COPYRIGHT */
 	#footer .small {
-		margin: 32px 0 0;
+		width: 100%;
+		margin: 3.2rem 0 0;
+		padding: 0;
+		font-size: 1.1rem;
+		color: #ccc; /* 旧 #aaa（背景とのコントラスト4.5以上） */
+		text-align: left;
 	}
 	#footer .footer-sns-list {
-		gap: 6px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+		gap: 0.6rem;
 	}
 	#footer .footer-sns-list a {
-		padding: 6px;
+		padding: 0.6rem;
 		margin-left: -6px;
 	}
 	#footer .footer-copy {
-		font-size: 13px;
-	}
-	#footer .small {
-		font-size: 11px;
+	margin: 1.5rem 0 0;
+	line-height: 1.8;
+	color: #fff;
+	margin-top: 1.2rem;
+		font-size: 1.3rem;
 	}
 
 	/* 画面幅いっぱいのCTA画像：SPは中央付近を表示 */
@@ -987,4 +932,66 @@ body {
 	.freetrial-img {
 		object-position: 50% 50%;
 	}
+}
+
+/* フェードインの遅延（旧：HTMLの style="--fade-delay:…"） */
+.fd-0  { --fade-delay: 0s; }
+.fd-10 { --fade-delay: .1s; }
+.fd-15 { --fade-delay: .15s; }
+.fd-20 { --fade-delay: .2s; }
+.fd-30 { --fade-delay: .3s; }
+.fd-40 { --fade-delay: .4s; }
+
+/* =========================
+   英字の大見出し（参考：大きなセリフ体の英字＋小さな日本語）
+   ・HTML：<h2 class="has-en"><span class="en-title" lang="en">Price</span>料金プラン</h2>
+   ・ページごとの h2 の指定（#contents h2 など）より強くするため、:not(#_) で詳細度を上げている
+========================= */
+:is(h1, h2).has-en > span.en-title {
+	display: block;
+	position: static;
+	left: auto;
+	margin: 0 0 1.2rem;
+	font-family: "Cormorant Garamond", "Times New Roman", serif;
+	font-size: 5.6rem;
+	font-weight: 500;
+	line-height: 1.1;
+	letter-spacing: 0.02em;
+}
+.has-en:not(#_) {
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 1.8;
+	letter-spacing: 0.15em;
+}
+
+/* =========================
+   写真の窓（参考：画面に固定した写真の上を、カードが流れていく）
+   ・class="photo-window" のセクションだけ背景を透明にし、写真を画面に固定して敷く
+   ・写真は各ページのCSSで --window-photo に指定。文字が読めるよう、写真は少し暗くする
+========================= */
+section.photo-window,
+div.photo-window {
+	position: relative;
+	clip-path: inset(0); /* 固定した写真を、このセクションの形に切り抜く */
+	background: transparent;
+}
+.photo-window::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background:
+		linear-gradient(rgba(34, 36, 28, 0.42), rgba(34, 36, 28, 0.42)),
+		var(--window-photo, url("../img/facility_05_relax.jpg")) center / cover no-repeat;
+}
+/* 窓の中の見出しは白 */
+.photo-window .has-en:not(#_) {
+	color: #fff;
+	text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (max-width: 768px) {
+	:is(h1, h2).has-en > span.en-title { font-size: 3.8rem; }
+	.has-en:not(#_) { font-size: 1.3rem; }
 }

@@ -8,21 +8,9 @@ color: #494848;
 }
 
 
-.main {
-	max-width: 1200px;
-}
-
-
 /*===========================================================================
 lesson
 ===========================================================================*/
-
-.clearfix::after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
 
 #wrapper {
 	width: 1200px;
@@ -37,23 +25,9 @@ lesson
     	position: relative;
 }
 
-.kv-lead  {
-	position: absolute;
-	top: 40px; /* 上の余白 */
-	left: 50%;
-	transform: translateX(-50%);
-	color: #fff;
-	font-size: 18px;
-	font-weight: 300;
-	letter-spacing: 0.08em;
-	white-space: nowrap;
-	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-}
-
-
 .key {
 	text-align: center;
-	margin: 40px;
+	margin: 4rem;
 	line-height: 1.8;
 }
 
@@ -70,32 +44,6 @@ lesson
     	height: auto;
 }
 
-.keyVisual h1 {
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	transform: translate(-50%, -50%);
-    	font-size: 52px;
-	font-family: serif;
-	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-	color: #ffffff;
-
-
-}
-
-.keyVisual h3 {
-    	position: absolute;
-    	top: calc(50% + 40px);
-    	left: 50%;
-    	transform: translateX(-50%);
-    	font-size: 20px;
-    	white-space: nowrap;
-	font-family: serif;
-	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-	color: #ffffff;
-}
-
-
 /******************** プログラム ********************/
 
 .containerProgram {
@@ -109,39 +57,22 @@ lesson
 .pilates {
     background-color: #E5DFA4;
 
-    padding: 20px;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 }
 
 /***** プログラム全体の中見出し *****/
-.explainTitle h2 {
-  	font-size: 32px;
-	margin: 0;
-    	padding-top: 30px;
-    	width: 100%;
-    	box-sizing: border-box;
-}
 
 /***** プログラム全体の小見出し *****/
-.explainTitle h4 {
-  	font-size: 16px;
-   	margin: 10px 0 0 -10px;
-}
 
 /***** プログラム説明文章 *****/
-.explain {
-	padding: 10px;
-Line-height: 1.8;
-
-}
 
 /***** ピラティス左右 *****/
 .pilates .fl,
 .pilates .fr {
-    float: left;
     width: 50%;
-    padding: 15px;
+    padding: 1.5rem;
     box-sizing: border-box;
     position: relative;
 }
@@ -162,7 +93,9 @@ Line-height: 1.8;
     display: block;
     width: 100%;
     height: auto;
+    transition: opacity .3s;
 }
+.photo img:hover { opacity: .8; } /* 画像にマウスを乗せると少し透ける（旧：jQuery） */
 
 /***** 画像中央の白文字 *****/
 
@@ -178,7 +111,7 @@ Line-height: 1.8;
     margin: 0;
 
     color: #fff;
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
@@ -256,8 +189,8 @@ Line-height: 1.8;
 .pilates .fl p,
 .pilates .fr p {
     line-height: 1.8;
-    font-size: 16px;
-Margin-top: 20px;
+    font-size: 1.6rem;
+Margin-top: 2rem;
 }
 
 
@@ -267,8 +200,8 @@ Margin-top: 20px;
 
 .yoga {
     background-color: #fff;
-    margin: 20px;
-    padding: 20px;
+    margin: 2rem;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 }
@@ -277,9 +210,8 @@ Margin-top: 20px;
 
 .yoga .fl,
 .yoga .fr {
-    float: left;
     width: 50%;
-    padding: 15px;
+    padding: 1.5rem;
     box-sizing: border-box;
 }
 
@@ -299,37 +231,16 @@ Margin-top: 20px;
 
 
 /* 緑の丸 */
-.circle {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 235px;
-    left: 450px;
-    background-color: #B0C99A;
-    border-radius: 50%;
-    z-index: 2;
-}
 
 /* 白い三角 */
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-   top: 250px;
-    left: 473px;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 40px solid #fff;
-    z-index: 3;
-}
 
 
 /***** ヨガ左右文章 *****/
 .yoga .fl p,
 .yoga .fr p {
-    margin: 10px 0;
+    margin: 1rem 0;
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 
@@ -339,8 +250,8 @@ Margin-top: 20px;
 
 .training {
     background-color: #E5DFA4;
-    margin: 20px;
-    padding: 20px;
+    margin: 2rem;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 }
@@ -350,9 +261,8 @@ Margin-top: 20px;
 
 .training .fl,
 .training .fr {
-    float: left;
     width: 50%;
-    padding: 15px;
+    padding: 1.5rem;
     box-sizing: border-box;
 }
 
@@ -374,28 +284,7 @@ Margin-top: 20px;
 
 
 /* 緑の丸 */
-.circle {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 235px;
-    left: 450px;
-    background-color: #B0C99A;
-    border-radius: 50%;
-    z-index: 2;
-}
 
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-   top: 250px;
-    left: 473px;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 40px solid #fff;
-    z-index: 3;
-}
 
 
 /*** トレーニングマシーン左右文章 ***/
@@ -403,8 +292,8 @@ Margin-top: 20px;
 .training .fr p {
 
     line-height: 1.8;
-    font-size: 16px;
-Margin-top: 20px;
+    font-size: 1.6rem;
+Margin-top: 2rem;
 }
 
 
@@ -413,8 +302,8 @@ Margin-top: 20px;
 
 .boxing {
     background-color: #fff;
-    margin: 20px;
-    padding: 20px;
+    margin: 2rem;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 }
@@ -422,9 +311,8 @@ Margin-top: 20px;
 /*** ボクシング左右 ***/
 .boxing .fl,
 .boxing .fr {
-    float: left;
     width: 50%;
-    padding: 15px;
+    padding: 1.5rem;
     box-sizing: border-box;
 }
 
@@ -442,7 +330,7 @@ Margin-top: 20px;
 .boxing .fr .photo {
     position: relative;
     width: 100%;
-Margin-bottom:20px;
+Margin-bottom:2rem;
 }
 
 
@@ -476,9 +364,9 @@ Margin-bottom:20px;
 .boxing .fr p {
 
     line-height: 1.8;
-    font-size: 16px;  line-height: 1.8;
-    font-size: 16px;
-Margin-top: 20px;
+    font-size: 1.6rem;  line-height: 1.8;
+    font-size: 1.6rem;
+Margin-top: 2rem;
 }
 
 
@@ -486,59 +374,48 @@ Margin-top: 20px;
 
 .containerPersonal {
     background-color: #E5DFA4;
-    margin: 20px;
-    padding: 20px;
+    margin: 2rem;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 width: 1200px;
 }
 
-.explainTitle h2 {
-   	font-size: 32px;
-   	margin: 10px 0 0;
-	text-align: center;
-}
 
-.explainTitle h4 {
-  	font-size: 16px;
-   	margin: 10px 0 0;
-	text-align: center;
-Margin-bottom: 30px;
-}
 
 
 /*** パーソナルレッスン：左文章 ***/
 .flPersonal {
-    float: left;
+    float: left; /* 文章と写真を互い違いにずらして重ねる配置のため float のまま */
     width: 50%;
-    padding: 30px;
+    padding: 3rem;
     box-sizing: border-box;
     position: relative;
 }
 
 /*** パーソナルレッスン：右画像 ***/
 .frPersonal {
-    float: right;
+    float: right; /* 文章と写真を互い違いにずらして重ねる配置のため float のまま */
     width: 50%;
-    padding: 30px;
+    padding: 3rem;
     box-sizing: border-box;
     position: relative;
 }
 
 /*** 食事指導：左画像 ***/
 .flFood {
-    float: left;
+    float: left; /* 文章と写真を互い違いにずらして重ねる配置のため float のまま */
     width: 50%;
-    padding: 30px;
+    padding: 3rem;
     box-sizing: border-box;
     position: relative;
 }
 
 /*** 食事指導：右文章 ***/
 .frFood {
-    float: right;
+    float: right; /* 文章と写真を互い違いにずらして重ねる配置のため float のまま */
     width: 50%;
-    padding: 30px;
+    padding: 3rem;
     box-sizing: border-box;
 text-align: center;
     position: relative;
@@ -549,10 +426,13 @@ text-align: center;
 .frPersonal img,
 .flFood img {
 	position: relative;
+	opacity: 0;                    /* 画面に入ったら lesson.js が .is-in を付けて表示 */
+	transform: translateY(40px);
+	transition: opacity 1s ease, transform .8s ease;
 width: 100%;
     max-width: 520px;
     height: 500px;
-    padding: 0 20px 10px;
+    padding: 0 2rem 1rem;
     box-sizing: border-box;
     object-fit: cover;
     z-index: 1;
@@ -577,49 +457,40 @@ width: 100%;
     left: 50%;
     transform: translateX(-50%);
 }
-/* ★要確認：次の } は元のCSSにあった余分な閉じ括弧です。これのせいで直後の「.flPersonal h2, .frFood h2」ルールが無効になっています。
-   消すと見出しが20px・中央寄せになり見た目が変わるため、現状維持のまま残しています（デザイン確認のうえ判断してください）。 */
-}
-
 
 /*** 見出し ***/
-.flPersonal h2,
-.frFood h2 {
-    font-size: 20px;
-    margin: 0 0 20px;
-text-align: center;
+.flPersonal h3,
+.frFood h3 {
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 /*** 文章 ***/
 .flPersonal p,
 .frFood p {
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.8;
-    margin: 0 0 15px;
+    margin: 0 0 1.5rem;
 text-align: center;
 }
 
 /*** 高さの崩れ防止 ***/
-.personalContent {
-    display: flow-root;
-}
-
-
 /*** パーソナルレッスンについてボタン ***/
 .moreBtn {
     width: 320px;
-    margin-left: 820px;
+    margin-left: 82rem;
 }
 
 .moreBtn a {
-Font-size: 20px;
+Font-size: 2rem;
     display: inline-block;
     background-color: #B0C99A;
     color: #fff;
     text-decoration: none;
-    padding: 12px 30px;
+    padding: 0 3rem;
+    line-height: 5rem; /* 高さ50px：ほかのボタンとそろえる */
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: transform .3s ease, opacity .3s ease;
 }
 
 /* オンマウスで少し拡大 */
@@ -637,7 +508,7 @@ Font-size: 20px;
 	width: 1200px;
     background-color: #fff;
 
-    padding: 20px;
+    padding: 2rem;
     box-sizing: border-box;
     display: flow-root;
 }
@@ -645,26 +516,26 @@ Font-size: 20px;
 
 /** インストラクター全体の中見出し **/
 .explainTitle h2 {
-  	font-size: 32px;
-
+	margin: 1rem 0 0;
+	font-size: 2.4rem;
 	text-align: center;
-    	padding-top: 20px;
-    	width: 100%;
-    	box-sizing: border-box;
-
-
+	padding-top: 2rem;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 /** インストラクター全体の小見出し **/
-.explainTitle h4 {
-  	font-size: 16px;
-
+.explainTitle .explain-sub {
+	margin: 1rem 0 0;
+	Margin-bottom: 3rem;
+	font-size: 1.6rem;
 	text-align: center;
 }
 
 /** インストラクター説明文章 **/
 .explain {
-	padding: 30px;
+	Line-height: 1.8;
+	padding: 3rem;
 }
 
 
@@ -679,15 +550,16 @@ Font-size: 20px;
 .instructor_photo p {
     width: 200px;
     margin: 100;
-padding: 20px;
+padding: 2rem;
 }
 
 .instructor_photo img {
     width: 100%;
     height: auto;
     display: block;
-
+    transition: filter .4s;
 }
+.instructor_photo img:hover { filter: brightness(.9); } /* マウスを乗せると少し暗く（旧：jQuery） */
 
 
 /** インストラクターカテゴリー **/
@@ -707,7 +579,7 @@ height: 3em;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-Padding-bottom: 10px;
+Padding-bottom: 1rem;
 }
 
 /** インストラクター名前 **/
@@ -722,7 +594,7 @@ Padding-bottom: 10px;
     width: 200px;
     margin: 0;
     text-align: center;
-padding: 10px;
+padding: 1rem;
 border-top: 1px solid #484848;
 Border-bottom: 1px solid #484848;
 }
@@ -735,14 +607,14 @@ Border-bottom: 1px solid #484848;
     justify-content: space-between;
     text-align: center;
 align-items: flex-start;
-Padding-bottom: 10px;
+Padding-bottom: 1rem;
 }
 
 .instructor_introduce p {
     width: 200px;
     margin: 0;
-	padding-top:20px;
-	padding-left: 20px;
+	padding-top:2rem;
+	padding-left: 2rem;
     text-align: center;
     box-sizing: border-box;
 Line-height: 1.6;
@@ -752,18 +624,13 @@ Line-height: 1.6;
 /*************** 当日の持ち物 ***************/
 
 
-.containerBelongings {
-
-	width: 1200px;
-    background-color: #fff;
-
-    Padding-top: 50px;
-    box-sizing: border-box;
-    display: flow-root;
-}
 
 
 .containerBelongings {
+	background-color: #fff;
+	Padding-top: 5rem;
+	box-sizing: border-box;
+	display: flow-root;
     width: 1200px;
 }
 
@@ -773,7 +640,7 @@ Line-height: 1.6;
     z-index: 2;
 }
 
-.containerBelongings .title p {
+.containerBelongings .title h2 {
     width: 300px;
     height: 70px;
     border: 4px solid #B0C99A;
@@ -782,9 +649,9 @@ Line-height: 1.6;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 2.4rem;
     background-color: #fff;
-    margin-left: 50px;
+    margin-left: 5rem;
     position: relative;
     z-index: 2;
 }
@@ -798,10 +665,10 @@ Line-height: 1.6;
     border: 20px solid #E5DFA4;
     border-radius: 20px;
     box-sizing: border-box;
-    padding: 30px;
-    margin-left: 130px;
+    padding: 3rem;
+    margin-left: 13rem;
     margin-top: -40px;
-    Margin-bottom: 40px;
+    Margin-bottom: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -812,7 +679,7 @@ Line-height: 1.6;
 .containerBelongings .item_fr {
     width: 50%;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 2rem;
 }
 
 .containerBelongings .item_fl {
@@ -824,15 +691,16 @@ Line-height: 1.6;
 }
 
 
-.containerBelongings #item h5 {
-    Font-size: 20px;
-Margin: 20px 10px 20px;
+.containerBelongings #item h3 {
+    font-weight: 500;
+    Font-size: 2rem;
+Margin: 2rem 1rem 2rem;
 }
 
 
 .containerBelongings #item p {
-    Font-size: 16px;
-Margin: 20px;
+    Font-size: 1.6rem;
+Margin: 2rem;
 Line-height: 1.8;
 }
 
@@ -900,7 +768,7 @@ Line-height: 1.8;
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.8;
   letter-spacing: 0.08em;
@@ -917,7 +785,7 @@ Line-height: 1.8;
   margin: 0;
   padding: 0;
   font-family: serif; /* いちばんシンプルなセリフ体（料金ページと同じ指定） */
-  font-size: 52px;
+  font-size: 5.2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.05em;
@@ -928,10 +796,10 @@ Line-height: 1.8;
 /* タイトル下の日本語（- 〇〇 -：20px） */
 .common-pagehead h1 span {
   display: block;
-  margin: 8px 0 0;
+  margin: 0.8rem 0 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.15em;
@@ -960,11 +828,11 @@ Line-height: 1.8;
 	.common-pagehead-inner p { display: none; }
 	.common-pagehead h1 {
 		top: 50%;
-		font-size: 40px;
+		font-size: 4rem;
 	}
 	.common-pagehead h1 span {
-		margin-top: 6px;
-		font-size: 16px;
+		margin-top: 0.6rem;
+		font-size: 1.6rem;
 	}
 	.common-pagehead > img { width: 150%; } /* lessonのみ：人物の顔が切れないように */
 
@@ -979,48 +847,47 @@ Line-height: 1.8;
 	}
 
 	.key {
-		margin: 30px 20px;
-		font-size: 14px;
+		margin: 3rem 2rem;
+		font-size: 1.4rem;
 	}
 	.key p { display: inline; }
 
 	/* プログラム共通 */
 	.explainTitle h2 {
-		font-size: 26px;
-		padding-top: 16px;
+		font-size: 2rem;
+		padding-top: 1.6rem;
 	}
-	.explainTitle h4 { margin-left: 0; }
+	.explainTitle .explain-sub { margin-left: 0; }
 	.explain {
-		padding: 10px 6px;
-		font-size: 14px;
+		padding: 1rem 0.6rem;
+		font-size: 1.4rem;
 		text-align: left;
 	}
 	.explain p { display: inline; }
 
-	.pilates { padding: 16px 14px; }
+	.pilates { padding: 1.6rem 1.4rem; }
 	.yoga,
 	.training,
 	.boxing {
-		margin: 12px;
-		padding: 16px 14px;
+		margin: 1.2rem;
+		padding: 1.6rem 1.4rem;
 	}
 	.pilates .fl, .pilates .fr,
 	.yoga .fl, .yoga .fr,
 	.training .fl, .training .fr,
 	.boxing .fl, .boxing .fr {
-		float: none;
 		width: 100%;
-		padding: 10px 0 14px;
+		padding: 1rem 0 1.4rem;
 	}
 	.pilates .fl p, .pilates .fr p,
 	.yoga .fl p, .yoga .fr p,
 	.training .fl p, .training .fr p,
 	.boxing .fl p, .boxing .fr p {
-		font-size: 14px;
-		margin-top: 12px;
+		font-size: 1.4rem;
+		margin-top: 1.2rem;
 	}
 	.photo-title {
-		font-size: 22px;
+		font-size: 2.2rem;
 		letter-spacing: 1px;
 	}
 	.photo a {
@@ -1040,21 +907,21 @@ Line-height: 1.8;
 
 	/* パーソナルレッスン・食事指導：縦積み */
 	.containerPersonal {
-		margin: 12px;
-		padding: 16px 14px;
+		margin: 1.2rem;
+		padding: 1.6rem 1.4rem;
 		width: auto;
 	}
 	.flPersonal, .frPersonal, .flFood, .frFood {
 		float: none;
 		width: 100%;
-		padding: 20px 0;
+		padding: 2rem 0;
 	}
 	.flPersonal p, .frFood p {
-		font-size: 14px;
+		font-size: 1.4rem;
 		text-align: left;
 	}
-	.flPersonal h2, .frFood h2 {
-		font-size: 18px;
+	.flPersonal h3, .frFood h3 {
+		font-size: 1.8rem;
 		text-align: center;
 	}
 	.frPersonal img,
@@ -1063,7 +930,7 @@ Line-height: 1.8;
 		max-width: none;
 		height: auto;
 		aspect-ratio: 1 / 1;
-		padding: 0 24px 10px;
+		padding: 0 2.4rem 1rem;
 	}
 	.containerPersonal .frPersonal::before,
 	.containerPersonal .flFood::before {
@@ -1074,12 +941,12 @@ Line-height: 1.8;
 	}
 	.moreBtn {
 		width: auto;
-		margin: 10px 0 0;
+		margin: 1rem 0 0;
 		text-align: center;
 	}
 	.moreBtn a {
-		font-size: 16px;
-		padding: 14px 20px;
+		font-size: 1.8rem;
+		padding: 0 2rem;
 	}
 
 	/* インストラクター：2列カード
@@ -1088,11 +955,11 @@ Line-height: 1.8;
 	.containerInstructor {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		column-gap: 12px;
-		padding: 16px 14px;
+		column-gap: 1.2rem;
+		padding: 1.6rem 1.4rem;
 	}
 	.containerInstructor > .explainTitle { grid-column: 1 / -1; grid-row: 1; }
-	.containerInstructor > .explain { grid-column: 1 / -1; grid-row: 2; padding: 10px 6px 20px; }
+	.containerInstructor > .explain { grid-column: 1 / -1; grid-row: 2; padding: 1rem 0.6rem 2rem; }
 	.instructor_photo,
 	.instructor_category,
 	.instructor_name,
@@ -1100,25 +967,25 @@ Line-height: 1.8;
 
 	.instructor_photo p {
 		width: auto;
-		margin: 16px 0 0;
+		margin: 1.6rem 0 0;
 		padding: 0;
 	}
 	.instructor_category p {
 		width: auto;
 		height: auto;
 		min-height: 3em;
-		padding: 6px 0 0;
-		font-size: 13px;
+		padding: 0.6rem 0 0;
+		font-size: 1.3rem;
 	}
 	.instructor_name p {
 		width: auto;
-		padding: 6px;
-		font-size: 14px;
+		padding: 0.6rem;
+		font-size: 1.4rem;
 	}
 	.instructor_introduce p {
 		width: auto;
-		padding: 10px 0 14px;
-		font-size: 13px;
+		padding: 1rem 0 1.4rem;
+		font-size: 1.3rem;
 		line-height: 1.7;
 		text-align: left;
 	}
@@ -1144,26 +1011,52 @@ Line-height: 1.8;
 	.instructor_introduce p:nth-child(5) { grid-column: 1; grid-row: 14; }
 
 	/* 当日の持ち物 */
-	.containerBelongings { padding-top: 30px; }
-	.containerBelongings .title p {
+	.containerBelongings { padding-top: 3rem; }
+	.containerBelongings .title h2 {
 		width: 220px;
 		height: 56px;
-		margin-left: 20px;
-		font-size: 18px;
+		margin-left: 2rem;
+		font-size: 2rem;
 	}
 	.containerBelongings #item {
 		width: auto;
 		height: auto;
-		margin: -28px 14px 30px;
-		padding: 40px 10px 20px;
+		margin: -28px 1.4rem 3rem;
+		padding: 4rem 1rem 2rem;
 		border-width: 10px;
 		flex-direction: column;
 	}
 	.containerBelongings .item_fl,
 	.containerBelongings .item_fr {
 		width: 100%;
-		padding: 0 6px;
+		padding: 0 0.6rem;
 	}
-	.containerBelongings #item h5 { margin: 10px 0; font-size: 17px; }
-	.containerBelongings #item p { margin: 10px 0; font-size: 14px; }
+	.containerBelongings #item h3 { margin: 1rem 0; font-size: 1.8rem; }
+	.containerBelongings #item p { margin: 1rem 0; font-size: 1.4rem; }
+}
+
+/* パーソナルレッスン・食事指導の画像：画面に入ったら表示（lesson.js） */
+.frPersonal img.is-in,
+.flFood img.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+	.frPersonal img, .flFood img { opacity: 1; transform: none; transition: none; }
+}
+
+/* 左右2列の並び（旧：float）。見出し・説明文は1行まるごと使う（PCのみ。SPは1列のまま） */
+@media screen and (min-width: 769px) {
+	.pilates, .yoga, .training, .boxing {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+	.pilates > .explainTitle, .yoga > .explainTitle, .training > .explainTitle, .boxing > .explainTitle,
+	.pilates > .explain, .yoga > .explain, .training > .explain, .boxing > .explain {
+		width: 100%;
+	}
+	/* flexの中では見出しの上下の余白が外へ出ない（margin collapse しない）ので、外側に付け替える */
+	.pilates > .explainTitle, .yoga > .explainTitle, .training > .explainTitle, .boxing > .explainTitle {
+		margin: 1rem 0 3rem;
+	}
+	.pilates > .explainTitle h2, .yoga > .explainTitle h2, .training > .explainTitle h2, .boxing > .explainTitle h2 { margin-top: 0; }
+	.pilates > .explainTitle .explain-sub, .yoga > .explainTitle .explain-sub, .training > .explainTitle .explain-sub, .boxing > .explainTitle .explain-sub { margin-bottom: 0; }
 }

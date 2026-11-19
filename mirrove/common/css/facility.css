@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 body {
 font-weight: 400;
@@ -15,23 +15,23 @@ html {
 }
 
 #contents {
-	font-size: 16px;
+	font-size: 1.6rem;
 }
 
 #list-top{
   scroll-margin-top: 180px;
 }
 
-#contents > p {
-    margin-top: 50px;
+#contents > main > p {
+    margin-top: 5rem;
     text-align: center;
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 #facility-list {
-    margin-top: 50px;
-	margin-bottom: 80px;
+    margin-top: 5rem;
+	margin-bottom: 8rem;
 	text-align: center;
 }
 
@@ -39,7 +39,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 40px;
+    gap: 4rem;
 }
 
 .facility-row a {
@@ -51,11 +51,11 @@ html {
     box-sizing: border-box;
     background-color: #B0C99A;
     box-shadow: 2px 2px 6px #666;
-	font-size: 18px;
+	font-size: 1.8rem;
     text-align: center;
     text-decoration: none;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
     line-height: 1.5;
 	color: #494848
 }
@@ -67,16 +67,10 @@ html {
 #detail {
     width: 100%;
     max-width: 1200px;
-    margin: 180px auto 0;
+    margin: 18rem auto 0;
 }
 
 /* 写真と文章を横並びにする */
-.facility-item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 100px;
-}
 
 /* 左右交互に配置 */
 .facility-item.left {
@@ -88,14 +82,6 @@ html {
 }
 
 /* 写真 */
-.photo-box {
-    position: relative;
-    width: 745px;
-    height: 450px;
-    flex-shrink: 0;
-    overflow: visible;
-    z-index: 2;
-}
 
 .photo-box img {
     display: block;
@@ -105,9 +91,6 @@ html {
     object-position: center;
 }
 
-.facility-item {
-    position: relative;
-}
 
 /* 写真の下側に画面幅いっぱいの背景を敷く */
 .facility-item::before {
@@ -124,15 +107,7 @@ html {
 }
 
 /* 写真と文章を背景より手前にする */
-.photo-box {
-    position: relative;
-    z-index: 2;
-}
 
-.article {
-    position: relative;
-    z-index: 1;
-}
 
 /* 見出し */
 .photo-box h2 {
@@ -147,7 +122,7 @@ html {
     box-sizing: border-box;
     background-color: #B0C99A;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 1.6rem;
     box-shadow: 2px 2px 6px #666;
     scroll-margin-top: 120px;
 }
@@ -161,18 +136,6 @@ html {
 }
 
 /* 文章の枠 */
-.article {
-    width: 440px;
-    height: 333px;
-    flex: 0 0 440px;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    border: 2px solid #E5DFA4;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /* 文章 */
 .article-text {
@@ -185,6 +148,10 @@ html {
     text-align: left;
     line-height: 1.8;
 }
+/* 段落の間・後ろは1行分あける（旧：<br><br>） */
+.article p + p { margin-top: 1lh; }
+.article p.gap-after-1 { margin-bottom: 1lh; }
+.article p.gap-after-2 { margin-bottom: 2lh; }
 
 /* ▲リンク */
 .article a {
@@ -192,19 +159,37 @@ html {
     width: 100%;
     text-align: right;
     text-decoration: none;
-    color: #E5DFA4;
+    color: #567645; /* 旧 #E5DFA4（白背景で読めるよう濃い緑に） */
 }
 
 .facility-item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10rem;
     position: relative;
 }
 
 .photo-box {
+	width: 745px;
+	height: 450px;
+	flex-shrink: 0;
+	overflow: visible;
     position: relative;
     z-index: 2;
 }
 
 .article {
+	width: 440px;
+	height: 333px;
+	flex: 0 0 440px;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+	border: 2px solid #E5DFA4;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
     position: relative;
     z-index: 1;
 }
@@ -321,7 +306,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.8;
   letter-spacing: 0.08em;
@@ -338,7 +323,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: serif; /* いちばんシンプルなセリフ体（料金ページと同じ指定） */
-  font-size: 52px;
+  font-size: 5.2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.05em;
@@ -349,10 +334,10 @@ html {
 /* タイトル下の日本語（- 〇〇 -：20px） */
 .common-pagehead h1 span {
   display: block;
-  margin: 8px 0 0;
+  margin: 0.8rem 0 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif; /* Noto Sans（太字なし） */
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.15em;
@@ -392,25 +377,25 @@ html, body {
 	.common-pagehead-inner p { display: none; }
 	.common-pagehead h1 {
 		top: 50%;
-		font-size: 40px;
+		font-size: 4rem;
 	}
 	.common-pagehead h1 span {
-		margin-top: 6px;
-		font-size: 16px;
+		margin-top: 0.6rem;
+		font-size: 1.6rem;
 	}
 
-	#contents > p {
-		margin-top: 36px;
-		padding: 0 20px;
-		font-size: 14px;
+	#contents > main > p {
+		margin-top: 3.6rem;
+		padding: 0 2rem;
+		font-size: 1.4rem;
 	}
 	#list-top { scroll-margin-top: 20px; }
 
 	/* 設備リンク：縦並び */
 	#facility-list {
-		margin-top: 24px;
-		margin-bottom: 50px;
-		padding: 0 20px;
+		margin-top: 2.4rem;
+		margin-bottom: 5rem;
+		padding: 0 2rem;
 	}
 	.facility-row {
 		flex-direction: column;
@@ -421,18 +406,18 @@ html, body {
 		width: 100%;
 		max-width: 360px;
 		height: 64px;
-		margin-bottom: 16px;
-		font-size: 16px;
+		margin-bottom: 1.6rem;
+		font-size: 1.6rem;
 	}
 
 	/* 詳細：写真→文章 の縦積み */
-	#detail { margin-top: 60px; }
+	#detail { margin-top: 6rem; }
 	.facility-item,
 	.facility-item.left,
 	.facility-item.right {
 		flex-direction: column;
 		align-items: stretch;
-		margin-bottom: 70px;
+		margin-bottom: 7rem;
 	}
 	.facility-item::before {
 		top: auto;
@@ -447,7 +432,7 @@ html, body {
 		top: -24px;
 		width: 190px;
 		height: 48px;
-		font-size: 15px;
+		font-size: 1.5rem;
 	}
 	#relax { height: 60px; }
 	.facility-item.left .photo-box h2 { left: 12px; }
@@ -459,8 +444,8 @@ html, body {
 		width: auto;
 		height: auto;
 		flex: none;
-		margin: -20px 20px 0;
-		padding: 36px 24px 20px;
+		margin: -20px 2rem 0;
+		padding: 3.6rem 2.4rem 2rem;
 		box-sizing: border-box;
 	}
 	.article-text {
@@ -468,12 +453,12 @@ html, body {
 		height: auto;
 	}
 	.article p {
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 1.8;
 	}
-	.article-text p br + br { display: none; }
+	.article p + p, .article p.gap-after-1, .article p.gap-after-2 { margin-top: 0; margin-bottom: 0; } /* SPは段落の間をあけない */
 	.article a {
-		padding: 10px 0 0;
-		font-size: 18px;
+		padding: 1rem 0 0;
+		font-size: 1.8rem;
 	}
 }

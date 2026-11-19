@@ -8,16 +8,16 @@
   document.documentElement.classList.add('js');
 
   function init() {
-    var texts = document.querySelectorAll('.article-text p');
+    const texts = document.querySelectorAll('.article-text p');
     if (!texts.length) return;
 
     // 古いブラウザ：アニメーションなしで全部表示
     if (!('IntersectionObserver' in window)) {
-      for (var i = 0; i < texts.length; i++) texts[i].classList.add('is-show');
+      for (let i = 0; i < texts.length; i++) texts[i].classList.add('is-show');
       return;
     }
 
-    var observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-show');
@@ -25,7 +25,7 @@
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
 
-    for (var j = 0; j < texts.length; j++) observer.observe(texts[j]);
+    for (let j = 0; j < texts.length; j++) observer.observe(texts[j]);
   }
 
   if (document.readyState === 'loading') {

@@ -12,24 +12,24 @@
 	'use strict';
 
 	// ===== 設定 =====
-	var SPEED = 50;          // 流れる速さ（px/秒）。大きいほど速い
-	var PAUSE_ON_HOVER = false; // true にするとマウスを乗せている間は止まる
+	const SPEED = 50;          // 流れる速さ（px/秒）。大きいほど速い
+	const PAUSE_ON_HOVER = false; // true にするとマウスを乗せている間は止まる
 	// ================
 
-	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	if (reduce) { return; }
 
 	// ※ <head> で読み込まれても動くよう、要素の取得は init()（DOM読み込み後）で行う
-	var slider = null;
-	var track = null;
-	var originals = [];
+	let slider = null;
+	let track = null;
+	let originals = [];
 
-	var loopWidth = 0;   // 元の画像1セット分の長さ（スタート位置から複製の先頭までの距離）
-	var pos = 0;         // 現在の移動量（px）
-	var last = null;     // 前フレームの時刻
-	var running = false; // 動かす条件を満たしているか
-	var hovering = false;
-	var rafId = null;
+	let loopWidth = 0;   // 元の画像1セット分の長さ（スタート位置から複製の先頭までの距離）
+	let pos = 0;         // 現在の移動量（px）
+	let last = null;     // 前フレームの時刻
+	let running = false; // 動かす条件を満たしているか
+	let hovering = false;
+	let rafId = null;
 
 	// ---------- 複製して必要な長さまで並べる ----------
 	function clearClones() {
@@ -42,7 +42,7 @@
 		clearClones();
 
 		// 1セット分の長さ ＝ 複製1つ目の左端 − 元の1つ目の左端（gap込みで正確に測る）
-		var probe = originals[0].cloneNode(true);
+		const probe = originals[0].cloneNode(true);
 		probe.setAttribute('data-clone', '');
 		track.appendChild(probe);
 		loopWidth = probe.offsetLeft - originals[0].offsetLeft;
@@ -51,13 +51,13 @@
 		if (loopWidth <= 0) { return false; }
 
 		// 画面幅 + 1セット分を満たすまで、元の画像セットを複製して並べる
-		var sets = Math.ceil(slider.clientWidth / loopWidth) + 1;
-		for (var s = 0; s < sets; s++) {
+		const sets = Math.ceil(slider.clientWidth / loopWidth) + 1;
+		for (let s = 0; s < sets; s++) {
 			originals.forEach(function (el) {
-				var c = el.cloneNode(true);
+				const c = el.cloneNode(true);
 				c.setAttribute('data-clone', '');
 				c.setAttribute('aria-hidden', 'true');
-				var img = c.querySelector('img');
+				const img = c.querySelector('img');
 				if (img) { img.setAttribute('alt', ''); }
 				track.appendChild(c);
 			});
@@ -69,7 +69,7 @@
 	// ---------- アニメーション ----------
 	function frame(now) {
 		if (last === null) { last = now; }
-		var dt = (now - last) / 1000;
+		const dt = (now - last) / 1000;
 		last = now;
 
 		if (!(PAUSE_ON_HOVER && hovering)) {
@@ -129,7 +129,7 @@
 		}
 
 		// 画像の読み込み完了・画面幅の変更で長さが変わるので作り直す
-		var resizeTimer = null;
+		let resizeTimer = null;
 		window.addEventListener('resize', function () {
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(build, 200);

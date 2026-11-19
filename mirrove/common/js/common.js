@@ -6,7 +6,7 @@
    ※ jQuery不要
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function () {
-	var toggle = document.getElementById('sp-menu-toggle');
+	const toggle = document.getElementById('sp-menu-toggle');
 	if (!toggle) { return; }
 
 	Array.prototype.forEach.call(document.querySelectorAll('.sp-menu a'), function (a) {

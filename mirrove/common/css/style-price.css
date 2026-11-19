@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 body {
 font-weight: 400;
 line-height: 1.8;
@@ -43,7 +43,7 @@ color: #494848;
 	height: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 40px;
+	padding: 0 4rem;
 }
 
 /* ↓画像にかぶせるキャッチコピー（画像上端からの位置） */
@@ -53,7 +53,7 @@ color: #494848;
 	left: 50%;
 	transform: translateX(-50%); /* 水平中央揃え */
 	color: #ffffff;
-	font-size: 18px;
+	font-size: 1.8rem;
 	font-weight: 300;
 	letter-spacing: 0.08em;
 	white-space: nowrap;
@@ -73,18 +73,18 @@ color: #494848;
 
 /* ↓英字 (price) */
 .kv-en {
-	font-size: 52px;
+	font-size: 5.2rem;
 	font-weight: 300; /* 細身のフォント */
 	letter-spacing: 0.05em;
 	line-height: 1;
-	margin-bottom: 8px;
+	margin-bottom: 0.8rem;
 	font-family: serif;
 	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* ↓日本語 (料金) */
 .kv-ja {
-	font-size: 20px;
+	font-size: 2rem;
 	letter-spacing: 0.15em;
 	opacity: 0.9;
 	text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -94,11 +94,11 @@ color: #494848;
 /* ↓キャッチコピー（KV直下）=============================== */
 
 .lead01 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	color: #494848;
 	line-height: 1.8;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
 	text-align: center;
 
 	/* JSアニメーション用の初期状態 */
@@ -116,10 +116,10 @@ color: #494848;
 /* ↓料金プラン案内セクション=============================== */
 
 .lead02 {
-	font-size: 22px;
+	font-size: 2.2rem;
 	color: #494848;
 	line-height: 1.8;
-	padding-bottom: 50px;
+	padding-bottom: 5rem;
 	text-align: center;
 }
 
@@ -127,19 +127,19 @@ color: #494848;
 
 
 .pricePlan-section {
-	padding-bottom: 0px;/* 現状不要だけど調整用に残しておく */
+	padding-bottom: 0;/* 現状不要だけど調整用に残しておく */
 }
 
 /* ↓インナーコンテナ */
 .pricePlanTitle-container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-bottom: 80px;
+	padding-bottom: 8rem;
 }
 
 .pricePlanTitle-container h2 {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: 2.4rem;
+	font-weight: 400;
 }
 
 
@@ -148,13 +148,13 @@ color: #494848;
 	display: flex;
 	justify-content: center; /* 水平中央配置 */
 	align-items: center;     /* 上下中央揃え */
-	gap: 12px;               /* ロゴと文字の間隔 */
-	font-size: 26px;
+	gap: 1.2rem;               /* ロゴと文字の間隔 */
+	font-size: 2.6rem;
 	font-weight: 300;
 	color: #494848;
-	letter-spacing: 5px;
+	letter-spacing: normal;
 	margin: 0;
-	padding-top: 80px;
+	padding-top: 8rem;
 }
 
 /* ↓ロゴのサイズ制御 */
@@ -169,16 +169,16 @@ color: #494848;
 .planCard-container3point {
 	display: flex;
 	justify-content: center; /* 3つのカードを画面の真ん中に寄せる */
-	gap: 10px;               /* カードとカードの間のすき間（10px） */
+	gap: 1rem;               /* カードとカードの間のすき間（10px） */
 	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す */
-	padding-bottom: 60px;
+	padding-bottom: 6rem;
 }
 
 .planCard-3pointName {
 	width: 350px;
 	height: 50px;
-	font-size: 18px;
-	font-weight: 300;
+	font-size: 2rem;
+	font-weight: 500;
 	background-color: #B0C99A;
 	border-radius: 15px 15px 0 0;
 	display: flex;
@@ -189,7 +189,7 @@ color: #494848;
 .planCard-3pointDescription {
 	width: 350px;
 	height: 100px;
-	font-size: 15px;
+	font-size: 1.6rem;
 	background-color: #fff;
 	border-radius: 0 0 15px 15px;
 	display: flex;
@@ -202,17 +202,17 @@ color: #494848;
 .planCard-containerPrice {
 	display: flex;
 	justify-content: center; /* 4つのカードを画面の真ん中に寄せる */
-	gap: 5px;               /* カードとカードの間のすき間 */
+	gap: 0.5rem;               /* カードとカードの間のすき間 */
 	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す  */
-	padding: 20px;
-	padding-bottom: 30px;
+	padding: 2rem;
+	padding-bottom: 3rem;
 }
 
 
 .pCard-Name {
 	width: 250px;
 	height: 75px;
-	font-weight: 300;
+	font-weight: 700;
 	background-color: #B0C99A;
 	border-radius: 15px 15px 0 0;
 	display: flex;
@@ -232,7 +232,7 @@ color: #494848;
 .pCard-time {
 	width: 250px;
 	height: 100px;
-	line-height: 1.5;
+	line-height: 1.8;
 	background-color: #fff;
 	display: flex;
 	justify-content: center;  /* 上下中央配置 */
@@ -248,7 +248,7 @@ color: #494848;
 	flex-direction: column;   /* 上下2段に並べる */
 	justify-content: center;  /* 全体を上下中央配置 */
 	align-items: center;      /* 全体を左右中央配置 */
-	gap: 4px;                 /* 金額と税込テキストの間隔 */
+	gap: 0.4rem;                 /* 金額と税込テキストの間隔 */
 }
 
 .pCard-priceMain {
@@ -258,26 +258,27 @@ color: #494848;
 
 
 .pCard-priceFee {
-	font-size: 24px;
+	font-size: 2.4rem;
 	font-weight: 300;
 }
 
 .pCard-priceYen {
-	font-size: 18px;
+	font-size: 1.8rem;
 	line-height: 1;
-	padding-left: 2px;
+	padding-left: 0.2rem;
 }
 
 .pCard-priceTax {
-	font-size: 14px;
+	font-size: 1.4rem;
 	line-height: 1;
 }
 
 .lead03 {
 	width: 900px;
 	margin: 0 auto;
-	line-height: 1.5;
-	padding-bottom: 100px;
+	font-size: 1.4rem;
+	line-height: 1.7;
+	padding-bottom: 10rem;
 }
 
 
@@ -303,21 +304,21 @@ color: #494848;
 }
 
 .pricePlan-option h2 {
-	font-size: 24px;
-	font-weight: 300;
+	font-size: 2.4rem;
+	font-weight: 400;
 	text-align: center;      /* テキスト中央配置 */
-	padding-top: 80px;
-	padding-bottom: 60px;
+	padding-top: 8rem;
+	padding-bottom: 6rem;
 }
 
 .planCard-containerOption {
 	display: flex;
 	justify-content: center; /* 2つのカードを画面の真ん中に寄せる */
 	align-items: stretch;    /* 左右のカードの高さを揃える */
-	gap: 30px;               /* カードとカードの間のすき間（30px） */
+	gap: 3rem;               /* カードとカードの間のすき間（30px） */
 	flex-wrap: wrap;         /* 画面が狭くなったら自動で折り返す */
-	padding: 20px;
-	padding-bottom: 100px;
+	padding: 2rem;
+	padding-bottom: 10rem;
 }
 
 /* カードの外枠（左右の高さ揃え） */
@@ -330,8 +331,8 @@ color: #494848;
 .planCard-optionName {
 	width: 100%;
 	height: 50px;
-	font-size: 24px;
-	font-weight: 300;
+	font-size: 2rem;
+	font-weight: 500;
 	background-color: #B0C99A;
 	border-radius: 15px 15px 0 0;
 	display: flex;
@@ -346,7 +347,7 @@ color: #494848;
 	background-color: #fcf7c5;
 	border-radius: 0 0 15px 15px;
 	box-sizing: border-box;
-	padding: 24px 20px 28px;
+	padding: 2.4rem 2rem 2.8rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -357,10 +358,10 @@ color: #494848;
 .ticket-price-list {
 	list-style: none;
 	padding: 0;
-	margin: 20px 0 0 0;
+	margin: 2rem 0 0 0;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 1rem;
 }
 
 /* 各行：絶対に改行させない指定 */
@@ -374,42 +375,42 @@ color: #494848;
 
 /* 「1回チケット（50分）：」 */
 .ticket-label {
-	font-size: 15px;
+	font-size: 1.5rem;
 }
 
 /* 金額の数字（大きめ・太字） */
 .ticket-price-val {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 300;
 	letter-spacing: 0.02em;
-	margin-left: 2px;
+	margin-left: 0.2rem;
 }
 
 /* 「円」 */
 .ticket-price-unit {
-	font-size: 15px;
-	margin-right: 6px;
+	font-size: 1.5rem;
+	margin-right: 0.6rem;
 }
 
 /* 「（税込 32,780 円）」 */
 .ticket-tax {
-	font-size: 12px;
+	font-size: 1.2rem;
 	color: #494848;
 }
 
  /* ↓お支払方法案内セクション=============================== */
 
 .pricePlan-payment h2 {
-	font-size: 24px;
-	font-weight: 300;
+	font-size: 2.4rem;
+	font-weight: 400;
 	text-align: center;      /* テキスト中央配置 */
-	padding-top: 80px;
-	padding-bottom: 60px;
+	padding-top: 8rem;
+	padding-bottom: 6rem;
 }
 
 .pricePlan-payment p img {
 	width: 700px;
-	padding-bottom: 100px;
+	padding-bottom: 10rem;
 	margin: 0 auto;
 	display: block; /* 画像下部の隙間を除去 */
 }
@@ -418,15 +419,15 @@ color: #494848;
 /* ↓良くある質問セクション=============================== */
 
 .pricePlan-question {
-	padding-bottom: 100px;
+	padding-bottom: 10rem;
 }
 
 .pricePlan-question h2 {
-	font-size: 24px;
-	font-weight: 300;
+	font-size: 2.4rem;
+	font-weight: 400;
 	text-align: center;      /* 見出し中央配置 */
-	padding-top: 80px;
-	padding-bottom: 50px;
+	padding-top: 8rem;
+	padding-bottom: 5rem;
 	color: #494848;
 }
 
@@ -434,10 +435,10 @@ color: #494848;
 .questionBox {
 	max-width: 800px;
 	margin: 0 auto;          /* 左右中央配置 */
-	padding: 0 20px;
+	padding: 0 2rem;
 	display: flex;
 	flex-direction: column;
-	gap: 40px;               /* 1つ目と2つ目の質問の間隔 */
+	gap: 4rem;               /* 1つ目と2つ目の質問の間隔 */
 }
 
 .questionItem {
@@ -453,22 +454,22 @@ color: #494848;
 	height: 54px;
 	background-color: #fcf7c5;
 	border-radius: 12px;
-	font-size: 18px;
+	font-size: 1.8rem;
 	font-weight: 300;
 	color: #494848;
 	display: flex;
 	justify-content: center; /* 水平中央 */
 	align-items: center;     /* 上下中央 */
-	margin: 0 0 24px 0;
+	margin: 0 0 2.4rem 0;
 }
 
 /* 回答テキスト（A） */
 .questionA {
 	width: 100%;
-	font-size: 16px;
+	font-size: 1.6rem;
 	color: #494848;
 	text-align: center;      /* テキスト中央揃え */
-	line-height: 1.6;
+	line-height: 1.8;
 	margin: 0;
 }
 
@@ -506,20 +507,20 @@ color: #494848;
   border-radius: 50%;           /* 正円 */
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s ease;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
   z-index: 10;
 }
 
 /* 矢印アイコン */
 .pagetop-arrow {
-  font-size: 11px;
+  font-size: 1.1rem;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 0.2rem;
 }
 
 /* 「TOP」文字 */
 .pagetop-text {
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.05em;
   line-height: 1;
@@ -540,30 +541,30 @@ color: #494848;
 
 	/* KV */
 	.praiceKv { height: 200px; }
-	.kv-inner { padding: 0 20px; box-sizing: border-box; }
+	.kv-inner { padding: 0 2rem; box-sizing: border-box; }
 	.kv-lead { display: none; } /* SPではキャッチコピー非表示（本文の見える範囲を増やすため） */
 	.kv-titleBox { top: 50%; }
-	.kv-en { font-size: 40px; }
-	.kv-ja { font-size: 16px; }
+	.kv-en { font-size: 4rem; }
+	.kv-ja { font-size: 1.6rem; }
 
 	/* リード文 */
 	.lead01 {
-		padding: 40px 20px;
-		font-size: 14px;
+		padding: 4rem 2rem;
+		font-size: 1.4rem;
 		text-align: left;
 	}
 	.lead01 br,
 	.lead03 br { display: none; }
 	.lead02 {
-		padding: 0 20px 30px;
-		font-size: 17px;
+		padding: 0 2rem 3rem;
+		font-size: 1.7rem;
 	}
 
 	/* 見出し */
-	.pricePlanTitle-container { padding-bottom: 40px; }
+	.pricePlanTitle-container { padding-bottom: 4rem; }
 	.pricePlan-title {
-		padding-top: 50px;
-		font-size: 20px;
+		padding-top: 5rem;
+		font-size: 2rem;
 		letter-spacing: 2px;
 	}
 	.pricePlan-title img { height: 20px; }
@@ -572,34 +573,34 @@ color: #494848;
 	.planCard-container3point {
 		flex-direction: column;
 		align-items: center;
-		gap: 20px;
-		padding: 0 20px 40px;
+		gap: 2rem;
+		padding: 0 2rem 4rem;
 	}
 	.planCard-container3point > div { width: 100%; max-width: 420px; }
 	.planCard-3pointName {
 		width: 100%;
 		height: auto;
 		min-height: 46px;
-		padding: 6px 10px;
+		padding: 0.6rem 1rem;
 		box-sizing: border-box;
-		font-size: 16px;
+		font-size: 1.8rem;
 		text-align: center;
 	}
 	.planCard-3pointDescription {
 		width: 100%;
 		height: auto;
-		padding: 16px 16px;
+		padding: 1.6rem 1.6rem;
 		box-sizing: border-box;
-		font-size: 14px;
-		line-height: 1.7;
+		font-size: 1.4rem;
+		line-height: 1.8;
 		text-align: left;
 	}
 	.planCard-3pointDescription br { display: none; }
 
 	/* プラン比較：2列 */
 	.planCard-containerPrice {
-		gap: 14px 10px;
-		padding: 0 15px 20px;
+		gap: 1.4rem 1rem;
+		padding: 0 1.5rem 2rem;
 	}
 	.planCard-containerPrice > div {
 		width: calc(50% - 5px);
@@ -614,44 +615,44 @@ color: #494848;
 	}
 	.pCard-Name {
 		height: 64px;
-		padding: 0 6px;
-		font-size: 14px;
+		padding: 0 0.6rem;
+		font-size: 1.6rem;
 		line-height: 1.4;
 	}
 	.pCard-Description {
 		height: 72px;
-		padding: 0 6px;
-		font-size: 12px;
+		padding: 0 0.6rem;
+		font-size: 1.2rem;
 		line-height: 1.5;
 	}
 	.pCard-time {
 		height: 80px;
-		font-size: 13px;
+		font-size: 1.4rem;
 	}
 	.pCard-price { height: 80px; }
-	.pCard-priceFee { font-size: 20px; }
-	.pCard-priceYen { font-size: 14px; }
-	.pCard-priceTax { font-size: 11px; }
+	.pCard-priceFee { font-size: 2rem; }
+	.pCard-priceYen { font-size: 1.4rem; }
+	.pCard-priceTax { font-size: 1.1rem; }
 
 	.lead03 {
 		width: auto;
-		padding: 10px 20px 60px;
-		font-size: 12px;
+		padding: 1rem 2rem 6rem;
+		font-size: 1.3rem;
 	}
 
 	/* オプション */
 	.pricePlan-option h2,
 	.pricePlan-payment h2,
 	.pricePlan-question h2 {
-		padding-top: 50px;
-		padding-bottom: 30px;
-		font-size: 20px;
+		padding-top: 5rem;
+		padding-bottom: 3rem;
+		font-size: 2rem;
 	}
 	.planCard-containerOption {
 		flex-direction: column;
 		align-items: center;
-		gap: 24px;
-		padding: 0 20px 60px;
+		gap: 2.4rem;
+		padding: 0 2rem 6rem;
 	}
 	.planCard-item {
 		width: 100%;
@@ -661,13 +662,13 @@ color: #494848;
 		box-sizing: border-box;
 		height: auto;
 		min-height: 46px;
-		padding: 6px 10px;
-		font-size: 17px;
+		padding: 0.6rem 1rem;
+		font-size: 1.8rem;
 		text-align: center;
 	}
-	.planCard-optionDescription { padding: 20px 16px 24px; }
+	.planCard-optionDescription { padding: 2rem 1.6rem 2.4rem; }
 	.planCard-optionText {
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 1.7;
 	}
 	.planCard-optionText br { display: none; }
@@ -675,38 +676,38 @@ color: #494848;
 		flex-wrap: wrap;
 		white-space: normal;
 	}
-	.ticket-label { width: 100%; font-size: 14px; }
-	.ticket-price-val { margin-left: 0; font-size: 18px; }
-	.ticket-price-unit { font-size: 14px; }
-	.ticket-tax { font-size: 12px; }
+	.ticket-label { width: 100%; font-size: 1.4rem; }
+	.ticket-price-val { margin-left: 0; font-size: 1.8rem; }
+	.ticket-price-unit { font-size: 1.4rem; }
+	.ticket-tax { font-size: 1.2rem; }
 
 	/* お支払い方法 */
 	.pricePlan-payment p img {
 		width: 100%;
 		max-width: 700px;
-		padding: 0 20px 60px;
+		padding: 0 2rem 6rem;
 		box-sizing: border-box;
 	}
 
 	/* よくある質問 */
-	.pricePlan-question { padding-bottom: 60px; }
+	.pricePlan-question { padding-bottom: 6rem; }
 	.questionBox {
-		padding: 0 20px;
-		gap: 28px;
+		padding: 0 2rem;
+		gap: 2.8rem;
 	}
 	.questionQ {
 		box-sizing: border-box;
 		height: auto;
 		min-height: 50px;
-		padding: 8px 14px;
+		padding: 0.8rem 1.4rem;
 		box-sizing: border-box;
-		margin-bottom: 14px;
-		font-size: 15px;
+		margin-bottom: 1.4rem;
+		font-size: 1.5rem;
 		line-height: 1.6;
 		text-align: left;
 	}
 	.questionA {
-		font-size: 14px;
+		font-size: 1.4rem;
 		text-align: left;
 	}
 
@@ -720,4 +721,8 @@ color: #494848;
 		width: 46px;
 		height: 46px;
 	}
+	.pricePlanTitle-container h2 { font-size: 2rem; }
 }
+
+/* OPTION見出しの「α」だけ大きく（旧：HTMLの style 属性） */
+.lead02-alpha { font-size: 1.25em; }

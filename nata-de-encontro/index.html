@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nata de Encontro</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="小さな出会い、大きなときめき。渋谷駅中央口すぐのエッグタルト専門店 Nata de Encontro。">
@@ -22,7 +21,7 @@
     </a>
     <div class="header-right">
       <a class="status js-status" href="#access" data-state="">本日の営業を確認中</a>
-      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="メニューを開く"><i></i><i></i><i></i></button>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="メニューを開く"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
@@ -30,11 +29,11 @@
 <nav class="nav" id="nav" aria-label="サイトメニュー">
   <div class="nav-inner">
     <ol>
-      <li><a href="#story"><b>STORY</b><small>ブランドについて</small></a></li>
-      <li><a href="#menu"><b>MENU</b><small>メニュー</small></a></li>
-      <li><a href="#craft"><b>THE CRAFT</b><small>こだわり</small></a></li>
-      <li><a href="#news"><b>NEWS</b><small>お知らせ</small></a></li>
-      <li><a href="#access"><b>ACCESS</b><small>店舗情報</small></a></li>
+      <li><a href="#story"><span class="en">STORY</span><small>ブランドについて</small></a></li>
+      <li><a href="#menu"><span class="en">MENU</span><small>メニュー</small></a></li>
+      <li><a href="#craft"><span class="en">THE CRAFT</span><small>こだわり</small></a></li>
+      <li><a href="#news"><span class="en">NEWS</span><small>お知らせ</small></a></li>
+      <li><a href="#access"><span class="en">ACCESS</span><small>店舗情報</small></a></li>
     </ol>
     <div class="nav-meta">
       京王井の頭線 渋谷駅 中央口すぐ<br><span data-store="summary">10:00 – 19:00 ／ 水曜定休</span>
@@ -71,7 +70,7 @@
           <div class="dots" id="dots" role="group" aria-label="写真の切り替え">
             <button type="button" aria-current="true" aria-label="写真1"></button><button type="button" aria-current="false" aria-label="写真2"></button><button type="button" aria-current="false" aria-label="写真3"></button>
           </div>
-          <p class="hero-today"><b class="js-today-head">渋谷駅 中央口すぐ</b><span class="js-today-sub" data-store="summary">10:00 – 19:00 ／ 水曜定休</span></p>
+          <p class="hero-today"><span class="js-today-head today-head">渋谷駅 中央口すぐ</span><span class="js-today-sub" data-store="summary">10:00 – 19:00 ／ 水曜定休</span></p>
         </div>
       </div>
     </div>
@@ -117,7 +116,7 @@
       <p class="mood-hint">写真をタップしても選べます</p>
 
       <ul class="cards" id="cards">
-        <li class="card" data-id="original" tabindex="0" role="button" aria-pressed="false">
+        <li class="card" data-id="original">
           <span class="badge">今日のあなたに</span>
           <div class="pic"><img src="img/tart-original.webp" alt="焦げ目のついたオリジナルのエッグタルト" width="312" height="251" loading="lazy"></div>
           <h3>ORIGINAL<span class="ja">エッグタルト</span></h3>
@@ -129,7 +128,7 @@
             <div><dt>香ばしさ</dt><dd aria-label="5段階中5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></dd></div>
           </dl>
         </li>
-        <li class="card" data-id="cacao" tabindex="0" role="button" aria-pressed="false">
+        <li class="card" data-id="cacao">
           <span class="badge">今日のあなたに</span>
           <div class="pic"><img src="img/tart-cacao.webp" alt="カカオニブをのせたチョコレート色のエッグタルト" width="309" height="253" loading="lazy"></div>
           <h3>CACAO<span class="ja">カカオ</span></h3>
@@ -141,7 +140,7 @@
             <div><dt>香ばしさ</dt><dd aria-label="5段階中4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></dd></div>
           </dl>
         </li>
-        <li class="card" data-id="cheese" tabindex="0" role="button" aria-pressed="false">
+        <li class="card" data-id="cheese">
           <span class="badge">今日のあなたに</span>
           <div class="pic"><img src="img/tart-cheese.webp" alt="削ったチーズをのせたエッグタルト" width="313" height="253" loading="lazy"></div>
           <h3>CHEESE<span class="ja">チーズ</span></h3>
@@ -156,9 +155,9 @@
       </ul>
 
       <a class="seasonal" href="#news-marron">
-        <b>SEASONAL</b>
-        <span>11月の季節限定「和栗のエッグタルト」¥450</span>
-        <em>詳しく見る</em>
+        <span class="ss-label">SEASONAL</span>
+        <span class="ss-text">11月の季節限定「和栗のエッグタルト」¥450</span>
+        <span class="ss-more">詳しく見る</span>
       </a>
 
       <div class="gift">
@@ -168,8 +167,8 @@
           <h3>ご自宅用にも、<br>手みやげにも。</h3>
           <p>お好きな味を組み合わせて箱に詰めます。友人や家族とわけあえば、ときめきもふたつ、みっつと増えていきます。</p>
           <ul>
-            <li><span>3個入り（3種から選べます）</span><b>¥1,200</b></li>
-            <li><span>6個入り（3種から選べます）</span><b>¥2,300</b></li>
+            <li><span>3個入り（3種から選べます）</span><span class="gift-price">¥1,200</span></li>
+            <li><span>6個入り（3種から選べます）</span><span class="gift-price">¥2,300</span></li>
           </ul>
         </div>
       </div>
@@ -193,17 +192,17 @@
           <h3>シンプルだからこそ、<br>素材にこだわる。</h3>
           <p>卵、ミルク、砂糖をベースにしたなめらかなカスタードと、何層にも重なったパイ生地。素材本来の味わいを、やさしい甘さで引き立てました。</p>
           <ol class="layers" id="layers">
-            <li><button type="button" data-layer="1"><span class="n">1</span><b>焼き色</b><span>高温で一気に焼き上げ、表面をキャラメリゼ。ほろ苦い香ばしさが生まれます。</span></button></li>
-            <li><button type="button" data-layer="2"><span class="n">2</span><b>カスタード</b><span>卵黄をたっぷり使い、ぷるんととろける食感に。甘さは控えめです。</span></button></li>
-            <li><button type="button" data-layer="3"><span class="n">3</span><b>パイ生地</b><span>バターを折り込んだ生地を薄くのばし、サクッと軽い層を重ねています。</span></button></li>
+            <li><button type="button" data-layer="1"><span class="n">1</span><span class="lt">焼き色</span><span>高温で一気に焼き上げ、表面をキャラメリゼ。ほろ苦い香ばしさが生まれます。</span></button></li>
+            <li><button type="button" data-layer="2"><span class="n">2</span><span class="lt">カスタード</span><span>卵黄をたっぷり使い、ぷるんととろける食感に。甘さは控えめです。</span></button></li>
+            <li><button type="button" data-layer="3"><span class="n">3</span><span class="lt">パイ生地</span><span>バターを折り込んだ生地を薄くのばし、サクッと軽い層を重ねています。</span></button></li>
           </ol>
         </div>
         <div class="craft-visual">
           <div class="anatomy" id="anatomy">
             <img src="img/craft.webp" alt="エッグタルトの断面。表面の焼き色、カスタード、パイ生地の層が見える" width="601" height="342" loading="lazy">
-            <button class="spot" type="button" data-layer="1" style="left:63%;top:20%" aria-label="焼き色">1</button>
-            <button class="spot" type="button" data-layer="2" style="left:44%;top:52%" aria-label="カスタード">2</button>
-            <button class="spot" type="button" data-layer="3" style="left:22%;top:50%" aria-label="パイ生地">3</button>
+            <button class="spot" type="button" data-layer="1" aria-label="焼き色">1</button>
+            <button class="spot" type="button" data-layer="2" aria-label="カスタード">2</button>
+            <button class="spot" type="button" data-layer="3" aria-label="パイ生地">3</button>
           </div>
           <p class="craft-hint">数字をタップすると、説明が切り替わります</p>
           <div class="layer-card" id="layerCard" aria-live="polite">
@@ -231,7 +230,7 @@
       <div class="sec-head"><h2>NEWS</h2><p>お知らせ</p></div>
       <div class="news-list">
         <details id="news-marron" open>
-          <summary><time datetime="2026-11-01">2026.11.01</time><b>秋の季節限定「和栗のエッグタルト」を発売しました</b>
+          <summary><time datetime="2026-11-01">2026.11.01</time><span class="ttl">秋の季節限定「和栗のエッグタルト」を発売しました</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">新商品</span></summary>
           <div class="body">
             <p>和栗のペーストを合わせたカスタードを、香ばしいパイ生地で焼き上げました。栗の素朴な甘さとキャラメリゼのほろ苦さをお楽しみください。</p>
@@ -239,12 +238,12 @@
           </div>
         </details>
         <details>
-          <summary><time datetime="2026-10-06">2026.10.06</time><b>新宿伊勢丹にて期間限定ポップアップを開催</b>
+          <summary><time datetime="2026-10-06">2026.10.06</time><span class="ttl">新宿伊勢丹にて期間限定ポップアップを開催</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">イベント</span></summary>
           <div class="body"><p>新宿伊勢丹 本館地下1階にて、期間限定のポップアップストアを出店します。定番3種に加え、ポップアップ限定のアソートボックスもご用意しました。</p></div>
         </details>
         <details>
-          <summary><time datetime="2026-09-30">2026.09.30</time><b>10月の定休日についてのお知らせ</b>
+          <summary><time datetime="2026-09-30">2026.09.30</time><span class="ttl">10月の定休日についてのお知らせ</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">営業</span></summary>
           <div class="body">
             <p>いつも当店をご利用いただきありがとうございます。誠に勝手ながら、以下のとおり定休日とさせていただきます。</p>
@@ -253,7 +252,7 @@
           </div>
         </details>
         <details>
-          <summary><time datetime="2026-09-18">2026.09.18</time><b>台風に伴う営業時間の変更について</b>
+          <summary><time datetime="2026-09-18">2026.09.18</time><span class="ttl">台風に伴う営業時間の変更について</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg><span class="tag">営業</span></summary>
           <div class="body"><p>台風の接近に伴い、9月19日（土）は15:00で閉店いたします。ご来店のお客様はお気をつけてお越しください。</p></div>
         </details>
@@ -274,7 +273,7 @@
           <dl class="info">
             <div><dt>住所</dt><dd>
               <span class="copyable"><span id="addr">〒150-0043<br>東京都渋谷区道玄坂1丁目4−1<br>京王井の頭線 渋谷駅 中央口そば コンコース2階</span></span>
-              <div style="margin-top:8px"><span class="copyable"><button type="button" id="copyAddr">住所をコピー</button></span></div>
+              <div class="addr-copy"><span class="copyable"><button type="button" id="copyAddr">住所をコピー</button></span></div>
             </dd></div>
             <div><dt>営業時間</dt><dd><span data-store="hours">10:00 〜 19:00</span> <small data-store="hours-note">（なくなり次第終了）</small></dd></div>
             <div><dt>定休日</dt><dd data-store="holidays">水曜日</dd></div>
@@ -282,7 +281,7 @@
           </dl>
           <div class="today-card">
             <span class="status js-status" data-state="">本日の営業を確認中</span>
-            <h4>焼きあがり時間</h4>
+            <h3>焼きあがり時間</h3>
             <ul class="bake" id="bake">
               <li>10:00<small>開店</small></li>
               <li>13:00<small>お昼</small></li>
@@ -330,7 +329,7 @@
    ここを書き換えるだけで、ヘッダー／メニュー／FV／ACCESS の
    表示と「営業中」などの自動判定がすべて切り替わります。
    ========================================================= */
-var STORE = {
+const STORE = {
   open:  "10:00",          // 開店時刻
   close: "19:00",          // 閉店時刻
   holidays: [3],           // 毎週の定休日（0=日 1=月 2=火 3=水 4=木 5=金 6=土）。複数可 例：[2,3]
@@ -362,7 +361,7 @@ var STORE = {
 <script>
 (function(){
   /* ---- menu overlay ---- */
-  var burger=document.getElementById('burger'), nav=document.getElementById('nav'), header=document.querySelector('.site-header');
+  const burger=document.getElementById('burger'), nav=document.getElementById('nav'), header=document.querySelector('.site-header');
   function setMenu(open){
     burger.setAttribute('aria-expanded',open);
     burger.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
@@ -372,13 +371,13 @@ var STORE = {
   burger.addEventListener('click',function(){setMenu(burger.getAttribute('aria-expanded')!=='true')});
   // メニューのリンク：メニューを閉じてから、セクションの先頭を画面の上端にぴったり合わせる
   nav.addEventListener('click',function(e){
-    var a=e.target.closest('a[href^="#"]'); if(!a) return;
-    var target=document.querySelector(a.getAttribute('href'));
+    const a=e.target.closest('a[href^="#"]'); if(!a) return;
+    const target=document.querySelector(a.getAttribute('href'));
     setMenu(false);
     if(!target) return;
     e.preventDefault();
     requestAnimationFrame(function(){
-      var y=Math.round(target.getBoundingClientRect().top+window.scrollY);
+      const y=Math.round(target.getBoundingClientRect().top+window.scrollY);
       window.scrollTo({top:y,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
     });
   });
@@ -387,26 +386,26 @@ var STORE = {
     a.addEventListener('click',function(e){
       e.preventDefault(); setMenu(false);
       window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-      if(location.hash){ try{history.replaceState(null,'',location.pathname+location.search)}catch(_){} }
+      if(location.hash){ try{history.replaceState(null,'',location.pathname+location.search)}catch{ /* 履歴を書き換えられない環境では何もしない */ } }
     });
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
 
   /* ---- today's status (JST) : すべて STORE から生成 ---- */
-  var WD=['日','月','火','水','木','金','土'];
-  function toMin(hm){var x=hm.split(':');return (+x[0])*60+(+x[1]||0)}
+  const WD=['日','月','火','水','木','金','土'];
+  function toMin(hm){const x=hm.split(':');return (+x[0])*60+(+x[1]||0)}
   function jstNow(){
-    var p={};
+    const p={};
     new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'numeric',minute:'numeric',hourCycle:'h23'})
       .formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
     return {y:+p.year,mo:+p.month,d:+p.day,min:(+p.hour)*60+(+p.minute)};
   }
   function dayInfo(base,offset){ // base: jstNow(), offset: 日数
-    var dt=new Date(Date.UTC(base.y,base.mo-1,base.d+offset));
-    var y=dt.getUTCFullYear(), m=dt.getUTCMonth()+1, d=dt.getUTCDate(), wd=dt.getUTCDay();
-    var key=y+'-'+String(m).padStart(2,'0')+'-'+String(d).padStart(2,'0');
-    var sp=null; (STORE.special||[]).forEach(function(x){ if(x.date===key || (x.from&&x.to&&x.from<=key&&key<=x.to)) sp=x; });
-    var info={key:key,m:m,d:d,wd:wd,sp:sp,label:offset===0?'本日':offset===1?'明日':offset===2?'明後日':(m+'/'+d+'（'+WD[wd]+'）')};
+    const dt=new Date(Date.UTC(base.y,base.mo-1,base.d+offset));
+    const y=dt.getUTCFullYear(), m=dt.getUTCMonth()+1, d=dt.getUTCDate(), wd=dt.getUTCDay();
+    const key=y+'-'+String(m).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    let sp=null; (STORE.special||[]).forEach(function(x){ if(x.date===key || (x.from&&x.to&&x.from<=key&&key<=x.to)) sp=x; });
+    const info={key:key,m:m,d:d,wd:wd,sp:sp,label:offset===0?'本日':offset===1?'明日':offset===2?'明後日':(m+'/'+d+'（'+WD[wd]+'）')};
     if(sp&&sp.closed){info.closed='special';return info}
     if(!sp&&STORE.holidays.indexOf(wd)>-1){info.closed='regular';return info}
     if(sp&&!sp.open&&!sp.close&&STORE.holidays.indexOf(wd)>-1){info.closed='regular';return info}
@@ -415,12 +414,12 @@ var STORE = {
     info.changed=!!(sp&&(sp.open&&sp.open!==STORE.open||sp.close&&sp.close!==STORE.close));
     return info;
   }
-  function nextOpen(base){for(var i=1;i<=31;i++){var d=dayInfo(base,i);if(!d.closed)return d}return null}
+  function nextOpen(base){for(let i=1;i<=31;i++){const d=dayInfo(base,i);if(!d.closed)return d}return null}
 
-  var now=jstNow(), today=dayInfo(now,0), nx=nextOpen(now);
-  var holidayNames=STORE.holidays.slice().sort().map(function(w){return WD[w]});
-  var nextText=nx?(nx.label+' '+nx.open+' から営業'):'';
-  var st;
+  const now=jstNow(), today=dayInfo(now,0), nx=nextOpen(now);
+  const holidayNames=STORE.holidays.slice().sort().map(function(w){return WD[w]});
+  const nextText=nx?(nx.label+' '+nx.open+' から営業'):'';
+  let st;
   if(today.closed){
     st={s:'closed',
         text: today.closed==='special' ? '本日は臨時休業です' : '本日は定休日です（'+WD[today.wd]+'曜）',
@@ -436,21 +435,21 @@ var STORE = {
     st={s:'closed',text:'本日の営業は終了しました',head:'本日の営業は終了',sub:nextText};
   }
   document.querySelectorAll('.js-status').forEach(function(el){el.textContent=st.text;el.dataset.state=st.s});
-  var th=document.querySelector('.js-today-head'), ts=document.querySelector('.js-today-sub');
+  const th=document.querySelector('.js-today-head'), ts=document.querySelector('.js-today-sub');
   if(th){th.textContent=st.head; ts.textContent=st.sub;}
 
   // 固定表示（営業時間・定休日）
-  var hoursText=STORE.open+' – '+STORE.close;
-  var holText=holidayNames.length?holidayNames.join('・')+'曜定休':'年中無休';
+  const hoursText=STORE.open+' – '+STORE.close;
+  const holText=holidayNames.length?holidayNames.join('・')+'曜定休':'年中無休';
   document.querySelectorAll('[data-store="summary"]').forEach(function(el){ if(!el.classList.contains('js-today-sub')) el.textContent=hoursText+' ／ '+holText; });
   document.querySelectorAll('[data-store="hours"]').forEach(function(el){el.textContent=STORE.open+' 〜 '+STORE.close});
   document.querySelectorAll('[data-store="hours-note"]').forEach(function(el){el.textContent=STORE.hoursNote?'（'+STORE.hoursNote+'）':''});
   document.querySelectorAll('[data-store="holidays"]').forEach(function(el){el.textContent=holidayNames.length?holidayNames.map(function(w){return w+'曜日'}).join('・'):'なし（年中無休）'});
 
   // 焼きあがり時間
-  var bakeEl=document.getElementById('bake'); bakeEl.innerHTML=''; var marked=false;
+  const bakeEl=document.getElementById('bake'); bakeEl.innerHTML=''; let marked=false;
   STORE.bake.forEach(function(b){
-    var li=document.createElement('li'), sm=document.createElement('small'), bm=toMin(b.time);
+    const li=document.createElement('li'), sm=document.createElement('small'), bm=toMin(b.time);
     li.textContent=b.time; sm.textContent=b.label; li.appendChild(sm);
     if(!today.closed){
       if(bm<toMin(today.open)||bm>=toMin(today.close)){li.classList.add('done');sm.textContent='本日なし'}
@@ -463,53 +462,52 @@ var STORE = {
   });
 
   // 臨時の予定を予告（今日〜noticeDays日先）。期間指定は1行にまとめる
-  function md(key){var x=key.split('-'),dt=new Date(Date.UTC(+x[0],+x[1]-1,+x[2]));return (+x[1])+'/'+(+x[2])+'（'+WD[dt.getUTCDay()]+'）'}
-  var notes=[], seen=[];
-  for(var i=0;i<=(STORE.noticeDays||14);i++){
-    var d=dayInfo(now,i); if(!d.sp||seen.indexOf(d.sp)>-1) continue;
+  function md(key){const x=key.split('-'),dt=new Date(Date.UTC(+x[0],+x[1]-1,+x[2]));return (+x[1])+'/'+(+x[2])+'（'+WD[dt.getUTCDay()]+'）'}
+  const notes=[], seen=[];
+  for(let i=0;i<=(STORE.noticeDays||14);i++){
+    const d=dayInfo(now,i); if(!d.sp||seen.indexOf(d.sp)>-1) continue;
     seen.push(d.sp);
-    var isRange=!!(d.sp.from&&d.sp.to);
-    var what=d.closed==='special'?'臨時休業':d.closed?'定休日':(d.open+' – '+d.close+' の営業');
+    const isRange=!!(d.sp.from&&d.sp.to);
+    let what=d.closed==='special'?'臨時休業':d.closed?'定休日':(d.open+' – '+d.close+' の営業');
     if(!isRange&&d.sp.open&&STORE.holidays.indexOf(d.wd)>-1&&!d.sp.closed) what='臨時営業（'+d.open+' – '+d.close+'）';
-    var when=isRange?(md(d.sp.from)+'〜'+md(d.sp.to)):md(d.key);
-    var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
-    var txt=d.sp.note ? esc(d.sp.note)+(d.closed?'':'（'+d.open+' – '+d.close+'）') : what;
-    notes.push('<b>'+when+'</b>'+txt);
+    const when=isRange?(md(d.sp.from)+'〜'+md(d.sp.to)):md(d.key);
+    const esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+    const txt=d.sp.note ? esc(d.sp.note)+(d.closed?'':'（'+d.open+' – '+d.close+'）') : what;
+    notes.push('<span class="sn-when">'+when+'</span>'+txt);
   }
-  var sn=document.getElementById('specialNote');
+  const sn=document.getElementById('specialNote');
   if(notes.length){sn.innerHTML='お知らせ：<br>'+notes.join('<br>');sn.hidden=false}
 
   /* ---- mood picker ---- */
-  var cards=document.getElementById('cards'), current=null;
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cards=document.getElementById('cards'); let current=null;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function pick(id, scroll){
     current=(current===id)?null:id;
     document.querySelectorAll('.mood button').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.pick===current))});
-    cards.querySelectorAll('.card').forEach(function(c){var on=c.dataset.id===current;c.classList.toggle('pick',on);c.setAttribute('aria-pressed',String(on))});
+    cards.querySelectorAll('.card').forEach(function(c){c.classList.toggle('pick',c.dataset.id===current)});
     cards.classList.toggle('picking',!!current);
     if(current&&scroll&&window.innerWidth<=860){
       // 選んだ商品の写真が、固定された気分バーのすぐ下に来るように移動
-      var pic=cards.querySelector('[data-id="'+current+'"] .pic');
-      var bar=document.querySelector('.mood').getBoundingClientRect();
-      var y=window.scrollY+pic.getBoundingClientRect().top-bar.height-(document.querySelector('.site-header').offsetHeight)-12;
+      const pic=cards.querySelector('[data-id="'+current+'"] .pic');
+      const bar=document.querySelector('.mood').getBoundingClientRect();
+      const y=window.scrollY+pic.getBoundingClientRect().top-bar.height-(document.querySelector('.site-header').offsetHeight)-12;
       window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
     }
   }
   document.querySelectorAll('.mood button').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.pick,true)})});
   cards.querySelectorAll('.card').forEach(function(c){
-    c.addEventListener('click',function(){pick(c.dataset.id,false)});
-    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(c.dataset.id,false)}});
+    c.addEventListener('click',function(){pick(c.dataset.id,false)}); // マウス・タップ用（キーボードは上の気分ボタンで選べる）
   });
 
   /* ---- craft anatomy ---- */
   function setLayer(k){
     document.querySelectorAll('[data-layer]').forEach(function(el){el.classList.toggle('on',el.dataset.layer===k)});
   }
-  var sp=matchMedia('(max-width: 860px)'), shown='1';
-  var card=document.getElementById('layerCard'), anatomy=document.getElementById('anatomy');
-  function layerData(k){var b=document.querySelector('#layers button[data-layer="'+k+'"]');return {t:b.querySelector('b').textContent,d:b.querySelector('span:last-child').textContent}}
+  const sp=matchMedia('(max-width: 860px)'); let shown='1';
+  const card=document.getElementById('layerCard'), anatomy=document.getElementById('anatomy');
+  function layerData(k){const b=document.querySelector('#layers button[data-layer="'+k+'"]');return {t:b.querySelector('.lt').textContent,d:b.querySelector('span:last-child').textContent}}
   function showLayer(k){
-    shown=k; setLayer(k); var d=layerData(k);
+    shown=k; setLayer(k); const d=layerData(k);
     document.getElementById('lcN').textContent=k;
     document.getElementById('lcT').textContent=d.t;
     document.getElementById('lcD').textContent=d.d;
@@ -517,16 +515,16 @@ var STORE = {
     document.getElementById('lcNext').disabled=(k==='3');
     card.querySelectorAll('.pips i').forEach(function(p,i){p.classList.toggle('on',String(i+1)===k)});
     // 吹き出しの矢印を、選んだ数字の真下へ
-    var spot=anatomy.querySelector('.spot[data-layer="'+k+'"]');
-    if(spot){var cr=card.getBoundingClientRect(), sr=spot.getBoundingClientRect();
-      if(cr.width){var x=Math.min(Math.max(sr.left+sr.width/2-cr.left,24),cr.width-24);card.style.setProperty('--arrow',x+'px')}}
+    const spot=anatomy.querySelector('.spot[data-layer="'+k+'"]');
+    if(spot){const cr=card.getBoundingClientRect(), sr=spot.getBoundingClientRect();
+      if(cr.width){const x=Math.min(Math.max(sr.left+sr.width/2-cr.left,24),cr.width-24);card.style.setProperty('--arrow',x+'px')}}
   }
   document.getElementById('lcPrev').addEventListener('click',function(){showLayer(String(+shown-1))});
   document.getElementById('lcNext').addEventListener('click',function(){showLayer(String(+shown+1))});
-  var sx=null;
+  let sx=null;
   card.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
-  card.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;
-    if(Math.abs(dx)>50){var n=+shown+(dx<0?1:-1);if(n>=1&&n<=3)showLayer(String(n))}});
+  card.addEventListener('touchend',function(e){if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>50){const n=+shown+(dx<0?1:-1);if(n>=1&&n<=3)showLayer(String(n))}});
   window.addEventListener('resize',function(){showLayer(shown)});
   document.querySelectorAll('[data-layer]').forEach(function(el){
     el.addEventListener('mouseenter',function(){if(!sp.matches)showLayer(el.dataset.layer)});
@@ -536,15 +534,15 @@ var STORE = {
   showLayer('1');
 
   /* ---- story photo: placed on scroll ---- */
-  var sph=document.querySelector('.story-photo');
+  const sph=document.querySelector('.story-photo');
   if(sph&&!reduce&&'IntersectionObserver' in window&&sph.getBoundingClientRect().top>window.innerHeight*0.9){
     sph.classList.add('pre');
-    var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ sph.classList.remove('pre'); io.disconnect(); } },{rootMargin:'0px 0px 0px 0px',threshold:0.15});
+    const io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ sph.classList.remove('pre'); io.disconnect(); } },{rootMargin:'0px 0px 0px 0px',threshold:0.15});
     io.observe(sph);
   }
 
   /* ---- FV slideshow ---- */
-  var slides=[].slice.call(document.querySelectorAll('#slides img')), dots=[].slice.call(document.querySelectorAll('#dots button')), si=0, timer=null;
+  const slides=Array.from(document.querySelectorAll('#slides img')), dots=Array.from(document.querySelectorAll('#dots button')); let si=0, timer=null;
   function show(i){
     si=(i+slides.length)%slides.length;
     slides.forEach(function(im,k){im.classList.toggle('on',k===si)});
@@ -558,25 +556,25 @@ var STORE = {
   /* ---- seasonal link opens its news ---- */
   document.querySelector('.seasonal').addEventListener('click',function(e){
     e.preventDefault();
-    var d=document.getElementById('news-marron'); d.open=true;
-    var news=document.getElementById('news'); news.scrollTop=0;
-    var y=window.scrollY+d.getBoundingClientRect().top-document.querySelector('.site-header').offsetHeight-24;
+    const d=document.getElementById('news-marron'); d.open=true;
+    const news=document.getElementById('news'); news.scrollTop=0;
+    const y=window.scrollY+d.getBoundingClientRect().top-document.querySelector('.site-header').offsetHeight-24;
     window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
   });
 
   /* ---- copy address ---- */
-  var cb=document.getElementById('copyAddr');
+  const cb=document.getElementById('copyAddr');
   cb.addEventListener('click',function(){
-    var txt=document.getElementById('addr').innerText.replace(/\n/g,' ');
+    const txt=document.getElementById('addr').innerText.replace(/\n/g,' ');
     function done(){cb.textContent='コピーしました';setTimeout(function(){cb.textContent='住所をコピー'},2000)}
-    function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='選択しました'}
-    try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+    function fallback(){const r=document.createRange();r.selectNodeContents(document.getElementById('addr'));const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='選択しました'}
+    try{navigator.clipboard.writeText(txt).then(done,fallback)}catch{fallback()}
   });
 
   /* ---- SP visit bar: show after FV, hide at ACCESS ---- */
-  var bar=document.getElementById('visitbar'), hero=document.querySelector('.hero'), access=document.getElementById('access');
-  var pastHero=false, atAccess=false;
-  function upd(){var s=pastHero&&!atAccess;bar.classList.toggle('show',s);bar.setAttribute('aria-hidden',!s);bar.querySelector('a').tabIndex=s?0:-1}
+  const bar=document.getElementById('visitbar'), hero=document.querySelector('.hero'), access=document.getElementById('access');
+  let pastHero=false, atAccess=false;
+  function upd(){const s=pastHero&&!atAccess;bar.classList.toggle('show',s);bar.setAttribute('aria-hidden',!s);bar.querySelector('a').tabIndex=s?0:-1}
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(e){pastHero=!e[0].isIntersecting;upd()}).observe(hero);
     new IntersectionObserver(function(e){atAccess=e[0].isIntersecting;upd()},{rootMargin:'0px 0px -30% 0px'}).observe(access);
