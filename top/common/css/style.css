@@ -885,3 +885,6 @@ img.op-left, .work__visual img.op-left { object-position: left center; }
   .soba-modal__nav { bottom: 1.8rem; }
   .soba-modal__nav--prev { left: calc(50% - 56px); } .soba-modal__nav--next { right: calc(50% - 56px); }
 }
+/* 04 PHOTOGRAPH：小見出しの日本語ラベルは、Careerなどと同じく右寄せ */
+#photo .gallery__head { flex-wrap: wrap; justify-content: space-between; row-gap: 0.4rem; }
+#photo .gallery__head small { margin-left: auto; white-space: nowrap; }
