@@ -1,3 +1,14 @@
+// 写真モーダル共通：前へ／次への矢印を、写真（またはパネル）のすぐ横に置く
+function placeModalNav(modal, target, prev, next) {
+  if (modal.hidden || !target) return;
+  if (window.matchMedia('(max-width: 760px)').matches && modal.id === 'sobaModal') { prev.style.left = next.style.right = ''; return; } // SPのSOBAは下に置くレイアウト（CSS）
+  const r = target.getBoundingClientRect(), vw = document.documentElement.clientWidth, w = prev.offsetWidth || 52, gap = 16;
+  const cx = r.left + r.width / 2, half = (target.offsetWidth || r.width) / 2; // 開くときの拡大アニメーション中でも、最終的な幅で計算
+  if (!half) return;
+  prev.style.left = Math.max(6, cx - half - w - gap) + 'px';
+  next.style.right = Math.max(6, vw - (cx + half) - w - gap) + 'px';
+}
+
 // スクロール表示：画像だけフェード（横並びの画像は左右から）。文章は最初から表示
 (function () {
   const all = document.querySelectorAll('.reveal');
@@ -111,11 +122,13 @@
     setTimeout(function () {
       img.src = b.getAttribute('data-src'); img.alt = b.querySelector('img').alt;
       img.style.opacity = 1;
+      if (img.complete) placeModalNav(modal, img, prevBtn, nextBtn); else img.onload = function () { placeModalNav(modal, img, prevBtn, nextBtn); };
     }, last ? 200 : 0);
     let head = b.closest('ul').previousElementSibling;
     while (head && !head.classList.contains('gallery__head')) head = head.previousElementSibling;
     const label = head ? head.childNodes[0].textContent.trim() : '';
-    countEl.textContent = label + '  ' + (idx + 1) + ' / ' + group.length;
+    const cap = b.getAttribute('data-caption'); // SOBAは店名も表示
+    countEl.textContent = label + '  ' + (idx + 1) + ' / ' + group.length + (cap ? '\n' + cap : '');
     last = b;
   }
   function openModal(btn) {
@@ -147,11 +160,81 @@
       if (last) last.focus({ preventScroll: true }); // 写真の位置からスクロールさせない
     }, 500);
   }
+  window.addEventListener('resize', function () { placeModalNav(modal, img, prevBtn, nextBtn); });
   grid.addEventListener('click', function (e) {
     const btn = e.target.closest('.photo__btn'); if (btn) openModal(btn);
   });
   modal.addEventListener('click', function (e) { if (e.target !== img && !e.target.closest('.photo-modal__nav')) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+})();
+
+// 04 PHOTOGRAPH：SOBA。写真にマウスを乗せるとMORE、クリックで紹介文をモーダル表示
+(function () {
+  const modal = document.getElementById('sobaModal');
+  if (!modal) return;
+  const items = Array.prototype.slice.call(document.querySelectorAll('.soba__item'));
+  const img = modal.querySelector('.soba-modal__img');
+  const body = modal.querySelector('.soba-modal__body');
+  const noEl = modal.querySelector('.soba-modal__no');
+  const nameEl = modal.querySelector('.soba-modal__name');
+  const catchEl = modal.querySelector('.soba-modal__catch');
+  const detailEl = modal.querySelector('.soba-modal__detail');
+  const closeBtn = modal.querySelector('.soba-modal__close');
+  let idx = 0, opener = null, timer = null, isOpen = false;
+  function fill(i) {
+    idx = (i + items.length) % items.length;
+    const li = items[idx], pic = li.querySelector('.soba__btn img');
+    img.src = pic.getAttribute('src'); img.alt = pic.alt;
+    noEl.textContent = li.querySelector('.soba__no').textContent + ' / ' + String(items.length).padStart(2, '0');
+    nameEl.innerHTML = li.querySelector('.soba__name').innerHTML;
+    catchEl.innerHTML = li.querySelector('.soba__catch').innerHTML; // 改行（<br>）も反映
+    detailEl.innerHTML = li.querySelector('.soba__detail').innerHTML;
+    body.scrollTop = 0; modal.querySelector('.soba-modal__panel').scrollTop = 0;
+    requestAnimationFrame(placeNav);
+  }
+  const panel = modal.querySelector('.soba-modal__panel'), sPrev = modal.querySelector('.soba-modal__nav--prev'), sNext = modal.querySelector('.soba-modal__nav--next');
+  function placeNav() { placeModalNav(modal, panel, sPrev, sNext); }
+  img.addEventListener('load', placeNav);
+  window.addEventListener('resize', placeNav);
+  function show(i) {
+    if (!isOpen) { fill(i); return; }
+    img.style.opacity = 0; body.style.opacity = 0;
+    setTimeout(function () { fill(i); img.style.opacity = 1; body.style.opacity = 1; }, 200);
+  }
+  function open(i, btn) {
+    clearTimeout(timer); opener = btn; fill(i); isOpen = true;
+    modal.hidden = false; document.body.classList.add('is-modal-open'); placeNav();
+    requestAnimationFrame(function () { requestAnimationFrame(function () { modal.classList.add('is-open'); }); });
+    closeBtn.focus({ preventScroll: true });
+  }
+  function close() {
+    isOpen = false; modal.classList.remove('is-open');
+    timer = setTimeout(function () {
+      modal.hidden = true; img.removeAttribute('src'); document.body.classList.remove('is-modal-open');
+      if (opener) opener.focus({ preventScroll: true });
+    }, 500);
+  }
+  items.forEach(function (li, i) {
+    const btn = li.querySelector('.soba__btn');
+    btn.addEventListener('click', function () { open(i, btn); });
+  });
+  closeBtn.addEventListener('click', close);
+  modal.querySelector('.soba-modal__nav--prev').addEventListener('click', function () { show(idx - 1); });
+  modal.querySelector('.soba-modal__nav--next').addEventListener('click', function () { show(idx + 1); });
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (modal.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  // スワイプ（スマホ）
+  let sx = null, sy = null;
+  modal.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  modal.addEventListener('touchend', function (e) {
+    if (sx === null) return; const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(idx + (dx < 0 ? 1 : -1));
+  });
 })();
 
 // トップ → 下層ページ → ブラウザの「戻る」で、元のセクションの同じ位置に戻す

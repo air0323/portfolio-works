@@ -642,7 +642,7 @@ main section[id] { scroll-margin-top: 56px; }
 .photo__btn:hover img, .photo__btn:focus-visible img { opacity: .8; }
 
 @media (max-width: 640px) { .photo__grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } }
-.photo-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 5.6rem 1.6rem; background: rgba(20, 24, 30, .85); }
+.photo-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 5.6rem 1.6rem; background: rgba(38, 44, 52, .62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
 .photo-modal[hidden] { display: none; }
 .photo-modal__img { max-width: min(1000px, 100%); max-height: 100%; object-fit: contain; box-shadow: 0 20px 50px rgba(0, 0, 0, .5); }
 .photo-modal__close { position: absolute; top: 12px; right: 16px; width: 44px; height: 44px; border: 0; background: none; color: #fff; font-size: 3.4rem; line-height: 1; cursor: pointer; }
@@ -809,3 +809,79 @@ img.op-left, .work__visual img.op-left { object-position: left center; }
 /* キーボード操作時のフォーカス表示（マウスクリックでは出ない） */
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .photo-modal :focus-visible { outline-color: #fff; }
+
+/* 04 PHOTOGRAPH：SOBA（そば巡り） */
+.soba { gap: 4rem 2.4rem; align-items: start; }
+.soba__item { position: relative; padding-right: 2.2rem; }
+.soba__btn { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; overflow: hidden; }
+.soba__btn img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .6s ease; }
+.soba__more { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(20, 24, 30, .38); color: #fff; font-family: var(--en); font-size: 1.4rem; font-weight: 500; letter-spacing: .16em; opacity: 0; transition: opacity .4s ease; }
+.soba__btn:hover .soba__more, .soba__btn:focus-visible .soba__more { opacity: 1; }
+.soba__btn:hover img, .soba__btn:focus-visible img { transform: scale(1.04); }
+.soba__no { position: absolute; top: 0; right: 0; margin: 0; writing-mode: vertical-rl; font-family: var(--en); font-size: 1.2rem; font-weight: 500; letter-spacing: .14em; color: #a9a39a; }
+.soba__name { display: flex; align-items: center; gap: 0.4rem; margin: 1.4rem 0 0.6rem; font-size: 1.2rem; letter-spacing: .06em; color: var(--ink-soft); }
+.soba__pin { width: 14px; height: 14px; flex: none; fill: var(--blue); }
+.soba__catch { margin: 0; font-family: var(--mincho); font-weight: 500; font-size: 1.6rem; line-height: 1.6; letter-spacing: .04em; color: var(--ink); }
+@media (max-width: 900px) { .soba { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .soba { gap: 2.8rem 1.2rem; } .soba__item { padding-right: 1.6rem; } .soba__catch { font-size: 1.4rem; } .soba__name { font-size: 1.1rem; } }
+
+/* SOBAモーダル：左に写真、右に紹介文 */
+.soba-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 4rem 8rem; background: rgba(38, 44, 52, .62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .5s ease; }
+.soba-modal[hidden] { display: none; }
+.soba-modal.is-open { opacity: 1; }
+.soba-modal__panel { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; width: min(1040px, 100%); max-height: calc(100svh - 8rem); background: #fff; transform: translateY(12px); transition: transform .5s ease; }
+.soba-modal.is-open .soba-modal__panel { transform: none; }
+.soba-modal__photo { min-height: 0; display: flex; align-items: center; justify-content: center; background: #f1eee8; }
+.soba-modal__img { display: block; width: 100%; height: auto; max-height: calc(100svh - 8rem); object-fit: contain; transition: opacity .2s ease; } /* 写真は切り抜かず、元の比率のまま全体を表示 */
+.soba-modal__body { overflow-y: auto; padding: 5.6rem 4.8rem 4.8rem; display: flex; flex-direction: column; justify-content: center; transition: opacity .2s ease; }
+.soba-modal__no { margin: 0; font-family: var(--en); font-size: 1.2rem; letter-spacing: .14em; color: #a9a39a; }
+.soba-modal__name { display: flex; align-items: center; gap: 0.5rem; margin: 0.6rem 0 1.2rem; font-size: 1.4rem; letter-spacing: .06em; color: var(--ink-soft); }
+.soba-modal__catch { margin: 0 0 2rem; font-family: var(--mincho); font-weight: 500; font-size: 2rem; line-height: 1.6; letter-spacing: .04em; color: var(--ink); }
+.soba-modal__detail .soba__txt { margin: 0; font-size: 1.35rem; line-height: 2; color: var(--ink); }
+.soba-modal__detail .soba__map { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 2.4rem; font-size: 1.25rem; letter-spacing: .06em; color: var(--blue); text-decoration: none; border-bottom: 1px solid currentColor; align-self: flex-start; }
+.soba-modal__detail .soba__map:hover { opacity: .7; }
+.soba-modal__detail { display: flex; flex-direction: column; }
+.soba-modal__close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #eef1f0; color: var(--ink-soft); font-size: 2.4rem; line-height: 1; cursor: pointer; }
+.soba-modal__close:hover { background: #e1e6e4; }
+.soba-modal__nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; background: rgba(0,0,0,.25); color: #fff; font-size: 3rem; line-height: 1; cursor: pointer; transition: background .3s; }
+.soba-modal__nav:hover, .soba-modal__nav:focus-visible { background: rgba(255,255,255,.2); }
+.soba-modal__nav--prev { left: 16px; }
+.soba-modal__nav--next { right: 16px; }
+.soba-modal :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.soba-modal__nav:focus-visible { outline-color: #fff; }
+@media (max-width: 760px) {
+  .soba-modal { padding: 1.6rem; align-items: center; }
+  .soba-modal__panel { grid-template-columns: 1fr; min-height: 0; max-height: calc(100svh - 3.2rem); overflow-y: auto; }
+  .soba-modal__img { width: 100%; height: auto; max-height: 56svh; }
+  .soba-modal__body { overflow: visible; padding: 2.4rem 2rem 8rem; }
+  .soba-modal__catch { font-size: 1.7rem; }
+  .soba-modal__close { background: rgba(255,255,255,.9); }
+  .soba-modal__nav { top: auto; bottom: 2.4rem; transform: none; width: 40px; height: 40px; font-size: 2.4rem; background: rgba(0,0,0,.45); }
+  .soba-modal__nav--prev { left: 2.4rem; } .soba-modal__nav--next { right: 2.4rem; }
+}
+@media (prefers-reduced-motion: reduce) { .soba-modal, .soba-modal__panel, .soba__btn img, .soba__more { transition: none; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+/* SOBAモーダル：最後の一言は手書きメモ風に */
+.soba-modal__detail .soba__memo { position: relative; align-self: flex-start; margin: 2.4rem 0 0 0.4rem; padding: 0.4rem 0.2rem 0.6rem; font-family: "Klee One", var(--gothic); font-weight: 600; font-size: 1.5rem; line-height: 1.8; letter-spacing: .04em; color: #2f5a86; transform: rotate(-1.5deg); }
+.soba-modal__detail .soba__memo span { background: linear-gradient(transparent 62%, rgba(241, 214, 120, .55) 62%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 0.2rem; } /* 行ごとにマーカー線 */
+.soba-modal__detail .soba__memo::before { content: "memo"; display: block; margin-bottom: 0.2rem; font-family: var(--en); font-weight: 400; font-size: 1.1rem; letter-spacing: .16em; color: #a9a39a; }
+/* Favorite：お蕎麦の食べ歩き（アイコン付きリンク） */
+.fav .fav__soba { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.fav .fav__soba img { width: 20px; height: 20px; flex: none; }
+.fav .fav__soba:hover { opacity: .7; }
+
+/* 写真モーダルの矢印：JSで写真のすぐ横に配置（大きい画面でも写真から離れすぎない） */
+.photo-modal__nav, .soba-modal__nav { transition: background .3s, left .2s, right .2s; }
+.fav .fav__soba img { order: 2; }
+/* 矢印：明るい背景でも消えないよう、通常・ホバーとも濃いめの地色に（PHOTO・SOBA共通） */
+.photo-modal__nav, .soba-modal__nav { background: rgba(38, 44, 52, .55); border-color: rgba(255, 255, 255, .7); color: #fff; }
+.photo-modal__nav:hover, .photo-modal__nav:focus-visible, .soba-modal__nav:hover, .soba-modal__nav:focus-visible { background: rgba(38, 44, 52, .85); color: #fff; }
+@media (hover: none) { .photo-modal__nav:hover, .soba-modal__nav:hover { background: rgba(38, 44, 52, .55); } }
+/* SP：SOBAモーダルの矢印は本文に重ならないよう、パネルの下の余白に置く */
+@media (max-width: 760px) {
+  .soba-modal { padding: 1.6rem 1.6rem 7.6rem; }
+  .soba-modal__panel { max-height: calc(100svh - 9.2rem); }
+  .soba-modal__body { padding-bottom: 3.2rem; }
+  .soba-modal__nav { bottom: 1.8rem; }
+  .soba-modal__nav--prev { left: calc(50% - 56px); } .soba-modal__nav--next { right: calc(50% - 56px); }
+}

@@ -10,7 +10,7 @@
   <link rel="icon" href="common/img/favicon.ico" sizes="64x64">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;800&family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;800&family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&family=Klee+One:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="common/css/style.css">
 </head>
 <body>
@@ -106,7 +106,7 @@
           <ul class="fav">
             <li><img src="common/img/icon/game.svg" alt="" width="28" height="28"><p class="fav__ttl">ゲーム<small>Game</small></p><p class="fav__txt">スーパーマリオRPG<br>スプラトゥーン3<br>ポケモン<br>バイオハザード<br>Hollow Knight<br>ゲーム実況を見ること</p></li>
             <li><img src="common/img/icon/anime.svg" alt="" width="28" height="28"><p class="fav__ttl">マンガ・アニメ<small>Manga / Anime</small></p><p class="fav__txt">シャーマンキング<br>スラムダンク<br>鋼の錬金術師<br>マクロスF<br>おそ松さん<br>名探偵プリキュア</p></li>
-            <li><img src="common/img/icon/favorite.svg" alt="" width="28" height="28"><p class="fav__ttl">好きなこと<small>Hobby</small></p><p class="fav__txt">写真撮影<br>カラオケ<br>謎解き<br>子どもと遊ぶこと<br>ドライブ</p></li>
+            <li><img src="common/img/icon/favorite.svg" alt="" width="28" height="28"><p class="fav__ttl">好きなこと<small>Hobby</small></p><p class="fav__txt">写真撮影<br>カラオケ<br>謎解き<br>子どもと遊ぶこと<br>ドライブ<br><a class="fav__soba" href="#soba">お蕎麦の食べ歩き<img src="common/img/icon/soba.svg" alt="" width="20" height="20"></a></p></li>
             <li><img src="common/img/icon/sports.svg" alt="" width="28" height="28"><p class="fav__ttl">スポーツ<small>Sports</small></p><p class="fav__txt">バレーボール<br>バドミントン<br>バスケットボール</p></li>
           </ul>
         </div>
@@ -301,6 +301,66 @@
           <li><button type="button" class="photo__btn" data-src="common/img/photo_15.jpg" aria-label="テラス席に並ぶ料理とパンを拡大"><img width="2000" height="1335" src="common/img/photo_15.jpg" alt="テラス席に並ぶ料理とパン" loading="lazy"></button></li>
           <li><button type="button" class="photo__btn" data-src="common/img/photo_16.jpg" aria-label="夕暮れの港に灯るビル群を拡大"><img width="2000" height="1335" src="common/img/photo_16.jpg" alt="夕暮れの港に灯るビル群" loading="lazy"></button></li>
           </ul>
+          <h3 class="gallery__head" id="soba">SOBA HA NOMIMONO<small>お蕎麦の食べ歩き</small></h3>
+          <p class="photo__desc">お蕎麦が大好きで、旅先や休日に食べ歩いています。これまでに訪れたお店の中から、おすすめのお店を紹介します。</p>
+          <ul class="photo__grid soba">
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="そばの実の紹介を開く"><img width="1478" height="1108" src="common/img/soba_01.jpg" alt="そばの実のそばの芽と刻み海苔をのせたお蕎麦と天かす" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#01</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>そばの実</p>
+            <h4 class="soba__catch">すべてが主役。私の一番。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">そばの芽が添えられた、これまで食べた中で一番好きなお蕎麦。蕎麦の香り、心地よいのど越し、つゆの甘さと辛さの絶妙なバランス。そして最後にいただく蕎麦湯まで、どこを取っても満足できる一杯でした。食べ終わったあとまで記憶に残る、私にとって特別なお蕎麦です。</p><p class="soba__memo"><span>はじめてのそばの芽。<br>ほかのお店であったら、ぜひ食べたい。</span></p><a class="soba__map" href="https://maps.app.goo.gl/SFuTiKj6E1877VMZ8" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="蕎麦切 砥喜和の紹介を開く"><img width="1800" height="1350" src="common/img/soba_02.jpg" alt="蕎麦切 砥喜和の木のせいろに盛った細切りの蕎麦" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#02</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>蕎麦切 砥喜和</p>
+            <h4 class="soba__catch">静かな時間まで味わう、<br>大人の蕎麦。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">都会の喧騒を忘れさせてくれるような、落ち着いた空間のお蕎麦屋さん。蕎麦は細切りでやや硬め。鰹の風味がしっかり感じられるつゆと合わせると、すっきりとした味わいがより際立ちます。最後は大好きな蕎麦湯までじっくり堪能。</p><p class="soba__memo"><span>商談で訪れた。きっとうまくいくはず！</span></p><a class="soba__map" href="https://maps.app.goo.gl/UC3tsxQrj2SzLkmW6" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="茶そば寿庵 蔵のまち店の紹介を開く"><img width="1350" height="1800" src="common/img/soba_03.jpg" alt="茶そば寿庵 蔵のまち店の朱塗りの器に重ねた茶そばと薬味" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#03</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>茶そば寿庵 蔵のまち店</p>
+            <h4 class="soba__catch">今日はどの味から？<br>五段重ねの割子そば。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">小江戸・川越の街並みによく似合う、落ち着いた雰囲気のお蕎麦屋さん。注文した割子そばは、五段それぞれを異なるトッピングで楽しめる一品です。一杯ごとに味わいが変わるので、最後まで飽きることなく完食。また川越を訪れたら食べたいと思えるお蕎麦でした。</p><p class="soba__memo"><span>朝早くから整理券をゲットした甲斐があった。</span></p><a class="soba__map" href="https://maps.app.goo.gl/v1YCY3VhMTCSC2sGA" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="そば処 田中屋の紹介を開く"><img width="1800" height="1350" src="common/img/soba_04.jpg" alt="そば処 田中屋の3種類の割子そば" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#04</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>そば処 田中屋</p>
+            <h4 class="soba__catch">参拝のあとは、出雲そば。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">しっかりとした食感と豊かな香りが楽しめる出雲そば。三種類のお蕎麦を一度に味わえるのもうれしく、食感やのど越しの違いまで楽しみながら、あっという間に完食しました。食後には、やさしい甘さのぜんざいも。出雲大社の参拝と合わせて、ぜひ立ち寄りたいお店です。</p><p class="soba__memo"><span>隣にあるきれいなスタバが目印。</span></p><a class="soba__map" href="https://maps.app.goo.gl/Hw15LoX3Dx3C32417" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="蕎麦と鶏 はんさむ 用賀の紹介を開く"><img width="1800" height="1350" src="common/img/soba_05.jpg" alt="蕎麦と鶏 はんさむ 用賀の鴨つけ汁のせいろそばと鴨ロース" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#05</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>蕎麦と鶏 はんさむ 用賀</p>
+            <h4 class="soba__catch">心をつかむ、<br>柔らかな鴨。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">太めで噛み応えのある麺から、蕎麦そのものの甘みをしっかり感じられました。少し甘めのおつゆとの相性もよく、全体のバランスがとても好み。鴨は驚くほどやわらかく、そのまま食べても、蕎麦と一緒に味わってもおいしい。また足を運びたくなる一軒です。</p><p class="soba__memo"><span>鴨に塩を振って食べるのが、一番好きな食べ方。</span></p><a class="soba__map" href="https://maps.app.goo.gl/adsoNkdUgB5ra3TXA" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="川上庵 本店の紹介を開く"><img width="1800" height="1350" src="common/img/soba_06.jpg" alt="川上庵 本店の海老天とせいろそば" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#06</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>川上庵 本店</p>
+            <h4 class="soba__catch">軽井沢の夜、<br>大きな海老天の誘惑。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">営業終了間際に訪れましたが、店内はまだまだ賑やか。印象的だったのは、存在感たっぷりの大きな海老天と、しっかりとした食感のお蕎麦です。噛むほどに蕎麦の風味が広がり、食べ応えも十分。海老天は思わず「もう一本」と言いたくなるおいしさでした。</p><p class="soba__memo"><span>夜に食べる天ぷら。背徳感最高。</span></p><a class="soba__map" href="https://maps.app.goo.gl/LLreWFzainnPxhZB7" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="たぬきときつねの紹介を開く"><img width="1800" height="1350" src="common/img/soba_07.jpg" alt="たぬきときつねの丸く整えて盛ったせいろそばとつけ汁" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#07</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>たぬきときつね</p>
+            <h4 class="soba__catch">太めの麺との、<br>つかの間の出会い。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">コシが強く太めの麺、きつねとたぬき。店名をそのまま一皿にしたようなお蕎麦です。整った盛り付けも美しく、瑞々しさがありながら、しっかりとした重みを感じるのど越し。ゆっくり味わうつもりだったのに、おいしさに夢中になって、あっという間になくなってしまいました。</p><p class="soba__memo"><span>あの太い麺は、いったいどこに。</span></p><a class="soba__map" href="https://maps.app.goo.gl/bwbabGxS5oAYnRvT9" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          <li class="soba__item">
+            <button type="button" class="soba__btn" aria-haspopup="dialog" aria-label="山元の紹介を開く"><img width="1800" height="1350" src="common/img/soba_08.jpg" alt="山元の十割そばの鴨せいろ" loading="lazy"><span class="soba__more" aria-hidden="true">MORE +</span></button>
+            <p class="soba__no" aria-hidden="true">#08</p>
+            <p class="soba__name"><svg class="soba__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>山元</p>
+            <h4 class="soba__catch">旅で出会った、<br>はじめての十割そば。</h4>
+            <div class="soba__detail" hidden><p class="soba__txt">初めて十割そばを味わいたくて、旅の途中に立ち寄ったお店です。いただいたのは、よく注文する鴨せいろ。細身のお蕎麦は驚くほどするりとのどを通り、十分な量があったはずなのに、気づけばあっという間に完食していました。香ばしいねぎと鴨の組み合わせも抜群です。</p><p class="soba__memo"><span>やっぱり鴨にはネギだよね。ネギガナイト。</span></p><a class="soba__map" href="https://maps.app.goo.gl/YT66Gff3vc8jabXH6" target="_blank" rel="noopener">Googleマップで見る<span class="sr-only">（新しいタブで開きます）</span></a></div>
+          </li>
+          </ul>
         </div>
       </div>
       <div class="photo-modal" id="photoModal" hidden>
@@ -308,6 +368,20 @@
         <button type="button" class="photo-modal__nav photo-modal__nav--prev" aria-label="前の写真">‹</button>
         <figure class="photo-modal__fig"><img class="photo-modal__img" alt=""><figcaption class="photo-modal__count"></figcaption></figure>
         <button type="button" class="photo-modal__nav photo-modal__nav--next" aria-label="次の写真">›</button>
+      </div>
+      <div class="soba-modal" id="sobaModal" role="dialog" aria-modal="true" aria-labelledby="sobaModalName" hidden>
+        <div class="soba-modal__panel">
+          <div class="soba-modal__photo"><img class="soba-modal__img" alt=""></div>
+          <div class="soba-modal__body">
+            <p class="soba-modal__no"></p>
+            <p class="soba-modal__name" id="sobaModalName"></p>
+            <p class="soba-modal__catch"></p>
+            <div class="soba-modal__detail"></div>
+          </div>
+          <button type="button" class="soba-modal__close" aria-label="閉じる">×</button>
+        </div>
+        <button type="button" class="soba-modal__nav soba-modal__nav--prev" aria-label="前のお店">‹</button>
+        <button type="button" class="soba-modal__nav soba-modal__nav--next" aria-label="次のお店">›</button>
       </div>
     </section>
 
