@@ -888,3 +888,7 @@ img.op-left, .work__visual img.op-left { object-position: left center; }
 /* 04 PHOTOGRAPH：小見出しの日本語ラベルは、Careerなどと同じく右寄せ */
 #photo .gallery__head { flex-wrap: wrap; justify-content: space-between; row-gap: 0.4rem; }
 #photo .gallery__head small { margin-left: auto; white-space: nowrap; }
+
+/* モーダル表示中：スクロールバーの有無で横幅が変わってページがずれないよう余白を確保。モーダル内のスクロールが後ろへ伝わらないように */
+html { scrollbar-gutter: stable; }
+.photo-modal, .soba-modal, .soba-modal__panel, .soba-modal__body { overscroll-behavior: contain; }

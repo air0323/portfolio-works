@@ -1,3 +1,22 @@
+// モーダル表示中は後ろのページを固定する（iPhoneのSafariでも背景がスクロールしないよう、bodyを固定してスクロール位置を保持）
+let lockedY = 0, locked = false;
+function lockScroll() {
+  if (locked) return; locked = true;
+  lockedY = window.scrollY || window.pageYOffset;
+  const b = document.body.style;
+  b.position = 'fixed'; b.top = -lockedY + 'px'; b.left = '0'; b.right = '0'; b.width = '100%';
+  document.body.classList.add('is-modal-open');
+}
+function unlockScroll() {
+  if (!locked) return; locked = false;
+  const b = document.body.style, html = document.documentElement;
+  b.position = b.top = b.left = b.right = b.width = '';
+  document.body.classList.remove('is-modal-open');
+  const sb = html.style.scrollBehavior; html.style.scrollBehavior = 'auto'; // 元の位置へ一瞬で戻す（スムーススクロールで動いて見えないように）
+  window.scrollTo(0, lockedY);
+  html.style.scrollBehavior = sb;
+}
+
 // 写真モーダル共通：前へ／次への矢印を、写真（またはパネル）のすぐ横に置く
 function placeModalNav(modal, target, prev, next) {
   if (modal.hidden || !target) return;
@@ -135,7 +154,7 @@ function placeModalNav(modal, target, prev, next) {
     clearTimeout(timer);
     group = Array.prototype.slice.call(btn.closest('ul').querySelectorAll('.photo__btn'));
     last = null; show(group.indexOf(btn)); last = btn;
-    modal.hidden = false; document.body.classList.add('is-modal-open');
+    modal.hidden = false; lockScroll();
     requestAnimationFrame(function () { requestAnimationFrame(function () { modal.classList.add('is-open'); }); });
     closeBtn.focus({ preventScroll: true });
   }
@@ -156,7 +175,7 @@ function placeModalNav(modal, target, prev, next) {
   function closeModal() {
     modal.classList.remove('is-open');
     timer = setTimeout(function () {
-      modal.hidden = true; img.removeAttribute('src'); document.body.classList.remove('is-modal-open');
+      modal.hidden = true; img.removeAttribute('src'); unlockScroll();
       if (last) last.focus({ preventScroll: true }); // 写真の位置からスクロールさせない
     }, 500);
   }
@@ -203,14 +222,14 @@ function placeModalNav(modal, target, prev, next) {
   }
   function open(i, btn) {
     clearTimeout(timer); opener = btn; fill(i); isOpen = true;
-    modal.hidden = false; document.body.classList.add('is-modal-open'); placeNav();
+    modal.hidden = false; lockScroll(); placeNav();
     requestAnimationFrame(function () { requestAnimationFrame(function () { modal.classList.add('is-open'); }); });
     closeBtn.focus({ preventScroll: true });
   }
   function close() {
     isOpen = false; modal.classList.remove('is-open');
     timer = setTimeout(function () {
-      modal.hidden = true; img.removeAttribute('src'); document.body.classList.remove('is-modal-open');
+      modal.hidden = true; img.removeAttribute('src'); unlockScroll();
       if (opener) opener.focus({ preventScroll: true });
     }, 500);
   }
