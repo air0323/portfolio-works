@@ -4,13 +4,16 @@ function lockScroll() {
   if (locked) return; locked = true;
   lockedY = window.scrollY || window.pageYOffset;
   const b = document.body.style;
-  b.position = 'fixed'; b.top = -lockedY + 'px'; b.left = '0'; b.right = '0'; b.width = '100%';
+  const sbw = window.innerWidth - document.documentElement.clientWidth; // スクロールバーの幅（消えたぶん横にずれないよう補う）
+  b.position = 'fixed'; b.top = -lockedY + 'px'; b.left = '0'; b.right = '0'; b.width = 'auto'; b.paddingRight = sbw ? sbw + 'px' : '';
+  const hd = document.getElementById('siteHeader'); if (hd && sbw && getComputedStyle(hd).position === 'fixed') hd.style.paddingRight = sbw + 'px'; // 固定ヘッダーのみ補正
   document.body.classList.add('is-modal-open');
 }
 function unlockScroll() {
   if (!locked) return; locked = false;
   const b = document.body.style, html = document.documentElement;
-  b.position = b.top = b.left = b.right = b.width = '';
+  b.position = b.top = b.left = b.right = b.width = b.paddingRight = '';
+  const hd = document.getElementById('siteHeader'); if (hd) hd.style.paddingRight = '';
   document.body.classList.remove('is-modal-open');
   const sb = html.style.scrollBehavior; html.style.scrollBehavior = 'auto'; // 元の位置へ一瞬で戻す（スムーススクロールで動いて見えないように）
   window.scrollTo(0, lockedY);
@@ -20,12 +23,18 @@ function unlockScroll() {
 // 写真モーダル共通：前へ／次への矢印を、写真（またはパネル）のすぐ横に置く
 function placeModalNav(modal, target, prev, next) {
   if (modal.hidden || !target) return;
-  if (window.matchMedia('(max-width: 760px)').matches && modal.id === 'sobaModal') { prev.style.left = next.style.right = ''; return; } // SPのSOBAは下に置くレイアウト（CSS）
-  const r = target.getBoundingClientRect(), vw = document.documentElement.clientWidth, w = prev.offsetWidth || 52, gap = 16;
+  if (window.matchMedia('(max-width: 760px)').matches) { // SPは写真の下に並べる（左右位置はCSS）
+    prev.style.left = next.style.right = '';
+    const fig = target.closest('figure');
+    if (fig) { const f = fig.getBoundingClientRect(), mm = modal.getBoundingClientRect(); const top = (f.top + f.height / 2 + fig.offsetHeight / 2) - mm.top + 14 + 'px'; prev.style.top = next.style.top = top; }
+    return;
+  }
+  prev.style.top = next.style.top = '';
+  const r = target.getBoundingClientRect(), m = modal.getBoundingClientRect(), w = prev.offsetWidth || 52, gap = 16; // 左右ともモーダル自身の端から測って均等に
   const cx = r.left + r.width / 2, half = (target.offsetWidth || r.width) / 2; // 開くときの拡大アニメーション中でも、最終的な幅で計算
   if (!half) return;
-  prev.style.left = Math.max(6, cx - half - w - gap) + 'px';
-  next.style.right = Math.max(6, vw - (cx + half) - w - gap) + 'px';
+  prev.style.left = Math.max(6, cx - half - w - gap - m.left) + 'px';
+  next.style.right = Math.max(6, m.right - (cx + half) - w - gap) + 'px';
 }
 
 // スクロール表示：画像だけフェード（横並びの画像は左右から）。文章は最初から表示

@@ -890,5 +890,10 @@ img.op-left, .work__visual img.op-left { object-position: left center; }
 #photo .gallery__head small { margin-left: auto; white-space: nowrap; }
 
 /* モーダル表示中：スクロールバーの有無で横幅が変わってページがずれないよう余白を確保。モーダル内のスクロールが後ろへ伝わらないように */
-html { scrollbar-gutter: stable; }
 .photo-modal, .soba-modal, .soba-modal__panel, .soba-modal__body { overscroll-behavior: contain; }
+/* SP：PHOTOのモーダルも、SOBAと同じく矢印を写真の下に並べる */
+@media (max-width: 760px) {
+  .photo-modal { padding-bottom: 8rem; }
+  .photo-modal__nav { bottom: auto; transform: none; width: 40px; height: 40px; font-size: 2.4rem; } /* 縦位置はJSで写真のすぐ下に */
+  .photo-modal__nav--prev { left: calc(50% - 56px); } .photo-modal__nav--next { right: calc(50% - 56px); }
+}
