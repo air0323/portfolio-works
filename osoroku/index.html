@@ -302,6 +302,7 @@ button{font:inherit; color:inherit; letter-spacing:inherit}
 .ftr .legal{max-width:1200px; margin:0 auto}
 .ftr p{margin:0}
 .ftr .copy{margin-top:2.6rem}
+.ftr .copy small{font-size:inherit}
 .sp-br{display:none}
 @media (max-width:760px){
   .ftr{padding-top:4.4rem; padding-bottom:3.2rem; font-size:1.05rem; line-height:1.75; letter-spacing:0}
@@ -573,7 +574,7 @@ button{font:inherit; color:inherit; letter-spacing:inherit}
     <p>©2024 Valve Corporation. Steamは、米国およびまたは<br class="sp-br">その他の国のValve Corporationの商標およびまたは登録商標です。</p>
     <p>このホームページに掲載されている著作物の無断利用を禁じます。</p>
     </div>
-  <p class="copy">© 2026 I-rori Entertainment Co., Ltd.</p>
+  <p class="copy"><small>&copy;&ensp;<span class="js-year">2026</span>&ensp;I-rori Entertainment Co., Ltd. All rights reserved.</small></p>
   </div>
 </footer>
 
@@ -772,6 +773,8 @@ button{font:inherit; color:inherit; letter-spacing:inherit}
 
   paint();
 })();
+// フッターの年を今年に自動で更新
+document.querySelectorAll('.js-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 </script>
 </body>
 </html>

@@ -13,3 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		a.addEventListener('click', function () { toggle.checked = false; });
 	});
 });
+
+// フッターの年を今年に自動で更新
+document.querySelectorAll('.js-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });

@@ -897,3 +897,5 @@ img.op-left, .work__visual img.op-left { object-position: left center; }
   .photo-modal__nav { bottom: auto; transform: none; width: 40px; height: 40px; font-size: 2.4rem; } /* 縦位置はJSで写真のすぐ下に */
   .photo-modal__nav--prev { left: calc(50% - 56px); } .photo-modal__nav--next { right: calc(50% - 56px); }
 }
+
+.footer__copy small { font-size: inherit; }

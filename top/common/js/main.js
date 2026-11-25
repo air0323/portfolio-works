@@ -333,3 +333,6 @@ function placeModalNav(modal, target, prev, next) {
     io.observe(f);
   });
 })();
+
+// フッターの年を今年に自動で更新
+document.querySelectorAll('.js-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });

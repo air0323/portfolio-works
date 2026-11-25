@@ -312,7 +312,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
     </a>
     <p class="copy">小さな出会い、大きなときめき。</p>
-    <small>© Nata de Encontro All Rights Reserved.</small>
+    <small>&copy;&ensp;<span class="js-year">2026</span>&ensp;Nata de Encontro All rights reserved.</small>
   </div>
 </footer>
 
@@ -580,6 +580,8 @@ const STORE = {
     new IntersectionObserver(function(e){atAccess=e[0].isIntersecting;upd()},{rootMargin:'0px 0px -30% 0px'}).observe(access);
   }
 })();
+// フッターの年を今年に自動で更新
+document.querySelectorAll('.js-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 </script>
 </body>
 </html>
